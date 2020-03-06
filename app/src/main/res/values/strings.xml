@@ -1,4 +1,22 @@
 <resources>
     <string name="app_name">HikeBuddy</string>
     <string name="action_settings">Settings</string>
+
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">DONE</string>
+
+    <string name="slide_1_title">Aloha</string>
+    <string name="slide_1_desc">Learn the trails of Oahu</string>
+
+    <string name="slide_2_title">Hike Up</string>
+    <string name="slide_2_desc">Keep safe with reminders</string>
+
+    <string name="slide_3_title">Choose Your Path Today</string>
+    <string name="slide_3_desc">Dozens of trails to choose from</string>
+
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
 </resources>
