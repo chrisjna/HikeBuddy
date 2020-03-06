@@ -1,4 +1,18 @@
 <resources>
     <string name="app_name">HikeBuddy</string>
     <string name="action_settings">Settings</string>
+
+    <string-array name="hike_names">
+        <item>Koko Head</item>
+    </string-array>
+
+    <string-array name="hike_info">
+        <item>info about koko head</item>
+    </string-array>
+
+    <array name="hike_images">
+        <item>@drawable/img_koko_head</item>
+    </array>
+
+
 </resources>
