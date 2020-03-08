@@ -14,7 +14,6 @@
             android:id="@+id/hikeimages"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="60dp"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -37,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/hikeimages"
-            android:padding="16dp"
+            android:padding="5dp"
             android:textColor="?android:textColorSecondary" />
 
         <TextView
@@ -46,7 +45,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/newsTitleDetail"
-            android:padding="16dp" />
+            android:padding="5dp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hikeinfo"
+            android:shadowColor="#00818181"
+            android:text="Checklist" />
+
 
     </RelativeLayout>
 </ScrollView>

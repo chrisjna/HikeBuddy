@@ -27,9 +27,19 @@
             style="@style/TextAppearance.AppCompat.Headline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/hikeimages"
-            android:padding="10dp"
+            android:layout_above="@id/difficulty"
+            android:layout_marginLeft="8dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark" />
+
+        <RatingBar
+            android:id="@+id/difficulty"
+            style="@android:style/Widget.DeviceDefault.Light.RatingBar.Indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_alignBottom="@id/hikeimages"
+            android:numStars="3"
+            android:background="#FFFFFF"/>
 
         <TextView
             android:id="@+id/newsTitle"

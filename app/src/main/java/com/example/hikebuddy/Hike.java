@@ -9,6 +9,7 @@ class Hike {
     private String title;
     private String info;
     private final int imageResource;
+    private int diff;
 
     /**
      * Constructor for the Sport data model.
@@ -16,10 +17,11 @@ class Hike {
      * @param title The name if the sport.
      * @param info Information about the sport.
      */
-    public Hike(String title, String info, int imageResource) {
+    public Hike(String title, String info, int imageResource, int diff) {
         this.title = title;
         this.info = info;
         this.imageResource = imageResource;
+        this.diff = diff;
     }
 
     /**
@@ -43,5 +45,7 @@ class Hike {
     public int getImageResource() {
         return imageResource;
     }
+
+    int getDiff() {return diff;}
 
 }
