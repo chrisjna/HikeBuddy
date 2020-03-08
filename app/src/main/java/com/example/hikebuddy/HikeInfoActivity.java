@@ -32,9 +32,11 @@ public class HikeInfoActivity extends AppCompatActivity {
         // Initialize the views.
         TextView hikeTitle = findViewById(R.id.hikename);
         ImageView hikeImage = findViewById(R.id.hikeimages);
+        TextView hikeInfo = findViewById(R.id.hikeinfo);
 
         // Set the text and image from the Intent extra.
         hikeTitle.setText(getIntent().getStringExtra("title"));
         hikeImage.setImageResource(getIntent().getIntExtra("image_resource",0));
+        hikeInfo.setText(getIntent().getStringExtra("info"));
     }
 }

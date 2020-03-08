@@ -7,7 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.RatingBar;
 
 import com.example.hikebuddy.R;
 
@@ -64,6 +66,7 @@ class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder>  {
         holder.mTitleText.setText(currentHike.getTitle());
         holder.mInfoText.setText(currentHike.getInfo());
         holder.mHikeImage.setImageResource(mHikeData.get(position).getImageResource());
+        holder.mHikeDiff.setRating(currentHike.getDiff());
     }
 
     /**
@@ -86,6 +89,7 @@ class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder>  {
         private TextView mTitleText;
         private TextView mInfoText;
         private ImageView mHikeImage;
+        private RatingBar mHikeDiff;
 
         /**
          * Constructor for the ViewHolder, used in onCreateViewHolder().
@@ -99,6 +103,7 @@ class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder>  {
             mTitleText = itemView.findViewById(R.id.hikename);
             mInfoText = itemView.findViewById(R.id.subTitle);
             mHikeImage = itemView.findViewById(R.id.hikeimages);
+            mHikeDiff = itemView.findViewById(R.id.difficulty);
 
             // Set the OnClickListener to the entire view.
             itemView.setOnClickListener(this);
@@ -116,6 +121,7 @@ class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder>  {
             detailIntent.putExtra("title", currentHike.getTitle());
             detailIntent.putExtra("image_resource",
                     currentHike.getImageResource());
+            detailIntent.putExtra("info", currentHike.getInfo());
             mContext.startActivity(detailIntent);
         }
     }

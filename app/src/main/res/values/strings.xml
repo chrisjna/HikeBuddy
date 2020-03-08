@@ -17,5 +17,13 @@
         <item>@drawable/img_manoa_falls</item>
     </array>
 
+    <integer-array name="difficulty">
+        <item>1</item>
+        <item>2</item>
+    </integer-array>
+
+    <integer name="kokodiff">1</integer>
+
+
 
 </resources>
