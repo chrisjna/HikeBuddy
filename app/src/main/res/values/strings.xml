@@ -16,7 +16,7 @@
     <string name="slide_3_title">Choose Your Path Today</string>
     <string name="slide_3_desc">Dozens of trails to choose from</string>
 
-
     <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
     <string name="play_again">Play Again</string>
+    <string name="title_activity_main2">Main2Activity</string>
 </resources>
