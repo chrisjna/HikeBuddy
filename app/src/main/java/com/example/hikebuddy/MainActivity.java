@@ -1,18 +1,27 @@
 package com.example.hikebuddy;
 
 import android.os.Bundle;
-
+import android.content.res.TypedArray;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+
+    private ArrayList<Hike> HikeData;
+    private HikeAdapter Adapter;
+    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +29,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        HikeData = new ArrayList<>();
+        recyclerView = findViewById(R.id.rv_hike_list);
+        Adapter = new HikeAdapter(this, HikeData);
+        recyclerView.setAdapter(Adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        initializeData();
 
     }
 
@@ -44,4 +60,36 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+    /**
+     * Initialize the Hike data from resources.
+     */
+    private void initializeData() {
+        // Get the resources from the XML file.
+        String[] HikeList = getResources()
+                .getStringArray(R.array.hike_names);
+        String[] HikeInfo = getResources()
+                .getStringArray(R.array.hike_info);
+        TypedArray HikeImageResources = getResources()
+                .obtainTypedArray(R.array.hike_images);
+        int[] HikeDifficulty = getResources().getIntArray(R.array.difficulty);
+
+        // Clear the existing data (to avoid duplication).
+        HikeData.clear();
+
+        // Create the ArrayList of Hike objects with the titles and
+        // information about each Hike
+        for (int i = 0; i < HikeList.length; i++) {
+            HikeData.add(new Hike(HikeList[i], HikeInfo[i],
+                    HikeImageResources.getResourceId(i, 0), HikeDifficulty[i]));
+        }
+
+        // Recycle the typed array.
+        HikeImageResources.recycle();
+
+        // Notify the adapter of the change.
+        Adapter.notifyDataSetChanged();
+    }
+
 }
