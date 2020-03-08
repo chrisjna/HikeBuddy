@@ -2,6 +2,30 @@
     <string name="app_name">HikeBuddy</string>
     <string name="action_settings">Settings</string>
 
+    <string-array name="hike_names">
+        <item>Koko Head</item>
+        <item>Manoa Falls</item>
+        <item>Makapu\'u Lighthouse</item>
+    </string-array>
+
+    <string-array name="hike_info">
+        <item>info about koko head</item>
+        <item>info about manoa falls</item>
+        <item>info about makapuu lighthouse</item>
+    </string-array>
+
+    <array name="hike_images">
+        <item>@drawable/img_koko_head</item>
+        <item>@drawable/img_manoa_falls</item>
+        <item>@drawable/img_makapuu</item>
+    </array>
+
+    <integer-array name="difficulty">
+        <item>1</item>
+        <item>2</item>
+        <item>1</item>
+    </integer-array>
+
     <string name="title_activity_welcome">Home Screen</string>
     <string name="next">NEXT</string>
     <string name="skip">SKIP</string>
@@ -18,5 +42,8 @@
 
     <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
     <string name="play_again">Play Again</string>
+
     <string name="title_activity_main2">Main2Activity</string>
+
+
 </resources>
