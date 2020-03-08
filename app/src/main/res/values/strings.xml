@@ -4,25 +4,28 @@
 
     <string-array name="hike_names">
         <item>Koko Head</item>
-        <item>Manoa Falls</item>item>
+        <item>Manoa Falls</item>
+        <item>Makapu\'u Lighthouse</item>
     </string-array>
 
     <string-array name="hike_info">
         <item>info about koko head</item>
-        <item>info about manoa falls</item>>
+        <item>info about manoa falls</item>
+        <item>info about makapuu lighthouse</item>
     </string-array>
 
     <array name="hike_images">
         <item>@drawable/img_koko_head</item>
         <item>@drawable/img_manoa_falls</item>
+        <item>@drawable/img_makapuu</item>
     </array>
 
     <integer-array name="difficulty">
         <item>1</item>
         <item>2</item>
+        <item>1</item>
     </integer-array>
 
-    <integer name="kokodiff">1</integer>
 
 
 
