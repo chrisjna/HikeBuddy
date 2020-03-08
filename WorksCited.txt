@@ -2,6 +2,8 @@
 
 1. https://www.androidhive.info/2016/05/android-build-intro-slider-app/
 
+2. Photo by Roberto Nickson from Pexels
+
 4. Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
 
 5. Icons made by <a href="https://www.flaticon.com/authors/pixelmeetup" title="Pixelmeetup">Pixelmeetup</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
