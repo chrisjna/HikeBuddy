@@ -4,14 +4,17 @@
 
     <string-array name="hike_names">
         <item>Koko Head</item>
+        <item>Manoa Falls</item>item>
     </string-array>
 
     <string-array name="hike_info">
         <item>info about koko head</item>
+        <item>info about manoa falls</item>>
     </string-array>
 
     <array name="hike_images">
         <item>@drawable/img_koko_head</item>
+        <item>@drawable/img_manoa_falls</item>
     </array>
 
 

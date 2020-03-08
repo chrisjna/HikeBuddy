@@ -38,7 +38,12 @@
         android:id="@+id/rv_hike_list"
         android:layout_width="match_parent"
         android:layout_height="655dp"
+        android:layout_margin="0dp"
         app:layout_anchor="@+id/include"
-        app:layout_anchorGravity="center" />
+        app:layout_anchorGravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

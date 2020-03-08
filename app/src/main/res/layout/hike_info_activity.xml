@@ -1,51 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/card_view"
-    android:layout_gravity="center"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="300dp"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp">
+        android:layout_height="wrap_content"
+        tools:context="com.example.android.hikebuddy.HikeInfoActivity">
 
         <ImageView
             android:id="@+id/hikeimages"
-            android:scaleType="centerCrop"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="60dp"
             android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/hikename"
             style="@style/TextAppearance.AppCompat.Headline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_alignBottom="@id/hikeimages"
-            android:padding="10dp"
+            android:padding="16dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark" />
 
         <TextView
-            android:id="@+id/newsTitle"
+            android:id="@+id/newsTitleDetail"
             style="@style/TextAppearance.AppCompat.Subhead"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_below="@id/hikeimages"
+            android:padding="16dp"
             android:textColor="?android:textColorSecondary" />
 
         <TextView
-            android:id="@+id/subTitle"
+            android:id="@+id/hikeinfo"
             style="@style/TextAppearance.AppCompat.Subhead"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/newsTitle" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/newsTitleDetail"
+            android:padding="16dp" />
 
     </RelativeLayout>
-
-</androidx.cardview.widget.CardView>
+</ScrollView>

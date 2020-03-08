@@ -35,8 +35,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(Adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        //initializeData();
-        HikeData.add(new Hike("Koko head", "info on koko head", R.drawable.img_koko_head));
+        initializeData();
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -73,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Initialize the Hike data from resources.
-     *
+     */
     private void initializeData() {
         // Get the resources from the XML file.
         String[] HikeList = getResources()
@@ -99,5 +98,5 @@ public class MainActivity extends AppCompatActivity {
         // Notify the adapter of the change.
         Adapter.notifyDataSetChanged();
     }
-     */
+
 }

@@ -80,7 +80,7 @@ class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder>  {
     /**
      * ViewHolder class that represents each row of data in the RecyclerView.
      */
-    class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         // Member Variables for the TextViews
         private TextView mTitleText;
@@ -99,6 +99,24 @@ class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder>  {
             mTitleText = itemView.findViewById(R.id.hikename);
             mInfoText = itemView.findViewById(R.id.subTitle);
             mHikeImage = itemView.findViewById(R.id.hikeimages);
+
+            // Set the OnClickListener to the entire view.
+            itemView.setOnClickListener(this);
+        }
+
+        /**
+         * Handle click to show HikeInfoActivity.
+         *
+         * @param view View that is clicked.
+         */
+        @Override
+        public void onClick(View view) {
+            Hike currentHike = mHikeData.get(getAdapterPosition());
+            Intent detailIntent = new Intent(mContext, HikeInfoActivity.class);
+            detailIntent.putExtra("title", currentHike.getTitle());
+            detailIntent.putExtra("image_resource",
+                    currentHike.getImageResource());
+            mContext.startActivity(detailIntent);
         }
     }
 }
