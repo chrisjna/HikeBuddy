@@ -41,6 +41,9 @@
         <activity android:name=".HikeInfoActivity" />
         <activity android:name=".HikeAdapter" />
         <activity android:name=".Hike" />
+        <activity android:name=".Visitors"/>
+        <activity android:name=".Residents"/>
+        <activity android:name=".Favorites"/>
     </application>
 
 </manifest>

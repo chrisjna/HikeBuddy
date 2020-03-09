@@ -14,8 +14,7 @@ import android.view.MenuItem;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
-
+public class Visitors  extends AppCompatActivity {
     private ArrayList<Hike> HikeData;
     private HikeAdapter Adapter;
     private RecyclerView recyclerView;
@@ -65,12 +64,12 @@ public class MainActivity extends AppCompatActivity {
     private void initializeData() {
         // Get the resources from the XML file.
         String[] HikeList = getResources()
-                .getStringArray(R.array.hike_names);
+                .getStringArray(R.array.vis_hike_names);
         String[] HikeInfo = getResources()
-                .getStringArray(R.array.hike_info);
+                .getStringArray(R.array.vis_hike_info);
         TypedArray HikeImageResources = getResources()
-                .obtainTypedArray(R.array.hike_images);
-        int[] HikeDifficulty = getResources().getIntArray(R.array.difficulty);
+                .obtainTypedArray(R.array.vis_hike_images);
+        int[] HikeDifficulty = getResources().getIntArray(R.array.vis_difficulty);
 
         // Clear the existing data (to avoid duplication).
         HikeData.clear();

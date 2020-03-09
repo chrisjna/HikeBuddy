@@ -47,13 +47,12 @@
             android:layout_below="@id/newsTitleDetail"
             android:padding="5dp" />
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="match_parent"
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/hikeinfo"
-            android:shadowColor="#00818181"
-            android:text="Checklist" />
+            android:text="CheckBox" />
 
 
     </RelativeLayout>
