@@ -39,7 +39,8 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:contentDescription="@string/visitor"
-                android:text="@string/visitor" />
+                android:text="@string/visitor"
+                android:onClick="callVisitors" />
 
             <Button
                 android:id="@+id/button3"
@@ -47,7 +48,8 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:contentDescription="@string/resident"
-                android:text="@string/resident" />
+                android:text="@string/resident"
+                android:onClick="callResidents"/>
 
 
         </TableRow>
@@ -64,7 +66,8 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:contentDescription="@string/favorites"
-                android:text="@string/favorites" />
+                android:text="@string/favorites"
+                android:onClick="callFavorites"/>
 
             <Button
                 android:id="@+id/button6"
@@ -72,7 +75,8 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:contentDescription="@string/information"
-                android:text="@string/information" />
+                android:text="@string/information"
+                android:onClick="callInformation"/>
         </TableRow>
 
     </TableLayout>
