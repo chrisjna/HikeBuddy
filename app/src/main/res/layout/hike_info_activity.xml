@@ -30,6 +30,16 @@
             android:padding="16dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark" />
 
+        <RatingBar
+            android:id="@+id/difficulty"
+            style="@android:style/Widget.DeviceDefault.Light.RatingBar.Indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_below="@id/hikeimages"
+            android:numStars="3"
+            android:background="#FFFFFF"/>
+
         <TextView
             android:id="@+id/newsTitleDetail"
             style="@style/TextAppearance.AppCompat.Subhead"
@@ -46,13 +56,6 @@
             android:layout_height="match_parent"
             android:layout_below="@id/newsTitleDetail"
             android:padding="5dp" />
-
-        <CheckBox
-            android:id="@+id/checkBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/hikeinfo"
-            android:text="CheckBox" />
 
 
     </RelativeLayout>

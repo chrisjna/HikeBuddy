@@ -2,7 +2,9 @@ package com.example.hikebuddy;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.media.Rating;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +15,8 @@ import android.content.Context;
 import com.example.hikebuddy.R;
 import static android.view.KeyCharacterMap.load;
 import androidx.appcompat.app.AppCompatActivity;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -33,10 +37,12 @@ public class HikeInfoActivity extends AppCompatActivity {
         TextView hikeTitle = findViewById(R.id.hikename);
         ImageView hikeImage = findViewById(R.id.hikeimages);
         TextView hikeInfo = findViewById(R.id.hikeinfo);
+        RatingBar hikeDiff = findViewById(R.id.difficulty);
 
         // Set the text and image from the Intent extra.
         hikeTitle.setText(getIntent().getStringExtra("title"));
         hikeImage.setImageResource(getIntent().getIntExtra("image_resource",0));
         hikeInfo.setText(getIntent().getStringExtra("info"));
+        hikeDiff.setRating(getIntent().getIntExtra("diff", 0));
     }
 }

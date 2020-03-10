@@ -34,7 +34,13 @@
     </string-array>
 
     <string-array name="vis_hike_info">
-        <item>info about koko head</item>
+        <item>Hike Difficulty: Medium
+
+            \n\n\tThe Koko Head Stairs, or Koko Crater Trail, is a long uphill hike that takes you to the top of the Koko Crater, a 1208ft high volcanic tuff cone.
+            \n\t\tThe stairs are actually old railroad tracks that go up the Crater.
+            \n\t\tThere are a total of 1050 of these tracks!
+            \n\t\tWatch out for the bridge section of the hike, where the tracks act as a bridge over a 40ft drop.
+            \n\t\tThe hike is short, ranging from 30min to 1hour but can be quite tiresome, be sure you stretch your knees!</item>
         <item>info about manoa falls</item>
         <item>info about makapuu lighthouse</item>
     </string-array>
@@ -59,7 +65,13 @@
     </string-array>
 
     <string-array name="res_hike_info">
-        <item>info about koko head</item>
+        <item>Hike Difficulty: Medium
+
+            \n\n\tThe Koko Head Stairs, or Koko Crater Trail, is a long uphill hike that takes you to the top of the Koko Crater, a 1208ft high volcanic tuff cone.
+            \n\t\tThe stairs are actually old railroad tracks that go up the Crater.
+            \n\t\tThere are a total of 1050 of these tracks!
+            \n\t\tWatch out for the bridge section of the hike, where the tracks act as a bridge over a 40ft drop.
+            \n\t\tThe hike is short, ranging from 30min to 1hour but can be quite tiresome, be sure you stretch your knees!</item>
         <item>info about manoa falls</item>
         <item>info about makapuu lighthouse</item>
     </string-array>
