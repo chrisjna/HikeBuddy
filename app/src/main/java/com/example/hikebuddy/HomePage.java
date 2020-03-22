@@ -1,11 +1,11 @@
 package com.example.hikebuddy;
 
+import android.content.Intent;
 import android.os.Bundle;
-
+import android.view.View;
+import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
-import android.view.View;
 
 public class HomePage extends AppCompatActivity {
 
@@ -16,6 +16,14 @@ public class HomePage extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        Button btn = findViewById(R.id.button2);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomePage.this, MainActivity.class));
+            }
+        });
     }
 
 }

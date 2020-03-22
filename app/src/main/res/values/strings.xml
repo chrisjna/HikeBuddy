@@ -50,6 +50,6 @@
     <string name="resident">Resident</string>
     <string name="favorites">Favorites</string>
     <string name="information">Information</string>
-
+    <string name="search">Search</string>
 
 </resources>
