@@ -20,7 +20,6 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder> {
 
     private ArrayList<Hike> mHikeData;
     private Context mContext;
-    public ArrayList<Hike> filteredList;
 
     /**
      * Constructor that passes in the Hike data and the context.
@@ -34,17 +33,8 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder> {
 
     }
 
-    public void filter(String text) {
-        mHikeData.clear();
-        if (text.isEmpty()) {
-            mHikeData.addAll(filteredList);
-        } else {
-            for (Hike title : filteredList) {
-                if (title.getTitle().toLowerCase().contains(text)) {
-                    filteredList.add(title);
-                }
-            }
-        }
+    public void filterList(ArrayList<Hike> filteredList) {
+        mHikeData = filteredList;
         notifyDataSetChanged();
     }
     /**
