@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                Adapter.filter(query);
+                filter(query);
                 return true;
             }
 
@@ -68,6 +68,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         return true;
+    }
+    private void filter(String text){
+        ArrayList<Hike> filteredList = new ArrayList<>();
+
+        for (Hike item : HikeData) {
+            if (item.getTitle().toLowerCase().contains(text.toLowerCase())) {
+                filteredList.add(item);
+            }
+        }
+        Adapter.filterList(filteredList);
     }
 
     @Override
