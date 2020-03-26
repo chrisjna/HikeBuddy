@@ -19,15 +19,16 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Hike> HikeData;
-    private ArrayList<Hike> filteredList;
     private HikeAdapter Adapter;
     RecyclerView recyclerView;
+    SearchView searchView;  //moved from OnCreateOptionsMenu to support onTextSubmit behavior
+    Toolbar toolbar;        //moved from OnCreateOptionsMenu to support onTextSubmit behavior
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         HikeData = new ArrayList<>();
         recyclerView = findViewById(R.id.rv_hike_list);
@@ -42,13 +43,14 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.search_menu, menu);
 
         SearchManager searchManager = (SearchManager)
                 getSystemService(Context.SEARCH_SERVICE);
         MenuItem searchMenuItem = menu.findItem(R.id.search);
-        SearchView searchView = (SearchView) searchMenuItem.getActionView();
+        searchView = (SearchView) searchMenuItem.getActionView();
 
         if (searchManager != null) {
             searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
@@ -58,18 +60,21 @@ public class MainActivity extends AppCompatActivity {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                filter(query);
-                return true;
+                searchView.clearFocus();
+                toolbar.collapseActionView();
+                return false;
             }
 
             @Override
-            public boolean onQueryTextChange(String newText) {
-                return false;
+            public boolean onQueryTextChange(String query) {
+                filter(query);
+                return true;
             }
         });
         return true;
     }
-    private void filter(String text){
+
+    private void filter(String text) {
         ArrayList<Hike> filteredList = new ArrayList<>();
 
         for (Hike item : HikeData) {
@@ -125,4 +130,20 @@ public class MainActivity extends AppCompatActivity {
         // Notify the adapter of the change.
         Adapter.notifyDataSetChanged();
     }
+
+
+    //restore previous list data
+
+    @Override
+    public void onBackPressed() {
+
+        if (!searchView.isIconified() && searchView != null) {
+            searchView.setIconified(true);
+            searchView.onActionViewCollapsed();
+        } else {
+            super.onBackPressed();
+        }
+
+    }
+
 }
