@@ -82,6 +82,7 @@
     </TableLayout>
 
     <SearchView
+        android:id="@+id/searchButton"
         android:layout_width="326dp"
         android:layout_height="50dp"
         android:background="@drawable/search_layout"

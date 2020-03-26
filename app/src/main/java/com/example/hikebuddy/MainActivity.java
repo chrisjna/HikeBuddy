@@ -2,6 +2,7 @@ package com.example.hikebuddy;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.view.Menu;
@@ -129,6 +130,13 @@ public class MainActivity extends AppCompatActivity {
 
         // Notify the adapter of the change.
         Adapter.notifyDataSetChanged();
+
+        Intent intent = getIntent();
+        String passedQuery = intent.getExtras().getString("passedQuery");
+
+        if (passedQuery != null) {
+            filter(passedQuery);
+        }
     }
 
 
