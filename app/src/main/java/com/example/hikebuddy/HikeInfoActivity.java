@@ -2,19 +2,13 @@ package com.example.hikebuddy;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.content.Intent;
-import android.view.LayoutInflater;
-import android.content.Context;
-import com.example.hikebuddy.R;
-import static android.view.KeyCharacterMap.load;
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.util.ArrayList;
 
 public class HikeInfoActivity extends AppCompatActivity {
 
@@ -38,5 +32,14 @@ public class HikeInfoActivity extends AppCompatActivity {
         hikeTitle.setText(getIntent().getStringExtra("title"));
         hikeImage.setImageResource(getIntent().getIntExtra("image_resource",0));
         hikeInfo.setText(getIntent().getStringExtra("info"));
+
+        Button btnMile = findViewById(R.id.buttonMilestone);
+
+        btnMile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HikeInfoActivity.this, Milestone.class));
+            }
+        });
     }
 }

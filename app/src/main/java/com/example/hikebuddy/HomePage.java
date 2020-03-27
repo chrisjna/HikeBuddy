@@ -20,19 +20,11 @@ public class HomePage extends AppCompatActivity {
 
         Button btn = findViewById(R.id.button2);
         SearchView searchView = findViewById(R.id.searchButton);
-        Button btn3 = findViewById(R.id.button3);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(HomePage.this, MainActivity.class));
-            }
-        });
-
-        btn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(HomePage.this, Milestone.class));
             }
         });
 
