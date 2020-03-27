@@ -48,12 +48,12 @@
             android:padding="5dp" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/buttonMilestone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/hikeinfo"
             android:shadowColor="#00818181"
-            android:text="Checklist" />
+            android:text="@string/milestones" />
 
 
     </RelativeLayout>

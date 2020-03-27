@@ -52,5 +52,7 @@
     <string name="information">Information</string>
     <string name="search">Search</string>
     <string name="todo">TODO</string>
+    <string name="milestones">Milestones</string>
+    <string name="textview">custom_text</string>
 
 </resources>
