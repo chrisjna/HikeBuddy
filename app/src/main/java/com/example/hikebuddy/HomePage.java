@@ -1,8 +1,5 @@
 package com.example.hikebuddy;
 
-import android.app.SearchManager;
-import android.content.ComponentName;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +20,7 @@ public class HomePage extends AppCompatActivity {
 
         Button btn = findViewById(R.id.button2);
         SearchView searchView = findViewById(R.id.searchButton);
+        Button btn3 = findViewById(R.id.button3);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,6 +28,14 @@ public class HomePage extends AppCompatActivity {
                 startActivity(new Intent(HomePage.this, MainActivity.class));
             }
         });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomePage.this, Milestone.class));
+            }
+        });
+
         searchView.setOnQueryTextListener(queryTextListener);
     }
 
