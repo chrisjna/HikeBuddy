@@ -51,5 +51,6 @@
     <string name="favorites">Favorites</string>
     <string name="information">Information</string>
     <string name="search">Search</string>
+    <string name="todo">TODO</string>
 
 </resources>
