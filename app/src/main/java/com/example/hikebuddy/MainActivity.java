@@ -131,10 +131,10 @@ public class MainActivity extends AppCompatActivity {
         // Notify the adapter of the change.
         Adapter.notifyDataSetChanged();
 
-        Intent intent = getIntent();
-        String passedQuery = intent.getExtras().getString("passedQuery");
 
-        if (passedQuery != null) {
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String passedQuery = extras.getString("passedQuery");
             filter(passedQuery);
         }
     }
