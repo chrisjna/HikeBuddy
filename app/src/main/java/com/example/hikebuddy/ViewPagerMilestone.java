@@ -12,14 +12,20 @@ import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+
+
 public class ViewPagerMilestone extends PagerAdapter {
 
     private Context context;
     private Integer [] images = {R.drawable.img_koko_head,R.drawable.mainpageimage,R.drawable.img_makapuu};
     private String[] texts = {"text1", "text2", "text3"};
+    private String[] titleArray;
+    private String[] hikeMilestones;
 
     public ViewPagerMilestone(Context context) {
         this.context = context;
+        titleArray = context.getResources().getStringArray(R.array.hike_names);
+        hikeMilestones = context.getResources().getStringArray(R.array.hike_milestone);
     }
 
     @Override
@@ -38,18 +44,21 @@ public class ViewPagerMilestone extends PagerAdapter {
 
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = layoutInflater.inflate(R.layout.custom, null);
+
         ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
         imageView.setImageResource(images[position]);
+
         TextView textView = (TextView) view.findViewById(R.id.milestoneDetail);
-        ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
         textView.setText(texts[position]);
+
+        ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
         progressBar.setMax(getCount() - 1);
         progressBar.setProgress(position);
 
         ViewPager vp = (ViewPager) container;
         vp.addView(view, 0);
-        return view;
 
+        return view;
     }
 
     @Override

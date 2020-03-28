@@ -24,7 +24,7 @@ public class HikeInfoActivity extends AppCompatActivity {
         setContentView(R.layout.hike_info_activity);
 
         // Initialize the views.
-        TextView hikeTitle = findViewById(R.id.hikename);
+        final TextView hikeTitle = findViewById(R.id.hikename);
         ImageView hikeImage = findViewById(R.id.hikeimages);
         TextView hikeInfo = findViewById(R.id.hikeinfo);
 
@@ -32,13 +32,16 @@ public class HikeInfoActivity extends AppCompatActivity {
         hikeTitle.setText(getIntent().getStringExtra("title"));
         hikeImage.setImageResource(getIntent().getIntExtra("image_resource",0));
         hikeInfo.setText(getIntent().getStringExtra("info"));
+        final String hikeTitleIntent = getIntent().getStringExtra("title");
 
         Button btnMile = findViewById(R.id.buttonMilestone);
 
         btnMile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(HikeInfoActivity.this, Milestone.class);
                 startActivity(new Intent(HikeInfoActivity.this, Milestone.class));
+                intent.putExtra("hikeTitle", hikeTitleIntent);
             }
         });
     }

@@ -55,4 +55,10 @@
     <string name="milestones">Milestones</string>
     <string name="textview">custom_text</string>
 
+    <string-array name="hike_milestone">
+        <item>Milestone about Koko Head</item>
+        <item>Milestone about Manoa Falls</item>
+        <item>Milestone about Makapu\'u Lighthouse</item>
+    </string-array>
+
 </resources>
