@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -40,7 +41,10 @@ public class ViewPagerMilestone extends PagerAdapter {
         ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
         imageView.setImageResource(images[position]);
         TextView textView = (TextView) view.findViewById(R.id.milestoneDetail);
+        ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
         textView.setText(texts[position]);
+        progressBar.setMax(getCount() - 1);
+        progressBar.setProgress(position);
 
         ViewPager vp = (ViewPager) container;
         vp.addView(view, 0);

@@ -5,12 +5,10 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
-import android.widget.TextView;
 
 public class Milestone extends AppCompatActivity {
 
     ViewPager viewPager;
-    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
