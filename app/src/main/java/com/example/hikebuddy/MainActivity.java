@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         HikeData = new ArrayList<>();
         recyclerView = findViewById(R.id.rv_hike_list);
         Adapter = new HikeAdapter(this, HikeData);

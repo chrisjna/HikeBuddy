@@ -36,9 +36,9 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder> {
 
     public void filterList(ArrayList<Hike> filteredList) {
         mHikeData = filteredList;
-        if (filteredList.isEmpty()) {
-                //Toast.makeText(HikeAdapter.this, "No Match found",Toast.LENGTH_LONG).show();
-        }
+        //if (filteredList.isEmpty()) {
+        //Toast.makeText(HikeAdapter.this, "No Match found",Toast.LENGTH_LONG).show();
+        //}
         notifyDataSetChanged();
     }
     /**
