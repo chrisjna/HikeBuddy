@@ -1,6 +1,7 @@
 package com.example.hikebuddy;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,9 @@ import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import java.net.URISyntaxException;
+
+import static android.content.Intent.getIntent;
 
 
 public class ViewPagerMilestone extends PagerAdapter {
@@ -21,12 +25,16 @@ public class ViewPagerMilestone extends PagerAdapter {
     private String[] texts = {"text1", "text2", "text3"};
     private String[] titleArray;
     private String[] hikeMilestones;
+    private String currentHike = "";
 
-    public ViewPagerMilestone(Context context) {
+    public ViewPagerMilestone(Context context, String hikeTitleMilestone) {
         this.context = context;
+
+        currentHike = hikeTitleMilestone;
         titleArray = context.getResources().getStringArray(R.array.hike_names);
         hikeMilestones = context.getResources().getStringArray(R.array.hike_milestone);
     }
+
 
     @Override
     public int getCount() {
