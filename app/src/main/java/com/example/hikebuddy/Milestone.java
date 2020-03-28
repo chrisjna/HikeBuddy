@@ -20,8 +20,11 @@ public class Milestone extends AppCompatActivity {
 
         viewPager = findViewById(R.id.viewPager);
 
-        ViewPagerMilestone viewPagerAdapter = new ViewPagerMilestone(this);
+        //get string
+        Bundle extras = getIntent().getExtras();
+        String hikeTitleMilestone = extras.getString("hikeTitleInfoActivity");
 
+        ViewPagerMilestone viewPagerAdapter = new ViewPagerMilestone(this, hikeTitleMilestone);
         viewPager.setAdapter(viewPagerAdapter);
 
     }

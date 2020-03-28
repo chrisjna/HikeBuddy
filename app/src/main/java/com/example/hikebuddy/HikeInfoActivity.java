@@ -41,7 +41,7 @@ public class HikeInfoActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(HikeInfoActivity.this, Milestone.class);
                 startActivity(new Intent(HikeInfoActivity.this, Milestone.class));
-                intent.putExtra("hikeTitle", hikeTitleIntent);
+                intent.putExtra("hikeTitleInfoActivity", hikeTitleIntent);
             }
         });
     }
