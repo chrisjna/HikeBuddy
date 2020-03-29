@@ -9,6 +9,7 @@ import android.os.Bundle;
 public class Milestone extends AppCompatActivity {
 
     ViewPager viewPager;
+    String hikeTitleMilestone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +23,9 @@ public class Milestone extends AppCompatActivity {
 
         //get string
         Bundle extras = getIntent().getExtras();
-        String hikeTitleMilestone = extras.getString("hikeTitleInfoActivity");
+        if (extras != null) {
+            hikeTitleMilestone = extras.getString("hikeTitleInfoActivity");
+        }
 
         ViewPagerMilestone viewPagerAdapter = new ViewPagerMilestone(this, hikeTitleMilestone);
         viewPager.setAdapter(viewPagerAdapter);
