@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 public class Milestone extends AppCompatActivity {
 
@@ -22,12 +24,11 @@ public class Milestone extends AppCompatActivity {
         viewPager = findViewById(R.id.viewPager);
 
         //get string
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            hikeTitleMilestone = extras.getString("hikeTitleInfoActivity");
-        }
+        Intent intent = getIntent();
+        hikeTitleMilestone = intent.getStringExtra("hikeTitleInfoActivity");
 
         ViewPagerMilestone viewPagerAdapter = new ViewPagerMilestone(this, hikeTitleMilestone);
+
         viewPager.setAdapter(viewPagerAdapter);
 
     }
