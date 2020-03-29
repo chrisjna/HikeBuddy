@@ -1,7 +1,6 @@
 package com.example.hikebuddy;
 
 import android.content.Context;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,28 +12,42 @@ import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import java.net.URISyntaxException;
-
-import static android.content.Intent.getIntent;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 
 
 public class ViewPagerMilestone extends PagerAdapter {
 
     private Context context;
     private Integer [] images = {R.drawable.img_koko_head,R.drawable.mainpageimage,R.drawable.img_makapuu};
-    private String[] texts = {"text1", "text2", "text3"};
-    private String[] titleArray;
-    private String[] hikeMilestones;
-    private String currentHike = "";
+    private String [] texts;
 
     public ViewPagerMilestone(Context context, String hikeTitleMilestone) {
         this.context = context;
 
-        currentHike = hikeTitleMilestone;
-        titleArray = context.getResources().getStringArray(R.array.hike_names);
-        hikeMilestones = context.getResources().getStringArray(R.array.hike_milestone);
-    }
+        String currentHike = hikeTitleMilestone;
 
+        for (Field field : R.array.class.getDeclaredFields())
+        {
+            if (Modifier.isStatic(field.getModifiers()) && !Modifier.isPrivate(field.getModifiers()) && field.getType().equals(int.class))
+            {
+                try
+                {
+                    if (field.getName().startsWith("Koko_Head_Milestone"))
+                    {
+                        int id = field.getInt(R.array.class);
+                        texts = context.getResources().getStringArray(id);
+                    }
+                } catch (IllegalArgumentException e)
+                {
+                    // ignore
+                } catch (IllegalAccessException e)
+                {
+                    // ignore
+                }
+            }
+        }
+    }
 
     @Override
     public int getCount() {
@@ -77,4 +90,5 @@ public class ViewPagerMilestone extends PagerAdapter {
         vp.removeView(view);
 
     }
+
 }

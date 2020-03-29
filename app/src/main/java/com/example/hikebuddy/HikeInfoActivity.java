@@ -32,6 +32,8 @@ public class HikeInfoActivity extends AppCompatActivity {
         hikeTitle.setText(getIntent().getStringExtra("title"));
         hikeImage.setImageResource(getIntent().getIntExtra("image_resource",0));
         hikeInfo.setText(getIntent().getStringExtra("info"));
+
+        //for Milestone
         final String hikeTitleIntent = getIntent().getStringExtra("title");
 
         Button btnMile = findViewById(R.id.buttonMilestone);
