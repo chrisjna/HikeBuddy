@@ -2,6 +2,7 @@ package com.example.hikebuddy;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -35,15 +36,19 @@ public class HikeInfoActivity extends AppCompatActivity {
 
         //for Milestone
         final String hikeTitleIntent = getIntent().getStringExtra("title");
+        Log.d(hikeTitleIntent, "here it is");
 
         Button btnMile = findViewById(R.id.buttonMilestone);
 
         btnMile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                String dataToTransmit="this info text will be valid on endActivity";
                 Intent intent = new Intent(HikeInfoActivity.this, Milestone.class);
-                startActivity(new Intent(HikeInfoActivity.this, Milestone.class));
-                intent.putExtra("hikeTitleInfoActivity", hikeTitleIntent);
+                intent.putExtra("hikeTitleInfoActivity",hikeTitleIntent);
+                startActivity(intent);
+
             }
         });
     }

@@ -1,6 +1,7 @@
 package com.example.hikebuddy;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,11 +22,12 @@ public class ViewPagerMilestone extends PagerAdapter {
     private Context context;
     private Integer [] images = {R.drawable.img_koko_head,R.drawable.mainpageimage,R.drawable.img_makapuu};
     private String [] texts;
+    private String hiker;
 
-    public ViewPagerMilestone(Context context, String hikeTitleMilestone) {
+    public ViewPagerMilestone(Context context,  String hike) {
         this.context = context;
-
-        String currentHike = hikeTitleMilestone;
+        this.hiker = hike + "_Milestone";
+        Log.d(hiker, "here it is 2");
 
         for (Field field : R.array.class.getDeclaredFields())
         {
@@ -33,7 +35,7 @@ public class ViewPagerMilestone extends PagerAdapter {
             {
                 try
                 {
-                    if (field.getName().startsWith("Koko_Head_Milestone"))
+                    if (field.getName().startsWith(hiker))
                     {
                         int id = field.getInt(R.array.class);
                         texts = context.getResources().getStringArray(id);
