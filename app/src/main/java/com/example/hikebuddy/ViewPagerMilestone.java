@@ -1,7 +1,6 @@
 package com.example.hikebuddy;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +26,6 @@ public class ViewPagerMilestone extends PagerAdapter {
     public ViewPagerMilestone(Context context,  String hike) {
         this.context = context;
         this.hiker = hike + "_Milestone";
-        Log.d(hiker, "here it is 2");
 
         for (Field field : R.array.class.getDeclaredFields())
         {
@@ -42,10 +40,8 @@ public class ViewPagerMilestone extends PagerAdapter {
                     }
                 } catch (IllegalArgumentException e)
                 {
-                    // ignore
                 } catch (IllegalAccessException e)
                 {
-                    // ignore
                 }
             }
         }

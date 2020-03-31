@@ -2,10 +2,11 @@
     <string name="app_name">HikeBuddy</string>
     <string name="action_settings">Settings</string>
 
+<!-- underscores used to find the hike in Milestones-->
     <string-array name="hike_names">
         <item>Koko_Head</item>
         <item>Manoa_Falls</item>
-        <item>Makapu\'u_Lighthouse</item>
+        <item>Makapuu_Lighthouse</item>
     </string-array>
 
     <string-array name="hike_info">
@@ -61,4 +62,15 @@
         <item>Milestone about Koko Head</item>
     </string-array>
 
+    <string-array name="Manoa_Falls_Milestone">
+        <item>Milestone about Manoa Falls</item>
+        <item>Milestone about Manoa Falls</item>
+        <item>Milestone about Manoa Falls</item>
+    </string-array>
+
+    <string-array name="Makapuu_Lighthouse_Milestone">
+        <item>Milestone about Lighthouse</item>
+        <item>Milestone about Lighthouse</item>
+        <item>Milestone about Lighthouse</item>
+    </string-array>
 </resources>
