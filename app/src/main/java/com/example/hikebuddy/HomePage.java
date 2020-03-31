@@ -15,13 +15,14 @@ public class HomePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbarHome);
         setSupportActionBar(toolbar);
 
-        Button btn = findViewById(R.id.button2);
+        Button filterVisitor = findViewById(R.id.button2);
+        Button informationButton = findViewById(R.id.button6);
         SearchView searchView = findViewById(R.id.searchButton);
 
-        btn.setOnClickListener(new View.OnClickListener() {
+        filterVisitor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(HomePage.this, MainActivity.class));
@@ -29,6 +30,13 @@ public class HomePage extends AppCompatActivity {
         });
 
         searchView.setOnQueryTextListener(queryTextListener);
+
+        informationButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomePage.this, InformationActivity.class));
+            }
+        });
     }
 
     final SearchView.OnQueryTextListener queryTextListener = new SearchView.OnQueryTextListener() {

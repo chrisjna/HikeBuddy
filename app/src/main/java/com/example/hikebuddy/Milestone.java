@@ -6,7 +6,6 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 
 public class Milestone extends AppCompatActivity {
 
@@ -18,7 +17,7 @@ public class Milestone extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_milestone);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbarHome);
         setSupportActionBar(toolbar);
 
         viewPager = findViewById(R.id.viewPager);
