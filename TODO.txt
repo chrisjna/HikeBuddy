@@ -1,0 +1,5 @@
+*style the milestone page
+*include more pictures
+*include an actual number counter
+*add transitions
+*work on the information page
