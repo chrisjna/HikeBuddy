@@ -132,4 +132,5 @@
         "y-axis only. The following example shows the card with a height of 6dp.\n\n"
 
     </string>
+    <string name="no_results_found">No results found</string>
 </resources>

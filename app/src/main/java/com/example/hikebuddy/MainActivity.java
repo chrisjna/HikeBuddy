@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.SearchView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Hike> HikeData;
     private HikeAdapter Adapter;
     RecyclerView recyclerView;
+    TextView textview;
     SearchView searchView;  //moved from OnCreateOptionsMenu to support onTextSubmit behavior
     Toolbar toolbar;        //moved from OnCreateOptionsMenu to support onTextSubmit behavior
 
@@ -80,10 +83,20 @@ public class MainActivity extends AppCompatActivity {
 
         for (Hike item : HikeData) {
             if (item.getTitle().toLowerCase().contains(text.toLowerCase())) {
+                recyclerView = findViewById(R.id.rv_hike_list);
+                textview = findViewById(R.id.textView);
+                recyclerView.setVisibility(View.VISIBLE);
+                textview.setVisibility(View.GONE);
                 filteredList.add(item);
+                Adapter.filterList(filteredList);
+            } else if (filteredList.isEmpty()){
+                recyclerView = findViewById(R.id.rv_hike_list);
+                textview = findViewById(R.id.textView);
+                recyclerView.setVisibility(View.GONE);
+                textview.setVisibility(View.VISIBLE);
+
             }
         }
-        Adapter.filterList(filteredList);
     }
 
     @Override
