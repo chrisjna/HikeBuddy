@@ -21,11 +21,11 @@ public class ViewPagerMilestone extends PagerAdapter {
     private Context context;
     private Integer [] images = {R.drawable.img_koko_head,R.drawable.mainpageimage,R.drawable.img_makapuu};
     private String [] texts;
-    private String hiker;
 
     public ViewPagerMilestone(Context context,  String hike) {
         this.context = context;
-        this.hiker = hike + "_Milestone";
+        String hiker = hike + " Milestone";
+        hiker = hiker.replaceAll(" ", "_");
 
         for (Field field : R.array.class.getDeclaredFields())
         {
