@@ -4,9 +4,9 @@
 
 <!-- underscores used to find the hike in Milestones-->
     <string-array name="hike_names">
-        <item>Koko_Head</item>
-        <item>Manoa_Falls</item>
-        <item>Makapuu_Lighthouse</item>
+        <item>Koko Head</item>
+        <item>Manoa Falls</item>
+        <item>Makapuu Lighthouse</item>
     </string-array>
 
     <string-array name="hike_info">
