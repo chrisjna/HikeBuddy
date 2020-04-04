@@ -2,27 +2,23 @@ package com.example.hikebuddy;
 
 import android.content.Context;
 import android.content.Intent;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.RatingBar;
+import android.widget.Toast;
 
-import com.example.hikebuddy.R;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-
-import static android.view.KeyCharacterMap.load;
 
 /***
  * The adapter class for the RecyclerView, contains the Hike data.
  */
-class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder>  {
+public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder> {
 
-    // Member variables.
     private ArrayList<Hike> mHikeData;
     private Context mContext;
 
@@ -30,19 +26,26 @@ class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder>  {
      * Constructor that passes in the Hike data and the context.
      *
      * @param HikeData ArrayList containing the Hike data.
-     * @param context Context of the application.
+     * @param context  Context of the application.
      */
     HikeAdapter(Context context, ArrayList<Hike> HikeData) {
         this.mHikeData = HikeData;
         this.mContext = context;
+
     }
 
-
+    public void filterList(ArrayList<Hike> filteredList) {
+        mHikeData = filteredList;
+        //if (filteredList.isEmpty()) {
+        //Toast.makeText(HikeAdapter.this, "No Match found",Toast.LENGTH_LONG).show();
+        //}
+        notifyDataSetChanged();
+    }
     /**
      * Required method for creating the viewholder objects.
      *
-     * @param parent The ViewGroup into which the new View will be added
-     *               after it is bound to an adapter position.
+     * @param parent   The ViewGroup into which the new View will be added
+     *                 after it is bound to an adapter position.
      * @param viewType The view type of the new View.
      * @return The newly created ViewHolder.
      */
@@ -55,7 +58,7 @@ class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder>  {
     /**
      * Required method that binds the data to the viewholder.
      *
-     * @param holder The viewholder into which the data should be put.
+     * @param holder   The viewholder into which the data should be put.
      * @param position The adapter position.
      */
     @Override
@@ -78,7 +81,6 @@ class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder>  {
     public int getItemCount() {
         return mHikeData.size();
     }
-
 
     /**
      * ViewHolder class that represents each row of data in the RecyclerView.
