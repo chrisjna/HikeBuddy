@@ -1,20 +1,19 @@
 package com.example.hikebuddy;
 
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.media.Rating;
+
+import android.util.Log;
+import android.widget.Button;
+
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.content.Intent;
-import android.view.LayoutInflater;
-import android.content.Context;
-import com.example.hikebuddy.R;
-import static android.view.KeyCharacterMap.load;
 import androidx.appcompat.app.AppCompatActivity;
+
 
 import org.w3c.dom.Text;
 
@@ -34,7 +33,7 @@ public class HikeInfoActivity extends AppCompatActivity {
         setContentView(R.layout.hike_info_activity);
 
         // Initialize the views.
-        TextView hikeTitle = findViewById(R.id.hikename);
+        final TextView hikeTitle = findViewById(R.id.hikename);
         ImageView hikeImage = findViewById(R.id.hikeimages);
         TextView hikeInfo = findViewById(R.id.hikeinfo);
         RatingBar hikeDiff = findViewById(R.id.difficulty);
@@ -43,6 +42,26 @@ public class HikeInfoActivity extends AppCompatActivity {
         hikeTitle.setText(getIntent().getStringExtra("title"));
         hikeImage.setImageResource(getIntent().getIntExtra("image_resource",0));
         hikeInfo.setText(getIntent().getStringExtra("info"));
+
         hikeDiff.setRating(getIntent().getIntExtra("diff", 0));
+
+
+        //for Milestone
+        final String hikeTitleIntent = getIntent().getStringExtra("title");
+        Log.d(hikeTitleIntent, "here it is");
+
+        Button btnMile = findViewById(R.id.buttonMilestone);
+
+        btnMile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String dataToTransmit="this info text will be valid on endActivity";
+                Intent intent = new Intent(HikeInfoActivity.this, Milestone.class);
+                intent.putExtra("hikeTitleInfoActivity",hikeTitleIntent);
+                startActivity(intent);
+
+            }
+        });
     }
 }

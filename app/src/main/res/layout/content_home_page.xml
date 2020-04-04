@@ -40,7 +40,11 @@
                 android:layout_weight="1"
                 android:contentDescription="@string/visitor"
                 android:text="@string/visitor"
+
                 android:onClick="callVisitors" />
+
+                tools:ignore="ButtonStyle" />
+
 
             <Button
                 android:id="@+id/button3"
@@ -49,7 +53,11 @@
                 android:layout_weight="1"
                 android:contentDescription="@string/resident"
                 android:text="@string/resident"
+
                 android:onClick="callResidents"/>
+
+                tools:ignore="ButtonStyle" />
+
 
 
         </TableRow>
@@ -67,7 +75,11 @@
                 android:layout_weight="1"
                 android:contentDescription="@string/favorites"
                 android:text="@string/favorites"
+
                 android:onClick="callFavorites"/>
+
+                tools:ignore="ButtonStyle" />
+
 
             <Button
                 android:id="@+id/button6"
@@ -76,12 +88,17 @@
                 android:layout_weight="1"
                 android:contentDescription="@string/information"
                 android:text="@string/information"
+
                 android:onClick="callInformation"/>
+
+                tools:ignore="ButtonStyle" />
+
         </TableRow>
 
     </TableLayout>
 
     <SearchView
+        android:id="@+id/searchButton"
         android:layout_width="326dp"
         android:layout_height="50dp"
         android:background="@drawable/search_layout"
