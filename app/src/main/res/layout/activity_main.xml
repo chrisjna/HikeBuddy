@@ -44,8 +44,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:lineSpacingExtra="8sp"
-        android:paddingLeft="200sp"
+        android:paddingLeft="160sp"
         android:paddingTop="400sp"
-        android:text="@string/no_results_found" />
+        android:text="@string/no_results_found"
+        android:visibility="gone"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
