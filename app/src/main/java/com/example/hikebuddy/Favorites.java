@@ -1,5 +1,7 @@
 package com.example.hikebuddy;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.content.res.TypedArray;
 
@@ -12,7 +14,11 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.lang.reflect.Array;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 public class Favorites  extends AppCompatActivity {
     private ArrayList<Hike> HikeData;
@@ -23,15 +29,16 @@ public class Favorites  extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbarHome);
         setSupportActionBar(toolbar);
         HikeData = new ArrayList<>();
+
+        initializeData();
+
         recyclerView = findViewById(R.id.rv_hike_list);
         Adapter = new HikeAdapter(this, HikeData);
         recyclerView.setAdapter(Adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        initializeData();
 
     }
 
@@ -62,30 +69,18 @@ public class Favorites  extends AppCompatActivity {
      * Initialize the Hike data from resources.
      */
     private void initializeData() {
-        // Get the resources from the XML file.
-        String[] HikeList = getResources()
-                .getStringArray(R.array.fav_hike_names);
-        String[] HikeInfo = getResources()
-                .getStringArray(R.array.fav_hike_info);
-        TypedArray HikeImageResources = getResources()
-                .obtainTypedArray(R.array.fav_hike_images);
-        int[] HikeDifficulty = getResources().getIntArray(R.array.fav_difficulty);
+        SharedPreferences pref = getSharedPreferences( "prefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        Gson gson = new Gson();
+        String json = pref.getString("favs", null);
+        Type type = new TypeToken<ArrayList<Hike>>() {}.getType();
+        HikeData = gson.fromJson(json, type);
 
-        // Clear the existing data (to avoid duplication).
-        HikeData.clear();
-
-        // Create the ArrayList of Hike objects with the titles and
-        // information about each Hike
-        for (int i = 0; i < HikeList.length; i++) {
-            HikeData.add(new Hike(HikeList[i], HikeInfo[i],
-                    HikeImageResources.getResourceId(i, 0), HikeDifficulty[i]));
-        }
-
-        // Recycle the typed array.
-        HikeImageResources.recycle();
+        System.out.println("IT WORKS");
+        System.out.println(HikeData);
 
         // Notify the adapter of the change.
-        Adapter.notifyDataSetChanged();
+        //Adapter.notifyDataSetChanged();
     }
 
 }
