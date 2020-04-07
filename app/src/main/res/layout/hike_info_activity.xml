@@ -55,7 +55,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/newsTitleDetail"
-            android:padding="5dp" />
+            android:padding="5dp"
+            app:fontFamily="casual" />
 
 
         <Button

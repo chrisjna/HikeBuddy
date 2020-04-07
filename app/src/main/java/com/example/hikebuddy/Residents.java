@@ -23,7 +23,7 @@ public class Residents  extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbarHome);
         setSupportActionBar(toolbar);
         HikeData = new ArrayList<>();
         recyclerView = findViewById(R.id.rv_hike_list);
@@ -78,7 +78,7 @@ public class Residents  extends AppCompatActivity {
         // information about each Hike
         for (int i = 0; i < HikeList.length; i++) {
             HikeData.add(new Hike(HikeList[i], HikeInfo[i],
-                    HikeImageResources.getResourceId(i, 0), HikeDifficulty[i]));
+                    HikeImageResources.getResourceId(i, 0), HikeDifficulty[i], false));
         }
 
         // Recycle the typed array.

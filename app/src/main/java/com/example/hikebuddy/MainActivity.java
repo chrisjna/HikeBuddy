@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
 
-    RecyclerView recyclerView;
     TextView textview;
     SearchView searchView;  //moved from OnCreateOptionsMenu to support onTextSubmit behavior
     Toolbar toolbar;        //moved from OnCreateOptionsMenu to support onTextSubmit behavior
@@ -146,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
         // information about each Hike
         for (int i = 0; i < HikeList.length; i++) {
             HikeData.add(new Hike(HikeList[i], HikeInfo[i],
-                    HikeImageResources.getResourceId(i, 0), HikeDifficulty[i]));
+                    HikeImageResources.getResourceId(i, 0), HikeDifficulty[i], false));
         }
 
         // Recycle the typed array.
@@ -177,5 +176,4 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-
 }
