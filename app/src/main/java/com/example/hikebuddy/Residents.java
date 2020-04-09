@@ -71,6 +71,7 @@ public class Residents  extends AppCompatActivity {
         TypedArray HikeImageResources = getResources()
                 .obtainTypedArray(R.array.res_hike_images);
         int[] HikeDifficulty = getResources().getIntArray(R.array.res_difficulty);
+        String[] HikeGear = getResources().getStringArray(R.array.res_gear);
 
 
         // Clear the existing data (to avoid duplication).
@@ -80,7 +81,7 @@ public class Residents  extends AppCompatActivity {
         // information about each Hike
         for (int i = 0; i < HikeList.length; i++) {
             HikeData.add(new Hike(HikeList[i], HikeInfo[i],
-                    HikeImageResources.getResourceId(i, 0), HikeDifficulty[i]));
+                    HikeImageResources.getResourceId(i, 0), HikeDifficulty[i], HikeGear[i]));
         }
 
         // Recycle the typed array.

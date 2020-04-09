@@ -191,6 +191,7 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder> {
                     currentHike.getImageResource());
             detailIntent.putExtra("info", currentHike.getInfo());
             detailIntent.putExtra("diff", currentHike.getDiff());
+            detailIntent.putExtra("gear", currentHike.getGear());
             mContext.startActivity(detailIntent);
         }
     }

@@ -10,22 +10,25 @@ class Hike {
     private String info;
     private final int imageResource;
     private int diff;
+    private String gear;
     private boolean favStatus;
 
 
-    public Hike(String title, String info, int imageResource, int diff, boolean favStatus) {
+    public Hike(String title, String info, int imageResource, int diff, String gear, boolean favStatus) {
         this.title = title;
         this.info = info;
         this.imageResource = imageResource;
         this.diff = diff;
+        this.gear = gear;
         this.favStatus = favStatus;
     }
 
-    public Hike(String title, String info, int imageResource, int diff) {
+    public Hike(String title, String info, int imageResource, int diff, String gear) {
         this.title = title;
         this.info = info;
         this.imageResource = imageResource;
         this.diff = diff;
+        this.gear = gear;
     }
 
     /**
@@ -33,7 +36,7 @@ class Hike {
      *
      * @return The title of the sport.
      */
-    String getTitle() {
+    public String getTitle() {
         return title;
     }
 
@@ -42,7 +45,7 @@ class Hike {
      *
      * @return The info about the sport.
      */
-    String getInfo() {
+    public String getInfo() {
         return info;
     }
 
@@ -50,9 +53,11 @@ class Hike {
         return imageResource;
     }
 
-    int getDiff() {
+    public int getDiff() {
         return diff;
     }
+
+    public String getGear() {return gear;}
 
     public boolean getFavStatus() {
         return favStatus;
