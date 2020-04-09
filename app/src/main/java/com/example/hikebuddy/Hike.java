@@ -21,6 +21,13 @@ class Hike {
         this.favStatus = favStatus;
     }
 
+    public Hike(String title, String info, int imageResource, int diff) {
+        this.title = title;
+        this.info = info;
+        this.imageResource = imageResource;
+        this.diff = diff;
+    }
+
     /**
      * Gets the title of the sport.
      *
