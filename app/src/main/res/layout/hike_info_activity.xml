@@ -59,11 +59,23 @@
             app:fontFamily="casual" />
 
 
-        <LinearLayout
-            android:id="@+id/checkboxes"
+        <TextView
+            android:id="@+id/hikegear"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/hikeinfo"
+            android:gravity="center"
+            android:text="Hiking Gear Checklist"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/checkboxes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hikegear"
             android:orientation="horizontal"></LinearLayout>
 
         <Button
