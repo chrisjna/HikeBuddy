@@ -52,16 +52,14 @@ public class HikeInfoActivity extends AppCompatActivity {
         String[] gear = gearString.split("\\s+");
         for (int i = 0; i < gear.length; i++) {
             gear[i] = gear[i].replaceAll("[^\\w]", "");
+            System.out.println(gear[i]);
         }
 
-        LinearLayout my_layout = findViewById(R.id.checkboxes);
+        LinearLayout checkboxList = findViewById(R.id.checkboxes);
         int arraylength = gear.length;
 
         for (int i = 0; i < arraylength; i++)
         {
-            TableRow row = new TableRow(this);
-            row.setId(i);
-            row.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
             CheckBox checkBox = new CheckBox(this);
             checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
@@ -71,8 +69,7 @@ public class HikeInfoActivity extends AppCompatActivity {
             });
             checkBox.setId(i);
             checkBox.setText(gear[i]);
-            row.addView(checkBox);
-            my_layout.addView(row);
+            checkboxList.addView(checkBox);
         }
 
 

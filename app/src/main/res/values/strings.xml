@@ -35,7 +35,7 @@
     </string-array>
 
     <string-array name="vis_hike_info">
-        <item>Hike Difficulty: Medium
+        <item>Hike Difficulty: Hard
 
             \n\n\tThe Koko Head Stairs, or Koko Crater Trail, is a long uphill hike that takes you to the top of the Koko Crater, a 1208ft high volcanic tuff cone.
             \n\t\tThe stairs are actually old railroad tracks that go up the Crater.
@@ -53,10 +53,16 @@
     </array>
 
     <integer-array name="vis_difficulty">
-        <item>2</item>
+        <item>3</item>
         <item>2</item>
         <item>1</item>
     </integer-array>
+
+    <string-array name="vis_gear">
+        <item>Water Boots test</item>
+        <item>item1 item2 item3 item4</item>
+        <item>item1 item2 item3 item4 item5</item>
+    </string-array>
 
     <!-- DATABASE FOR RESIDENT HIKES -->
     <string-array name="res_hike_names">
@@ -66,7 +72,7 @@
     </string-array>
 
     <string-array name="res_hike_info">
-        <item>Hike Difficulty: Medium
+        <item>Hike Difficulty: Hard
 
             \n\n\tThe Koko Head Stairs, or Koko Crater Trail, is a long uphill hike that takes you to the top of the Koko Crater, a 1208ft high volcanic tuff cone.
             \n\t\tThe stairs are actually old railroad tracks that go up the Crater.
@@ -84,7 +90,7 @@
     </array>
 
     <integer-array name="res_difficulty">
-        <item>2</item>
+        <item>3</item>
         <item>2</item>
         <item>1</item>
     </integer-array>
@@ -94,26 +100,6 @@
         <item>item1 item2 item3 item4</item>
         <item>item1 item2 item3 item4 item5</item>
     </string-array>
-
-
-    <!-- DATABASE FOR FAVORITES HIKES -->
-    <string-array name="fav_hike_names">
-        <item>Pill Boxes</item>
-    </string-array>
-
-    <string-array name="fav_hike_info">
-        <item>info about pill boxes</item>
-    </string-array>
-
-    <array name="fav_hike_images">
-        <item>@drawable/img_pill_boxes</item>
-    </array>
-
-    <integer-array name="fav_difficulty">
-        <item>2</item>
-    </integer-array>
-
-
 
 
 
