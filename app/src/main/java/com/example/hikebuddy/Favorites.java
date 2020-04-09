@@ -72,6 +72,7 @@ public class Favorites  extends AppCompatActivity {
     private void initializeData() {
         SharedPreferences pref = getSharedPreferences( "prefs", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
+        //Retrieve the SharedPreference string and convert it back into an arraylist of Hike objects.
         Gson gson = new Gson();
         String json = pref.getString("favs", null);
         Type type = new TypeToken<ArrayList<Hike>>() {}.getType();
