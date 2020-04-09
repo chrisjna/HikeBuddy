@@ -59,11 +59,18 @@
             app:fontFamily="casual" />
 
 
+        <LinearLayout
+            android:id="@+id/checkboxes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/hikeinfo"
+            android:orientation="horizontal"></LinearLayout>
+
         <Button
             android:id="@+id/buttonMilestone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/hikeinfo"
+            android:layout_below="@id/checkboxes"
             android:shadowColor="#00818181"
             android:text="@string/milestones" />
 

@@ -89,6 +89,12 @@
         <item>1</item>
     </integer-array>
 
+    <string-array name="res_gear">
+        <item>item1 item2 item3</item>
+        <item>item1 item2 item3 item4</item>
+        <item>item1 item2 item3 item4 item5</item>
+    </string-array>
+
 
     <!-- DATABASE FOR FAVORITES HIKES -->
     <string-array name="fav_hike_names">
