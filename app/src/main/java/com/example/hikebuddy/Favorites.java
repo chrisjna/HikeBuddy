@@ -39,6 +39,7 @@ public class Favorites  extends AppCompatActivity {
         Adapter = new HikeAdapter(this, HikeData);
         recyclerView.setAdapter(Adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        Adapter.notifyDataSetChanged();
 
     }
 
@@ -76,11 +77,6 @@ public class Favorites  extends AppCompatActivity {
         Type type = new TypeToken<ArrayList<Hike>>() {}.getType();
         HikeData = gson.fromJson(json, type);
 
-        System.out.println("IT WORKS");
-        System.out.println(HikeData);
-
-        // Notify the adapter of the change.
-        //Adapter.notifyDataSetChanged();
     }
 
 }

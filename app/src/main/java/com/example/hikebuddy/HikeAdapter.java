@@ -31,7 +31,6 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder> {
 
     private ArrayList<Hike> mHikeData;
     private Context mContext;
-    private HikeAdapter.ViewHolder viewHolder;
     private int index;
     private ArrayList<Hike> FavHikes = new ArrayList<Hike>();
 
@@ -44,6 +43,7 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder> {
     HikeAdapter(Context context, ArrayList<Hike> HikeData) {
         this.mHikeData = HikeData;
         this.mContext = context;
+        index = 0;
     }
 
     public void filterList(ArrayList<Hike> filteredList) {
@@ -65,6 +65,7 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder> {
     public HikeAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new ViewHolder(LayoutInflater.from(mContext).
                 inflate(R.layout.hike_item, parent, false));
+
     }
 
     /**
@@ -77,15 +78,17 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder> {
     public void onBindViewHolder(HikeAdapter.ViewHolder holder, int position) {
         // Get current Hike.
         Hike currentHike = mHikeData.get(position);
-        viewHolder = holder;
-        index = position;
+        final ViewHolder viewHolder = holder;
 
         holder.mTitleText.setText(currentHike.getTitle());
         holder.mInfoText.setText(currentHike.getInfo());
         holder.mHikeImage.setImageResource(mHikeData.get(position).getImageResource());
         holder.mHikeDiff.setRating(currentHike.getDiff());
-        if(currentHike.getFavStatus())
-            holder.mFav.setPressed(true);
+
+        if(currentHike.getFavStatus()) {
+            viewHolder.mFav.setPressed(true);
+            viewHolder.mFav.setBackgroundResource(R.drawable.ic_favorite_red_24dp);
+        }
 
         holder.mFav.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,16 +96,12 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder> {
                 SharedPreferences pref = mContext.getSharedPreferences( "prefs", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = pref.edit();
 
-                Hike currentHike = mHikeData.get(index);
+                Hike currentHike = mHikeData.get(viewHolder.getAdapterPosition());
 
                 if (currentHike.getFavStatus() == false) {
                     currentHike.setFavStatus(true);
                     editor.putBoolean("favbutton", true);
                     editor.apply();
-
-                    System.out.println("TEST TEST TEST");
-                    System.out.println(currentHike);
-                    System.out.println(FavHikes);
 
                     FavHikes.add(currentHike);
 
@@ -111,29 +110,31 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder> {
                     editor.putString("favs", json);
                     editor.apply();
 
-                    System.out.println(json);
-                    System.out.println(FavHikes);
-
                     Toast.makeText(mContext, "Hike Favorited", Toast.LENGTH_SHORT).show();
                     viewHolder.mFav.setBackgroundResource(R.drawable.ic_favorite_red_24dp);
+                    notifyDataSetChanged();
                 }
                 else {
                     currentHike.setFavStatus(false);
                     editor.putBoolean("favbutton", false);
                     editor.apply();
+
                     FavHikes.remove(currentHike);
+
+                    Gson gson = new Gson();
+                    String json = gson.toJson(FavHikes);
+                    editor.putString("favs", json);
+                    editor.apply();
+
                     Toast.makeText(mContext, "Hike Unfavorited", Toast.LENGTH_SHORT).show();
                     viewHolder.mFav.setBackgroundResource(R.drawable.ic_favorite_shadow_24dp);
-                }
+                    notifyDataSetChanged();
 
-                notifyDataSetChanged();
+                }
             }
 
         });
     }
-
-
-    public int favSize() { return FavHikes.size(); }
 
     /**
      * Required method for determining the size of the data set.

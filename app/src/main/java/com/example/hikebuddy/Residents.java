@@ -1,5 +1,7 @@
 package com.example.hikebuddy;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.content.res.TypedArray;
 
@@ -32,7 +34,6 @@ public class Residents  extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         initializeData();
-
     }
 
     @Override
@@ -71,6 +72,7 @@ public class Residents  extends AppCompatActivity {
                 .obtainTypedArray(R.array.res_hike_images);
         int[] HikeDifficulty = getResources().getIntArray(R.array.res_difficulty);
 
+
         // Clear the existing data (to avoid duplication).
         HikeData.clear();
 
@@ -78,7 +80,7 @@ public class Residents  extends AppCompatActivity {
         // information about each Hike
         for (int i = 0; i < HikeList.length; i++) {
             HikeData.add(new Hike(HikeList[i], HikeInfo[i],
-                    HikeImageResources.getResourceId(i, 0), HikeDifficulty[i], false));
+                    HikeImageResources.getResourceId(i, 0), HikeDifficulty[i]));
         }
 
         // Recycle the typed array.
@@ -87,5 +89,6 @@ public class Residents  extends AppCompatActivity {
         // Notify the adapter of the change.
         Adapter.notifyDataSetChanged();
     }
+
 
 }

@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_view"
-    android:layout_gravity="center"
     android:layout_width="match_parent"
     android:layout_height="300dp"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_gravity="center"
+    android:background="@android:color/transparent"
+    app:cardBackgroundColor="@android:color/transparent"
+    app:cardCornerRadius="20dp"
+    app:contentPaddingBottom="3dp"
+    app:contentPaddingTop="3dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -12,22 +17,24 @@
 
         <ImageView
             android:id="@+id/hikeimages"
-            android:scaleType="centerCrop"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <Button
             android:id="@+id/favorite"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_alignTop="@id/hikeimages"
             android:layout_alignRight="@id/hikeimages"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="3dp"
             android:background="@drawable/ic_favorite_shadow_24dp"
             android:clickable="true" />
 
@@ -42,13 +49,13 @@
 
         <RatingBar
             android:id="@+id/difficulty"
-            style="@android:style/Widget.DeviceDefault.Light.RatingBar"
+            style="@android:style/Widget.DeviceDefault.Light.RatingBar.Indicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@id/hikeimages"
             android:layout_alignBottom="@id/hikeimages"
-            android:maxHeight="50dip"
-            android:minHeight="40dip"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginBottom="9dp"
             android:numStars="3" />
 
         <TextView
