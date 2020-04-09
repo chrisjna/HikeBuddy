@@ -1,5 +1,6 @@
 package com.example.hikebuddy;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,9 +39,9 @@ public class ViewPagerMilestone extends PagerAdapter {
                         int id = field.getInt(R.array.class);
                         texts = context.getResources().getStringArray(id);
                     }
-                } catch (IllegalArgumentException e)
+                } catch (IllegalArgumentException ignored)
                 {
-                } catch (IllegalAccessException e)
+                } catch (IllegalAccessException ignored)
                 {
                 }
             }
@@ -71,8 +72,13 @@ public class ViewPagerMilestone extends PagerAdapter {
         textView.setText(texts[position]);
 
         ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
-        progressBar.setMax(getCount() - 1);
-        progressBar.setProgress(position);
+        progressBar.setMax(getCount());
+        progressBar.setProgress(position + 1);
+
+        String maxNum = Integer.toString(getCount());
+        String current = Integer.toString(position + 1);
+        TextView textViewNumber = (TextView) view.findViewById(R.id.textViewNumber) ;
+        textViewNumber.setText(current + " of " + maxNum);
 
         ViewPager vp = (ViewPager) container;
         vp.addView(view, 0);
@@ -81,7 +87,7 @@ public class ViewPagerMilestone extends PagerAdapter {
     }
 
     @Override
-    public void destroyItem(ViewGroup container, int position, Object object) {
+    public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
 
         ViewPager vp = (ViewPager) container;
         View view = (View) object;

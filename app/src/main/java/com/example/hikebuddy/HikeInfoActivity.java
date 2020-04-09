@@ -1,7 +1,10 @@
 package com.example.hikebuddy;
 
+
 import androidx.recyclerview.widget.RecyclerView;
 import android.media.Rating;
+
+
 
 import android.util.Log;
 import android.widget.Button;
@@ -76,7 +79,6 @@ public class HikeInfoActivity extends AppCompatActivity {
 
         //for Milestone
         final String hikeTitleIntent = getIntent().getStringExtra("title");
-        Log.d(hikeTitleIntent, "here it is");
 
         Button btnMile = findViewById(R.id.buttonMilestone);
 
@@ -84,7 +86,6 @@ public class HikeInfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String dataToTransmit="this info text will be valid on endActivity";
                 Intent intent = new Intent(HikeInfoActivity.this, Milestone.class);
                 intent.putExtra("hikeTitleInfoActivity",hikeTitleIntent);
                 startActivity(intent);
