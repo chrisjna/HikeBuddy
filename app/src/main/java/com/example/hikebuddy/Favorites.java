@@ -1,5 +1,6 @@
 package com.example.hikebuddy;
 
+import android.app.SearchManager;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -13,6 +14,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.SearchView;
+import android.widget.TextView;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.Type;
@@ -24,6 +27,10 @@ public class Favorites  extends AppCompatActivity {
     private ArrayList<Hike> HikeData;
     private HikeAdapter Adapter;
     private RecyclerView recyclerView;
+
+    SearchView searchView;
+    Toolbar toolbar;
+    TextView textview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +53,53 @@ public class Favorites  extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.search_menu, menu);
+        SearchManager searchManager = (SearchManager)
+                getSystemService(Context.SEARCH_SERVICE);
+        MenuItem searchMenuItem = menu.findItem(R.id.search);
+        searchView = (SearchView) searchMenuItem.getActionView();
+
+        if (searchManager != null) {
+            searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        }
+        searchView.setSubmitButtonEnabled(true);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                searchView.clearFocus();
+                toolbar.collapseActionView();
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String query) {
+                filter(query);
+                return true;
+            }
+        });
         return true;
+    }
+
+    private void filter(String text) {
+        ArrayList<Hike> filteredList = new ArrayList<>();
+
+        for (Hike item : HikeData) {
+            if (item.getTitle().toLowerCase().contains(text.toLowerCase())) {
+                recyclerView = findViewById(R.id.rv_hike_list);
+                textview = findViewById(R.id.textView);
+                recyclerView.setVisibility(View.VISIBLE);
+                textview.setVisibility(View.GONE);
+                filteredList.add(item);
+                Adapter.filterList(filteredList);
+            } else if (filteredList.isEmpty()){
+                recyclerView = findViewById(R.id.rv_hike_list);
+                textview = findViewById(R.id.textView);
+                recyclerView.setVisibility(View.GONE);
+                textview.setVisibility(View.VISIBLE);
+
+            }
+        }
     }
 
     @Override
@@ -77,6 +129,18 @@ public class Favorites  extends AppCompatActivity {
         String json = pref.getString("favs", null);
         Type type = new TypeToken<ArrayList<Hike>>() {}.getType();
         HikeData = gson.fromJson(json, type);
+
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        if (!searchView.isIconified() && searchView != null) {
+            searchView.setIconified(true);
+            searchView.onActionViewCollapsed();
+        } else {
+            super.onBackPressed();
+        }
 
     }
 
