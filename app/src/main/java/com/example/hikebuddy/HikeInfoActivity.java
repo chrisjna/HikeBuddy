@@ -51,6 +51,8 @@ public class HikeInfoActivity extends AppCompatActivity {
         hikeInfo.setText(getIntent().getStringExtra("info"));
         hikeDiff.setRating(getIntent().getIntExtra("diff", 0));
 
+        //To make the checkboxes I take a string and use Regex to split up the string into an array
+        //Only works with ONE word items, ex "boots", NOT "hiking boots"
         String gearString = getIntent().getStringExtra("gear");
         String[] gear = gearString.split("\\s+");
         for (int i = 0; i < gear.length; i++) {
@@ -61,6 +63,7 @@ public class HikeInfoActivity extends AppCompatActivity {
         LinearLayout checkboxList = findViewById(R.id.checkboxes);
         int arraylength = gear.length;
 
+        //Make a new checkbox for each item in the gear array, so it can be different for each hike
         for (int i = 0; i < arraylength; i++)
         {
             CheckBox checkBox = new CheckBox(this);

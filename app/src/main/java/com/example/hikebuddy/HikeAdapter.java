@@ -82,6 +82,8 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder> {
         holder.mHikeImage.setImageResource(mHikeData.get(position).getImageResource());
         holder.mHikeDiff.setRating(currentHike.getDiff());
 
+        //This is SUPPOSED to check if the fav button was pressed and load the view image to be a red heart when
+        //you re enter the activity pages, but it doesn't work, button always appears grey and idk why.
         if(currentHike.getFavStatus()) {
             viewHolder.mFav.setPressed(true);
             viewHolder.mFav.setBackgroundResource(R.drawable.ic_favorite_red_24dp);
@@ -90,9 +92,11 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder> {
         holder.mFav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View buttonView) {
+                //Use Sharedpreferences to store the state of fav button AND to store the actual Hike object that got favorited
                 SharedPreferences pref = mContext.getSharedPreferences( "prefs", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = pref.edit();
 
+                //getAdapterPosition gets the current clicked on hike
                 Hike currentHike = mHikeData.get(viewHolder.getAdapterPosition());
 
                 if (currentHike.getFavStatus() == false) {
@@ -100,8 +104,11 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder> {
                     editor.putBoolean("favbutton", true);
                     editor.apply();
 
+                    //add current hike to array
                     FavHikes.add(currentHike);
 
+                    //You cannot pass arrays of objects between activities, so use Gson to convert the entire arraylist
+                    //of hike objects into a passable string, save string in SharedPreferences
                     Gson gson = new Gson();
                     String json = gson.toJson(FavHikes);
                     editor.putString("favs", json);
