@@ -2,6 +2,7 @@ package com.example.hikebuddy;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.content.res.TypedArray;
 
@@ -16,6 +17,10 @@ import android.view.MenuItem;
 import android.widget.SearchView;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 public class Visitors  extends AppCompatActivity {
@@ -26,6 +31,7 @@ public class Visitors  extends AppCompatActivity {
     SearchView searchView;
     Toolbar toolbar;
     TextView textview;
+    static boolean running = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -126,13 +132,32 @@ public class Visitors  extends AppCompatActivity {
         String[] HikeGear = getResources().getStringArray(R.array.vis_gear);
 
         // Clear the existing data (to avoid duplication).
-        HikeData.clear();
+        //HikeData.clear();
 
         // Create the ArrayList of Hike objects with the titles and
         // information about each Hike
         for (int i = 0; i < HikeList.length; i++) {
             HikeData.add(new Hike(HikeList[i], HikeInfo[i],
                     HikeImageResources.getResourceId(i, 0), HikeDifficulty[i], HikeGear[i], false));
+        }
+
+        //Get favorite hikes list
+        ArrayList<Hike> favHikes = new ArrayList<Hike>();
+        SharedPreferences pref = getSharedPreferences( "prefs", Context.MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = pref.getString("favs", null);
+        Type type = new TypeToken<ArrayList<Hike>>() {}.getType();
+        favHikes = gson.fromJson(json, type);
+
+        //IF favhike list exists then compare to hike data and update its fav status
+        if(favHikes != null && favHikes.size()>0){
+            for(int i=0; i<favHikes.size(); i++){
+                for(int j=0; j<HikeData.size(); j++){
+                    if(favHikes.get(i).getTitle().equals(HikeData.get(j).getTitle())){
+                        HikeData.get(j).setFavStatus(true);
+                    }
+                }
+            }
         }
 
         // Recycle the typed array.
@@ -152,6 +177,21 @@ public class Visitors  extends AppCompatActivity {
             super.onBackPressed();
         }
 
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        running = true;
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        running = false;
+    }
+
+    public boolean isRunning(){
+        return running;
     }
 
 }

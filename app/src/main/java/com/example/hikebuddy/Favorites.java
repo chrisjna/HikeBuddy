@@ -31,6 +31,7 @@ public class Favorites  extends AppCompatActivity {
     SearchView searchView;
     Toolbar toolbar;
     TextView textview;
+    static boolean running = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,6 +128,8 @@ public class Favorites  extends AppCompatActivity {
         //Retrieve the SharedPreference string and convert it back into an arraylist of Hike objects.
         Gson gson = new Gson();
         String json = pref.getString("favs", null);
+        editor.putString("favs", json);
+        editor.apply();
         Type type = new TypeToken<ArrayList<Hike>>() {}.getType();
         HikeData = gson.fromJson(json, type);
 
@@ -142,6 +145,21 @@ public class Favorites  extends AppCompatActivity {
             super.onBackPressed();
         }
 
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        running = true;
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        running = false;
+    }
+
+    public boolean isRunning(){
+        return running;
     }
 
 }

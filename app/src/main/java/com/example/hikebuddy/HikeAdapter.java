@@ -18,8 +18,10 @@ import android.widget.Toast;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Array;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -33,6 +35,9 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder> {
     private Context mContext;
     private int index;
     private ArrayList<Hike> FavHikes = new ArrayList<Hike>();
+    private Residents residents = new Residents();
+    private Visitors visitors = new Visitors();
+    private Favorites favorites = new Favorites();
 
     /**
      * Constructor that passes in the Hike data and the context.
@@ -82,14 +87,12 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder> {
         holder.mHikeImage.setImageResource(mHikeData.get(position).getImageResource());
         holder.mHikeDiff.setRating(currentHike.getDiff());
 
-        //This is SUPPOSED to check if the fav button was pressed and load the view image to be a red heart when
-        //you re enter the activity pages, but it doesn't work, button always appears grey and idk why.
         if(currentHike.getFavStatus()) {
             viewHolder.mFav.setPressed(true);
             viewHolder.mFav.setBackgroundResource(R.drawable.ic_favorite_red_24dp);
         }
 
-        holder.mFav.setOnClickListener(new View.OnClickListener() {
+        viewHolder.mFav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View buttonView) {
                 //Use Sharedpreferences to store the state of fav button AND to store the actual Hike object that got favorited
@@ -98,9 +101,13 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder> {
 
                 //getAdapterPosition gets the current clicked on hike
                 Hike currentHike = mHikeData.get(viewHolder.getAdapterPosition());
+                Gson gson = new Gson();
+                String json = new String();
 
                 if (currentHike.getFavStatus() == false) {
+                    System.out.println(currentHike.getTitle());
                     currentHike.setFavStatus(true);
+                    viewHolder.mFav.setPressed(true);
                     editor.putBoolean("favbutton", true);
                     editor.apply();
 
@@ -109,8 +116,7 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder> {
 
                     //You cannot pass arrays of objects between activities, so use Gson to convert the entire arraylist
                     //of hike objects into a passable string, save string in SharedPreferences
-                    Gson gson = new Gson();
-                    String json = gson.toJson(FavHikes);
+                    json = gson.toJson(FavHikes);
                     editor.putString("favs", json);
                     editor.apply();
 
@@ -118,17 +124,41 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder> {
                     viewHolder.mFav.setBackgroundResource(R.drawable.ic_favorite_red_24dp);
                     notifyDataSetChanged();
                 }
-                else {
+                else{
                     currentHike.setFavStatus(false);
                     editor.putBoolean("favbutton", false);
                     editor.apply();
 
-                    FavHikes.remove(currentHike);
-
-                    Gson gson = new Gson();
-                    String json = gson.toJson(FavHikes);
-                    editor.putString("favs", json);
-                    editor.apply();
+                    if(residents.isRunning()) {
+                        json = pref.getString("favs", null);
+                        Type type = new TypeToken<ArrayList<Hike>>() {}.getType();
+                        FavHikes = gson.fromJson(json, type);
+                        Hike removedHike = mHikeData.get(viewHolder.getAdapterPosition());
+                        FavHikes.remove(removedHike);
+                        json = gson.toJson(FavHikes);
+                        editor.putString("favs", json);
+                        editor.apply();
+                    }
+                    if(visitors.isRunning()) {
+                        json = pref.getString("favs", null);
+                        Type type = new TypeToken<ArrayList<Hike>>() {}.getType();
+                        FavHikes = gson.fromJson(json, type);
+                        Hike removedHike = mHikeData.get(viewHolder.getAdapterPosition());
+                        FavHikes.remove(removedHike);
+                        json = gson.toJson(FavHikes);
+                        editor.putString("favs", json);
+                        editor.apply();
+                    }
+                    if(favorites.isRunning()){
+                        json = pref.getString("favs", null);
+                        Type type = new TypeToken<ArrayList<Hike>>() {}.getType();
+                        FavHikes = gson.fromJson(json, type);
+                        Hike removedHike = FavHikes.get(viewHolder.getAdapterPosition());
+                        FavHikes.remove(removedHike);
+                        json = gson.toJson(FavHikes);
+                        editor.putString("favs", json);
+                        editor.apply();
+                    }
 
                     Toast.makeText(mContext, "Hike Unfavorited", Toast.LENGTH_SHORT).show();
                     viewHolder.mFav.setBackgroundResource(R.drawable.ic_favorite_shadow_24dp);
@@ -147,6 +177,8 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder> {
      */
     @Override
     public int getItemCount() {
+        if(mHikeData == null)
+            return 0;
         return mHikeData.size();
     }
 

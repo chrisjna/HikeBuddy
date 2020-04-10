@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
     SearchView searchView;  //moved from OnCreateOptionsMenu to support onTextSubmit behavior
     Toolbar toolbar;        //moved from OnCreateOptionsMenu to support onTextSubmit behavior
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -177,4 +176,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
 }
