@@ -55,7 +55,7 @@ public class HomePage extends AppCompatActivity {
         filterVisitor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(HomePage.this, MainActivity.class));
+                startActivity(new Intent(HomePage.this, Visitors.class));
             }
         });
 
