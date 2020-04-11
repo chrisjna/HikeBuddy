@@ -28,6 +28,7 @@ public class Residents  extends AppCompatActivity {
     private ArrayList<Hike> HikeData;
     private HikeAdapter Adapter;
     private RecyclerView recyclerView;
+    private ArrayList<Hike> favHikes;
 
 
     SearchView searchView;
@@ -143,7 +144,6 @@ public class Residents  extends AppCompatActivity {
         }
 
         //Get favorite hikes list
-        ArrayList<Hike> favHikes = new ArrayList<Hike>();
         SharedPreferences pref = getSharedPreferences( "prefs", Context.MODE_PRIVATE);
         Gson gson = new Gson();
         String json = pref.getString("favs", null);

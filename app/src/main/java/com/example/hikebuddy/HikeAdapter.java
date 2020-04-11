@@ -92,6 +92,11 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder> {
             viewHolder.mFav.setBackgroundResource(R.drawable.ic_favorite_red_24dp);
         }
 
+        if(!currentHike.getFavStatus()){
+            viewHolder.mFav.setPressed(false);
+            viewHolder.mFav.setBackgroundResource(R.drawable.ic_favorite_shadow_24dp);
+        }
+
         viewHolder.mFav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View buttonView) {
@@ -105,20 +110,33 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder> {
                 String json = new String();
 
                 if (currentHike.getFavStatus() == false) {
-                    System.out.println(currentHike.getTitle());
                     currentHike.setFavStatus(true);
                     viewHolder.mFav.setPressed(true);
                     editor.putBoolean("favbutton", true);
                     editor.apply();
 
-                    //add current hike to array
-                    FavHikes.add(currentHike);
-
-                    //You cannot pass arrays of objects between activities, so use Gson to convert the entire arraylist
-                    //of hike objects into a passable string, save string in SharedPreferences
-                    json = gson.toJson(FavHikes);
-                    editor.putString("favs", json);
-                    editor.apply();
+                    if(residents.isRunning()) {
+                        json = pref.getString("favs", null);
+                        Type type = new TypeToken<ArrayList<Hike>>() {}.getType();
+                        //You cannot pass arrays of objects between activities, so use Gson to convert the entire arraylist
+                        //of hike objects into a passable string, save string in SharedPreferences
+                        FavHikes = gson.fromJson(json, type);
+                        Hike addedHike = mHikeData.get(viewHolder.getAdapterPosition());
+                        FavHikes.add(addedHike);
+                        json = gson.toJson(FavHikes);
+                        editor.putString("favs", json);
+                        editor.apply();
+                    }
+                    if(visitors.isRunning()) {
+                        json = pref.getString("favs", null);
+                        Type type = new TypeToken<ArrayList<Hike>>() {}.getType();
+                        FavHikes = gson.fromJson(json, type);
+                        Hike addedHike = mHikeData.get(viewHolder.getAdapterPosition());
+                        FavHikes.add(addedHike);
+                        json = gson.toJson(FavHikes);
+                        editor.putString("favs", json);
+                        editor.apply();
+                    }
 
                     Toast.makeText(mContext, "Hike Favorited", Toast.LENGTH_SHORT).show();
                     viewHolder.mFav.setBackgroundResource(R.drawable.ic_favorite_red_24dp);
