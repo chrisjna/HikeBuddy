@@ -224,19 +224,33 @@
         <item>Milestone about Koko Head</item>
         <item>Milestone about Koko Head</item>
     </string-array>
+    <integer-array name="Koko_Head_Milestone_Images">
+        <item>@drawable/img_koko_head</item>
+        <item>@drawable/img_koko_head</item>
+        <item>@drawable/img_koko_head</item>
+    </integer-array>
 
     <string-array name="Manoa_Falls_Milestone">
         <item>Milestone about Manoa Falls</item>
         <item>Milestone about Manoa Falls</item>
         <item>Milestone about Manoa Falls</item>
     </string-array>
+    <integer-array name="Manoa_Falls_Milestone_Images">
+        <item>@drawable/img_manoa_falls</item>
+        <item>@drawable/img_manoa_falls</item>
+        <item>@drawable/img_manoa_falls</item>
+    </integer-array>
 
     <string-array name="Makapuu_Lighthouse_Milestone">
         <item>Milestone about Lighthouse</item>
         <item>Milestone about Lighthouse</item>
         <item>Milestone about Lighthouse</item>
     </string-array>
-
+    <integer-array name="Makapuu_Lighthouse_Milestone_Images">
+        <item>@drawable/img_makapuu</item>
+        <item>@drawable/img_makapuu</item>
+        <item>@drawable/img_makapuu</item>
+    </integer-array>
     <!--//////////////////////////////////////////////////////////////////////////////////////////////////-->
 
     <string name="title_activity_information">About</string>
