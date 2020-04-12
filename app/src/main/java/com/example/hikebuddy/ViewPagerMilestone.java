@@ -2,6 +2,7 @@ package com.example.hikebuddy;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,12 +21,13 @@ import java.lang.reflect.Modifier;
 public class ViewPagerMilestone extends PagerAdapter {
 
     private Context context;
-    private Integer [] images = {R.drawable.img_koko_head,R.drawable.mainpageimage,R.drawable.img_makapuu};
     private String [] texts;
+    private TypedArray images;
 
     public ViewPagerMilestone(Context context,  String hike) {
         this.context = context;
         String hiker = hike + " Milestone";
+        String hikerPictures = hiker + "_Images";
         hiker = hiker.replaceAll(" ", "_");
 
         for (Field field : R.array.class.getDeclaredFields())
@@ -34,10 +36,15 @@ public class ViewPagerMilestone extends PagerAdapter {
             {
                 try
                 {
-                    if (field.getName().startsWith(hiker))
+                    if (field.getName().matches(hiker))
                     {
                         int id = field.getInt(R.array.class);
                         texts = context.getResources().getStringArray(id);
+                    }
+
+                    if (field.getName().matches(hikerPictures)){
+                        int id = field.getInt(R.array.class);
+                        images = context.getResources().obtainTypedArray(id);
                     }
                 } catch (IllegalArgumentException ignored)
                 {
@@ -50,7 +57,7 @@ public class ViewPagerMilestone extends PagerAdapter {
 
     @Override
     public int getCount() {
-        return images.length;
+        return texts.length;
     }
 
     @Override
@@ -66,8 +73,8 @@ public class ViewPagerMilestone extends PagerAdapter {
         View view = layoutInflater.inflate(R.layout.custom, null);
 
         ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
-        imageView.setImageResource(images[position]);
-
+        imageView.setImageResource(images.getResourceId(position, -1));
+        
         TextView textView = (TextView) view.findViewById(R.id.milestoneDetail);
         textView.setText(texts[position]);
 
