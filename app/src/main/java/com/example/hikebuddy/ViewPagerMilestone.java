@@ -1,6 +1,5 @@
 package com.example.hikebuddy;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.view.LayoutInflater;

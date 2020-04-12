@@ -1,12 +1,5 @@
 package com.example.hikebuddy;
 
-
-import androidx.recyclerview.widget.RecyclerView;
-import android.media.Rating;
-
-
-
-import android.util.Log;
 import android.widget.Button;
 
 import android.widget.CompoundButton;
@@ -14,7 +7,6 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.CheckBox;
-import android.widget.TableRow;
 import android.os.Bundle;
 import android.view.View;
 import android.content.Intent;

@@ -3,13 +3,11 @@ package com.example.hikebuddy;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.SearchView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.content.Context;
-import android.content.Intent;
 
 public class HomePage extends AppCompatActivity {
 
