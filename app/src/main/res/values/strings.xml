@@ -150,8 +150,8 @@
     <string name="title_activity_main2">Main2Activity</string>
     <string name="title_activity_home_page">Home</string>
     <string name="main_screen_image">main screen image</string>
-    <string name="visitor">Visitor Hikes</string>
-    <string name="resident">Resident Hikes</string>
+    <string name="visitor">Visitor</string>
+    <string name="resident">Resident</string>
     <string name="favorites">Favorites</string>
     <string name="information">Information</string>
     <string name="search">Search</string>
