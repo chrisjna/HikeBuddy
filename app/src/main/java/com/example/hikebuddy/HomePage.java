@@ -13,6 +13,7 @@ public class HomePage extends AppCompatActivity {
 
     private MainActivity main;
     private Context mContext;
+    SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,24 +22,26 @@ public class HomePage extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbarHome);
         setSupportActionBar(toolbar);
         mContext = this;
-        SearchView searchView = findViewById(R.id.searchButton);
+        searchView = findViewById(R.id.searchButton);
         searchView.setOnQueryTextListener(queryTextListener);
-
     }
 
     public void callVisitors(View view){
         Intent detailIntent = new Intent(mContext, Visitors.class);
         mContext.startActivity(detailIntent);
+        searchView.clearFocus();
     }
 
     public void callResidents(View view){
         Intent detailIntent = new Intent(mContext, Residents.class);
         mContext.startActivity(detailIntent);
+        searchView.clearFocus();
     }
 
     public void callFavorites(View view){
         Intent detailIntent = new Intent(mContext, Favorites.class);
         mContext.startActivity(detailIntent);
+        searchView.clearFocus();
     }
 
 
@@ -53,6 +56,7 @@ public class HomePage extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             intent.putExtra("passedQuery", query);
             startActivity(intent);
+            searchView.clearFocus();
             return true;
         }
 
