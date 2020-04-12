@@ -257,7 +257,7 @@
         <item>Milestone about Lanikai Pillboxes</item>
         <item>Milestone about Lanikai Pillboxes</item>
     </string-array>
-    <integer-array name="Lanikai_Pillboxes_Images">
+    <integer-array name="Lanikai_Pillboxes_Milestone_Images">
         <item>@drawable/img_koko_head</item>
         <item>@drawable/img_koko_head</item>
         <item>@drawable/img_koko_head</item>
@@ -268,7 +268,7 @@
         <item>Milestone about Lanikai Pillboxes</item>
         <item>Milestone about Lanikai Pillboxes</item>
     </string-array>
-    <integer-array name="Maunawili_Falls_Images">
+    <integer-array name="Maunawili_Falls_Milestone_Images">
         <item>@drawable/img_koko_head</item>
         <item>@drawable/img_koko_head</item>
         <item>@drawable/img_koko_head</item>
@@ -279,7 +279,7 @@
         <item>Milestone about Stairway to Heaven</item>
         <item>Milestone about Stairway to Heaven</item>
     </string-array>
-    <integer-array name="Stairway_to_Heaven_Images">
+    <integer-array name="Stairway_to_Heaven_Milestone_Images">
         <item>@drawable/img_koko_head</item>
         <item>@drawable/img_koko_head</item>
         <item>@drawable/img_koko_head</item>
