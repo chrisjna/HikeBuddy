@@ -23,9 +23,9 @@ public class HomePage extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbarHome);
         setSupportActionBar(toolbar);
         mContext = this;
-
-
-
+        SearchView searchView = findViewById(R.id.searchButton);
+        searchView.setOnQueryTextListener(queryTextListener);
+        
     }
 
     public void callVisitors(View view){
@@ -45,29 +45,8 @@ public class HomePage extends AppCompatActivity {
 
 
     public void callInformation(View view){
-        //Intent detailIntent = new Intent(mContext, Information.class);
-        //mContext.startActivity(detailIntent);
-
-        Button filterVisitor = findViewById(R.id.button2);
-        Button informationButton = findViewById(R.id.button6);
-        SearchView searchView = findViewById(R.id.searchButton);
-
-        filterVisitor.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(HomePage.this, Visitors.class));
-            }
-        });
-
-        searchView.setOnQueryTextListener(queryTextListener);
-
-        informationButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(HomePage.this, InformationActivity.class));
-            }
-        });
-
+        Intent detailIntent = new Intent(mContext, InformationActivity.class);
+        mContext.startActivity(detailIntent);
     }
 
     final SearchView.OnQueryTextListener queryTextListener = new SearchView.OnQueryTextListener() {
@@ -84,4 +63,6 @@ public class HomePage extends AppCompatActivity {
             return false;
         }
     };
+
+
 }
