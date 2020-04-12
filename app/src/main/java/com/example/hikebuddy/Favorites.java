@@ -4,7 +4,6 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.content.res.TypedArray;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -17,7 +16,6 @@ import android.view.MenuItem;
 import android.widget.SearchView;
 import android.widget.TextView;
 
-import java.lang.reflect.Array;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import com.google.gson.Gson;
@@ -48,7 +46,6 @@ public class Favorites  extends AppCompatActivity {
         recyclerView.setAdapter(Adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         Adapter.notifyDataSetChanged();
-
     }
 
     @Override
@@ -98,7 +95,6 @@ public class Favorites  extends AppCompatActivity {
                 textview = findViewById(R.id.textView);
                 recyclerView.setVisibility(View.GONE);
                 textview.setVisibility(View.VISIBLE);
-
             }
         }
     }
@@ -129,6 +125,13 @@ public class Favorites  extends AppCompatActivity {
         String json = pref.getString("favs", null);
         Type type = new TypeToken<ArrayList<Hike>>() {}.getType();
         HikeData = gson.fromJson(json, type);
+
+        if (HikeData.isEmpty()){
+            recyclerView = findViewById(R.id.rv_hike_list);
+            textview = findViewById(R.id.textView);
+            recyclerView.setVisibility(View.GONE);
+            textview.setVisibility(View.VISIBLE);
+        }
 
     }
 
