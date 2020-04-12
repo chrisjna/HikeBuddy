@@ -39,11 +39,14 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:contentDescription="@string/visitor"
+
                 android:onClick="callVisitors"
                 android:text="@string/visitor"
                 android:textSize="20sp"
+/>
 
-                tools:ignore="ButtonStyle" />
+
+
 
 
             <Button
@@ -52,12 +55,11 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:contentDescription="@string/resident"
+
                 android:onClick="callResidents"
 
                 android:text="@string/resident"
-                android:textSize="20sp"
-
-                tools:ignore="ButtonStyle" />
+                android:textSize="20sp" />
 
 
 
@@ -75,12 +77,12 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:contentDescription="@string/favorites"
+
                 android:onClick="callFavorites"
 
                 android:text="@string/favorites"
                 android:textSize="20sp"
-
-                tools:ignore="ButtonStyle" />
+/>
 
 
             <Button
@@ -89,12 +91,13 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:contentDescription="@string/information"
+
                 android:onClick="callInformation"
 
                 android:text="@string/information"
                 android:textSize="20sp"
 
-                tools:ignore="ButtonStyle" />
+                />
 
         </TableRow>
 
