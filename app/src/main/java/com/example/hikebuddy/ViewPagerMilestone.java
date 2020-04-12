@@ -27,8 +27,8 @@ public class ViewPagerMilestone extends PagerAdapter {
     public ViewPagerMilestone(Context context,  String hike) {
         this.context = context;
         String hiker = hike + " Milestone";
-        String hikerPictures = hiker + "_Images";
         hiker = hiker.replaceAll(" ", "_");
+        String hikerPictures = hiker + "_Images";
 
         for (Field field : R.array.class.getDeclaredFields())
         {
