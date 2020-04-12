@@ -139,7 +139,7 @@
     <string-array name="res_hike_names">
         <item>Koko Head</item>
         <item>Manoa Falls</item>
-        <item>Makapu\'u Lighthouse</item>
+        <item>Makapuu Lighthouse</item>
     </string-array>
 
     <string-array name="res_hike_info">
@@ -186,7 +186,7 @@
 
 
 
-    <!--filter view toolbar title here-->
+    <!--General-->
 
     <string name="title_activity_welcome">Browse</string>
     <string name="next">NEXT</string>
@@ -217,7 +217,7 @@
     <string name="milestones">Milestones</string>
     <string name="textview">custom_text</string>
 
-    <!--//////////////////////////////////////////////////////////////////////////////////////////////////-->
+    <!--Milestone Activity Strings-->
 
     <string-array name="Koko_Head_Milestone">
         <item>Milestone about Koko Head</item>
@@ -251,7 +251,41 @@
         <item>@drawable/img_makapuu</item>
         <item>@drawable/img_makapuu</item>
     </integer-array>
-    <!--//////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+    <string-array name="Lanikai_Pillboxes_Milestone">
+        <item>Milestone about Lanikai Pillboxes</item>
+        <item>Milestone about Lanikai Pillboxes</item>
+        <item>Milestone about Lanikai Pillboxes</item>
+    </string-array>
+    <integer-array name="Lanikai_Pillboxes_Images">
+        <item>@drawable/img_koko_head</item>
+        <item>@drawable/img_koko_head</item>
+        <item>@drawable/img_koko_head</item>
+    </integer-array>
+
+    <string-array name="Maunawili_Falls_Milestone">
+        <item>Milestone about Lanikai Pillboxes</item>
+        <item>Milestone about Lanikai Pillboxes</item>
+        <item>Milestone about Lanikai Pillboxes</item>
+    </string-array>
+    <integer-array name="Maunawili_Falls_Images">
+        <item>@drawable/img_koko_head</item>
+        <item>@drawable/img_koko_head</item>
+        <item>@drawable/img_koko_head</item>
+    </integer-array>
+
+    <string-array name="Stairway_to_Heaven_Milestone">
+        <item>Milestone about Stairway to Heaven</item>
+        <item>Milestone about Stairway to Heaven</item>
+        <item>Milestone about Stairway to Heaven</item>
+    </string-array>
+    <integer-array name="Stairway_to_Heaven_Images">
+        <item>@drawable/img_koko_head</item>
+        <item>@drawable/img_koko_head</item>
+        <item>@drawable/img_koko_head</item>
+    </integer-array>
+
+    <!--Information Activity Strings-->
 
     <string name="title_activity_information">About</string>
     <string name="large_text">
