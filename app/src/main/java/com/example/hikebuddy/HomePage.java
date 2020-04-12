@@ -25,7 +25,7 @@ public class HomePage extends AppCompatActivity {
         mContext = this;
         SearchView searchView = findViewById(R.id.searchButton);
         searchView.setOnQueryTextListener(queryTextListener);
-        
+
     }
 
     public void callVisitors(View view){
