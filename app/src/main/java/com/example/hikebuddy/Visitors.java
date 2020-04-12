@@ -68,7 +68,6 @@ public class Visitors  extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 searchView.clearFocus();
-                toolbar.collapseActionView();
                 return false;
             }
 

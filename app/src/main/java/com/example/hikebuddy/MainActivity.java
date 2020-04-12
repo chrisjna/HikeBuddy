@@ -74,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 searchView.clearFocus();
-                toolbar.collapseActionView();
                 return false;
             }
 
@@ -136,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
         TypedArray HikeImageResources = getResources()
                 .obtainTypedArray(R.array.hike_images);
         int[] HikeDifficulty = getResources().getIntArray(R.array.difficulty);
-        String[] HikeGear = getResources().getStringArray(R.array.res_gear);
+        String[] HikeGear = getResources().getStringArray(R.array.hike_gear);
 
         // Clear the existing data (to avoid duplication).
         HikeData.clear();
