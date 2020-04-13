@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <resources>
     <string name="title_activity_information">About</string>
     <string name="large_text">
-        Tutorial\n
-        FAQ\n
-        About\n
-        https://hawaiitrails.hawaii.gov/trails
-        https://dlnr.hawaii.gov/dsp/hiking/oahu/makapuu-point-lighthouse-trail/
+        <h2>Tutorial</h2>
+        \n In progress
+        \n\n<h2>FAQ</h2>
+        \n <strong>What do the star shaped symbols mean?</strong>
+        \n The stars located on the bottom left are indicators of the difficulty of the hike. 1 means the hike is
+        easily accessible for most conditions, 2 stars means that some experience and physical conditioning is required
+        Three stars indicate a trail that requires good physical condition as well as proper gear. Difficulty
+        is based off of how well maintained the trails are, the natural terrain and the length of the route.
+        \n\n <strong>What is the heart shaped symbol?</strong>
+        \n These symbols mark which hike you have favorited. To access them, visit your Favorites list from the homepage?
+        \n\n<strong>How do I see all the hikes available?</strong>
+        \n On the Home screen, click on the search icon and type in the name of the hike. Our full list is
+        still under construction
+        \n\n<h2>Useful Resources</h2>
+        \n <a href="http://www.google.com">http://www.google.com</a>
+        \n <a href="https://hawaiitrails.hawaii.gov/trails/#/">https://hawaiitrails.hawaii.gov/trails/#/</a>
+        \n <a href="https://dlnr.hawaii.gov/dsp/hiking/oahu/">https://dlnr.hawaii.gov/dsp/hiking/oahu/</a>
     </string>
 </resources>
