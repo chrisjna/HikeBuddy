@@ -48,6 +48,7 @@ public class HomePage extends AppCompatActivity {
     public void callInformation(View view){
         Intent detailIntent = new Intent(mContext, InformationActivity.class);
         mContext.startActivity(detailIntent);
+        searchView.clearFocus();
     }
 
     final SearchView.OnQueryTextListener queryTextListener = new SearchView.OnQueryTextListener() {

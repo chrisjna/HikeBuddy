@@ -10,21 +10,47 @@
 
     <string-array name="Manoa_Falls_Milestone">
         <item>
-            \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t MileStone 1
-            \n\t\t  The gate to the trail will be near the message board.
-            \n\t\t  Your start and return point will be here so backtracking will be needed.
+            \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t MileStone 1
+            \n\n    The gate to the trail will be near the message board.
+            \n\n    Your start and return point will be here so backtracking will be needed.
                     Take care to observe the posted messages and familiarize yourself with the signage.
         </item>
         <item>
-            \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t MileStone 2
-            \n\n\t The second area to look for is the
+            \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t MileStone 2
+            \n\n    The second area to look for is in the wooden planks. This crosses over a stream.
+            \n\n    Continue to follow the worn path to avoid injuries and erosion to other areas of the trail.
         </item>
         <item>
-            \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t MileStone 3
-            \n\n\t When reaching the point in
+            \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t MileStone 3
+            \n\n    Around a mile in, you should reach an area with a low branch overhanging the trail.
+                    In addition there will be plastic footings here to help with grip. The terrain
+                    after this point becomes muddier and elevates.
+            \n\n    Continue on until you reach a large opening
+        </item>
+        <item>
+            \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t MileStone 4
+            \n\n    There will be an opening in the canopy with two paths. There are multiple ways to
+                    continue up but be sure to account for the mud here. The incline becomes very steep
+                    and may prove difficult on rainy days.
+            \n\n    Walk until you reach the stone walls
+        </item>
+        <item>
+            \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t MileStone 5
+            \n\n    When reaching the stone walls, be sure to turn left. After this point the path begins
+                    narrow dramatically and with less oompact dirt.
+            \n\n    Continue on until you reach a large staircase
+        </item>
+        <item>
+            \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t MileStone 6
+            \n\n    Approach these stairs with caution and be mindful of others. There are no handrails
+                    and can be slippery if damp.
+            \n\n    Continue on until you see the waterfall
         </item>
     </string-array>
     <integer-array name="Manoa_Falls_Milestone_Images">
+        <item>@drawable/img_manoa_falls</item>
+        <item>@drawable/img_manoa_falls</item>
+        <item>@drawable/img_manoa_falls</item>
         <item>@drawable/img_manoa_falls</item>
         <item>@drawable/img_manoa_falls</item>
         <item>@drawable/img_manoa_falls</item>
@@ -32,9 +58,26 @@
 
 
     <string-array name="Makapuu_Lighthouse_Milestone">
-        <item>Milestone 1 about Lighthouse</item>
-        <item>Milestone 2 about Lighthouse</item>
-        <item>Milestone 3 about Lighthouse</item>
+        <item>
+            \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t MileStone 1
+            \n\n    The entrance for this hike is marked clearly by some bollards after the end of the
+                    parking lot. Take care to read the posted signage and understand the safety warnings.
+                    There will be a smooth asphalt walkway that curves up to the 2nd milestone. Since
+                    the path is very clearly marked, do not go off the white lines to avoid eroding
+                    surroundings.
+        </item>
+        <item>
+            \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t MileStone 2
+            \n\n    The second milestone will have the lighthouse visibly around the corner. As you
+                    walk up there will be a fork in the road. Walk to the right to get to a vantage point.
+                    otherwise take the left or turn around to get to the start.
+            \n\n    Continue until you reach the edge of the lookout
+        </item>
+        <item>
+            \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t MileStone 3
+            \n\n    The lighthouse will be below the cliff. Take the time to rest here.
+            \n\n    Backtrack to the start of the hike on the same path taken earlier.
+        </item>
     </string-array>
     <integer-array name="Makapuu_Lighthouse_Milestone_Images">
         <item>@drawable/img_makapuu</item>
