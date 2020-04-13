@@ -4,12 +4,6 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.TypedArray;
-
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -18,7 +12,10 @@ import android.view.View;
 import android.widget.SearchView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -67,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 getSystemService(Context.SEARCH_SERVICE);
         MenuItem searchMenuItem = menu.findItem(R.id.search);
         searchView = (SearchView) searchMenuItem.getActionView();
+        searchView.setIconifiedByDefault(false);
 
         if (searchManager != null) {
             searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
@@ -94,14 +92,12 @@ public class MainActivity extends AppCompatActivity {
 
         for (Hike item : HikeData) {
             if (item.getTitle().toLowerCase().contains(text.toLowerCase())) {
-                recyclerView = findViewById(R.id.rv_hike_list);
                 textview = findViewById(R.id.textView);
                 recyclerView.setVisibility(View.VISIBLE);
                 textview.setVisibility(View.GONE);
                 filteredList.add(item);
                 Adapter.filterList(filteredList);
-            } else if (filteredList.isEmpty()){
-                recyclerView = findViewById(R.id.rv_hike_list);
+            } else if (filteredList.isEmpty()) {
                 textview = findViewById(R.id.textView);
                 recyclerView.setVisibility(View.GONE);
                 textview.setVisibility(View.VISIBLE);
@@ -151,17 +147,18 @@ public class MainActivity extends AppCompatActivity {
         }
 
         //Get favorite hikes list
-        SharedPreferences pref = getSharedPreferences( "prefs", Context.MODE_PRIVATE);
+        SharedPreferences pref = getSharedPreferences("prefs", Context.MODE_PRIVATE);
         Gson gson = new Gson();
         String json = pref.getString("favs", null);
-        Type type = new TypeToken<ArrayList<Hike>>() {}.getType();
+        Type type = new TypeToken<ArrayList<Hike>>() {
+        }.getType();
         favHikes = gson.fromJson(json, type);
 
         //IF favhike list exists then compare to hike data and update its fav status
-        if(favHikes != null && favHikes.size()>0){
-            for(int i=0; i<favHikes.size(); i++){
-                for(int j=0; j<HikeData.size(); j++){
-                    if(favHikes.get(i).getTitle().equals(HikeData.get(j).getTitle())){
+        if (favHikes != null && favHikes.size() > 0) {
+            for (int i = 0; i < favHikes.size(); i++) {
+                for (int j = 0; j < HikeData.size(); j++) {
+                    if (favHikes.get(i).getTitle().equals(HikeData.get(j).getTitle())) {
                         HikeData.get(j).setFavStatus(true);
                     }
                 }
@@ -182,20 +179,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
-    //restore previous list data
-
-    @Override
-    public void onBackPressed() {
-
-        if (!searchView.isIconified() && searchView != null) {
-            searchView.setIconified(true);
-            searchView.onActionViewCollapsed();
-        } else {
-            super.onBackPressed();
-        }
-
-    }
     @Override
     public void onStart() {
         super.onStart();
@@ -208,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
         running = false;
     }
 
-    public boolean isRunning(){
+    public boolean isRunning() {
         return running;
     }
 

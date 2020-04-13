@@ -3,19 +3,18 @@ package com.example.hikebuddy;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.Bundle;
 import android.content.res.TypedArray;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.SearchView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.LinearLayoutManager;
-
-import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.SearchView;
-import android.widget.TextView;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -23,7 +22,7 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
-public class Residents  extends AppCompatActivity {
+public class Residents extends AppCompatActivity {
     private ArrayList<Hike> HikeData;
     private HikeAdapter Adapter;
     private RecyclerView recyclerView;
@@ -31,8 +30,7 @@ public class Residents  extends AppCompatActivity {
 
 
     SearchView searchView;
-    Toolbar toolbar;
-    TextView textview;
+    TextView textView;
     static boolean running = false;
 
     @Override
@@ -46,6 +44,8 @@ public class Residents  extends AppCompatActivity {
         Adapter = new HikeAdapter(this, HikeData);
         recyclerView.setAdapter(Adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        textView = findViewById(R.id.textView);
+
 
         initializeData();
     }
@@ -58,6 +58,7 @@ public class Residents  extends AppCompatActivity {
                 getSystemService(Context.SEARCH_SERVICE);
         MenuItem searchMenuItem = menu.findItem(R.id.search);
         searchView = (SearchView) searchMenuItem.getActionView();
+        searchView.setIconifiedByDefault(false);
 
         if (searchManager != null) {
             searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
@@ -85,17 +86,13 @@ public class Residents  extends AppCompatActivity {
 
         for (Hike item : HikeData) {
             if (item.getTitle().toLowerCase().contains(text.toLowerCase())) {
-                recyclerView = findViewById(R.id.rv_hike_list);
-                textview = findViewById(R.id.textView);
                 recyclerView.setVisibility(View.VISIBLE);
-                textview.setVisibility(View.GONE);
+                textView.setVisibility(View.GONE);
                 filteredList.add(item);
                 Adapter.filterList(filteredList);
-            } else if (filteredList.isEmpty()){
-                recyclerView = findViewById(R.id.rv_hike_list);
-                textview = findViewById(R.id.textView);
+            } else if (filteredList.isEmpty()) {
                 recyclerView.setVisibility(View.GONE);
-                textview.setVisibility(View.VISIBLE);
+                textView.setVisibility(View.VISIBLE);
 
             }
         }
@@ -142,17 +139,18 @@ public class Residents  extends AppCompatActivity {
         }
 
         //Get favorite hikes list
-        SharedPreferences pref = getSharedPreferences( "prefs", Context.MODE_PRIVATE);
+        SharedPreferences pref = getSharedPreferences("prefs", Context.MODE_PRIVATE);
         Gson gson = new Gson();
         String json = pref.getString("favs", null);
-        Type type = new TypeToken<ArrayList<Hike>>() {}.getType();
+        Type type = new TypeToken<ArrayList<Hike>>() {
+        }.getType();
         favHikes = gson.fromJson(json, type);
 
         //IF favhike list exists then compare to hike data and update its fav status
-        if(favHikes != null && favHikes.size()>0){
-            for(int i=0; i<favHikes.size(); i++){
-                for(int j=0; j<HikeData.size(); j++){
-                    if(favHikes.get(i).getTitle().equals(HikeData.get(j).getTitle())){
+        if (favHikes != null && favHikes.size() > 0) {
+            for (int i = 0; i < favHikes.size(); i++) {
+                for (int j = 0; j < HikeData.size(); j++) {
+                    if (favHikes.get(i).getTitle().equals(HikeData.get(j).getTitle())) {
                         HikeData.get(j).setFavStatus(true);
                     }
                 }
@@ -167,17 +165,6 @@ public class Residents  extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() {
-
-        if (!searchView.isIconified() && searchView != null) {
-            searchView.setIconified(true);
-            searchView.onActionViewCollapsed();
-        } else {
-            super.onBackPressed();
-        }
-
-    }
-    @Override
     public void onStart() {
         super.onStart();
         running = true;
@@ -189,7 +176,7 @@ public class Residents  extends AppCompatActivity {
         running = false;
     }
 
-    public boolean isRunning(){
+    public boolean isRunning() {
         return running;
     }
 

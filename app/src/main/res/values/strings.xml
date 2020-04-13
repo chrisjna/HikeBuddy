@@ -220,13 +220,9 @@
     <!--Milestone Activity Strings-->
 
     <string-array name="Koko_Head_Milestone">
-        <item>Milestone about Koko Head</item>
-        <item>Milestone about Koko Head</item>
-        <item>Milestone about Koko Head</item>
+        <item>Under Development</item>
     </string-array>
     <integer-array name="Koko_Head_Milestone_Images">
-        <item>@drawable/img_koko_head</item>
-        <item>@drawable/img_koko_head</item>
         <item>@drawable/img_koko_head</item>
     </integer-array>
 
