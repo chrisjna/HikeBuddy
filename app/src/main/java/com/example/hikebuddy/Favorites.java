@@ -52,6 +52,7 @@ public class Favorites  extends AppCompatActivity {
             recyclerView.setVisibility(View.INVISIBLE);
             textview.setVisibility(View.VISIBLE);
         }
+
         Adapter.notifyDataSetChanged();
     }
 
