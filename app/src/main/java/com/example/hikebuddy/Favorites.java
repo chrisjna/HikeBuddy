@@ -46,6 +46,12 @@ public class Favorites  extends AppCompatActivity {
         Adapter = new HikeAdapter(this, HikeData);
         recyclerView.setAdapter(Adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        textview = findViewById(R.id.textView);
+
+        if (HikeData.isEmpty()) {
+            recyclerView.setVisibility(View.INVISIBLE);
+            textview.setVisibility(View.VISIBLE);
+        }
         Adapter.notifyDataSetChanged();
     }
 
@@ -126,13 +132,6 @@ public class Favorites  extends AppCompatActivity {
         String json = pref.getString("favs", null);
         Type type = new TypeToken<ArrayList<Hike>>() {}.getType();
         HikeData = gson.fromJson(json, type);
-
-        if (HikeData!= null && HikeData.isEmpty()){
-            recyclerView = findViewById(R.id.rv_hike_list);
-            textview = findViewById(R.id.textView);
-            recyclerView.setVisibility(View.GONE);
-            textview.setVisibility(View.VISIBLE);
-        }
 
     }
 
