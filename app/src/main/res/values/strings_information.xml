@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_activity_information">About</string>
+    <string name="large_text">
+        Tutorial\n
+        FAQ\n
+        About\n
+    </string>
+</resources>
