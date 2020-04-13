@@ -22,7 +22,10 @@
         android:paddingLeft="20sp"
         android:paddingTop="20sp"
         android:paddingRight="20sp"
-        android:text="@string/textview" />
+        android:text="@string/textview"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textSize="20sp"
+        app:fontFamily="sans-serif-medium" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -36,6 +39,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="200sp"
-        android:text="test" />
+        android:text="@string/test" />
 
 </LinearLayout>
