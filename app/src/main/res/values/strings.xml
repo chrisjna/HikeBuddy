@@ -184,28 +184,7 @@
         <item>Sunscreen Hat Water</item>
     </string-array>
 
-
-
     <!--General-->
-
-    <string name="title_activity_welcome">Browse</string>
-    <string name="next">NEXT</string>
-    <string name="skip">SKIP</string>
-    <string name="start">DONE</string>
-
-    <string name="slide_1_title">Aloha</string>
-    <string name="slide_1_desc"> Learn more about hiking in Oahu </string>
-
-    <string name="slide_2_title">Prepare</string>
-    <string name="slide_2_desc">Keep safe with reminders</string>
-
-    <string name="slide_3_title">Choose Your Path Today</string>
-    <string name="slide_3_desc">Look and search through popular trails</string>
-
-    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
-    <string name="play_again">Play Again</string>
-
-    <string name="title_activity_main2">Main2Activity</string>
     <string name="title_activity_home_page">Home</string>
     <string name="main_screen_image">main screen image</string>
     <string name="visitor">Visiting</string>
@@ -216,78 +195,6 @@
     <string name="todo">TODO</string>
     <string name="milestones">Milestones</string>
     <string name="textview">custom_text</string>
-
-    <!--Milestone Activity Strings-->
-
-    <string-array name="Koko_Head_Milestone">
-        <item>Under Development</item>
-    </string-array>
-    <integer-array name="Koko_Head_Milestone_Images">
-        <item>@drawable/img_koko_head</item>
-    </integer-array>
-
-    <string-array name="Manoa_Falls_Milestone">
-        <item>Milestone about Manoa Falls</item>
-        <item>Milestone about Manoa Falls</item>
-        <item>Milestone about Manoa Falls</item>
-    </string-array>
-    <integer-array name="Manoa_Falls_Milestone_Images">
-        <item>@drawable/img_manoa_falls</item>
-        <item>@drawable/img_manoa_falls</item>
-        <item>@drawable/img_manoa_falls</item>
-    </integer-array>
-
-    <string-array name="Makapuu_Lighthouse_Milestone">
-        <item>Milestone about Lighthouse</item>
-        <item>Milestone about Lighthouse</item>
-        <item>Milestone about Lighthouse</item>
-    </string-array>
-    <integer-array name="Makapuu_Lighthouse_Milestone_Images">
-        <item>@drawable/img_makapuu</item>
-        <item>@drawable/img_makapuu</item>
-        <item>@drawable/img_makapuu</item>
-    </integer-array>
-
-    <string-array name="Lanikai_Pillboxes_Milestone">
-        <item>Milestone about Lanikai Pillboxes</item>
-        <item>Milestone about Lanikai Pillboxes</item>
-        <item>Milestone about Lanikai Pillboxes</item>
-    </string-array>
-    <integer-array name="Lanikai_Pillboxes_Milestone_Images">
-        <item>@drawable/img_koko_head</item>
-        <item>@drawable/img_koko_head</item>
-        <item>@drawable/img_koko_head</item>
-    </integer-array>
-
-    <string-array name="Maunawili_Falls_Milestone">
-        <item>Milestone about Lanikai Pillboxes</item>
-        <item>Milestone about Lanikai Pillboxes</item>
-        <item>Milestone about Lanikai Pillboxes</item>
-    </string-array>
-    <integer-array name="Maunawili_Falls_Milestone_Images">
-        <item>@drawable/img_koko_head</item>
-        <item>@drawable/img_koko_head</item>
-        <item>@drawable/img_koko_head</item>
-    </integer-array>
-
-    <string-array name="Stairway_to_Heaven_Milestone">
-        <item>Milestone about Stairway to Heaven</item>
-        <item>Milestone about Stairway to Heaven</item>
-        <item>Milestone about Stairway to Heaven</item>
-    </string-array>
-    <integer-array name="Stairway_to_Heaven_Milestone_Images">
-        <item>@drawable/img_koko_head</item>
-        <item>@drawable/img_koko_head</item>
-        <item>@drawable/img_koko_head</item>
-    </integer-array>
-
-    <!--Information Activity Strings-->
-
-    <string name="title_activity_information">About</string>
-    <string name="large_text">
-        Tutorial\n
-        FAQ\n
-        About\n
-    </string>
     <string name="no_results_found">No results found</string>
+    <string name="test">test</string>
 </resources>

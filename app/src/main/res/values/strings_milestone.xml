@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Koko_Head_Milestone">
+        <item>Under Development</item>
+    </string-array>
+    <integer-array name="Koko_Head_Milestone_Images">
+        <item>@drawable/img_koko_head</item>
+    </integer-array>
+
+
+    <string-array name="Manoa_Falls_Milestone">
+        <item>
+            \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t MileStone 1
+            \n\t\t  The gate to the trail will be near the message board.
+            \n\t\t  Your start and return point will be here so backtracking will be needed.
+                    Take care to observe the posted messages and familiarize yourself with the signage.
+        </item>
+        <item>
+            \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t MileStone 2
+            \n\n\t The second area to look for is the
+        </item>
+        <item>
+            \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t MileStone 3
+            \n\n\t When reaching the point in
+        </item>
+    </string-array>
+    <integer-array name="Manoa_Falls_Milestone_Images">
+        <item>@drawable/img_manoa_falls</item>
+        <item>@drawable/img_manoa_falls</item>
+        <item>@drawable/img_manoa_falls</item>
+    </integer-array>
+
+
+    <string-array name="Makapuu_Lighthouse_Milestone">
+        <item>Milestone 1 about Lighthouse</item>
+        <item>Milestone 2 about Lighthouse</item>
+        <item>Milestone 3 about Lighthouse</item>
+    </string-array>
+    <integer-array name="Makapuu_Lighthouse_Milestone_Images">
+        <item>@drawable/img_makapuu</item>
+        <item>@drawable/img_makapuu</item>
+        <item>@drawable/img_makapuu</item>
+    </integer-array>
+
+
+    <string-array name="Lanikai_Pillboxes_Milestone">
+        <item>Milestone 1 about Lanikai Pillboxes</item>
+        <item>Milestone 2 about Lanikai Pillboxes</item>
+        <item>Milestone 3 about Lanikai Pillboxes</item>
+    </string-array>
+    <integer-array name="Lanikai_Pillboxes_Milestone_Images">
+        <item>@drawable/img_koko_head</item>
+        <item>@drawable/img_koko_head</item>
+        <item>@drawable/img_koko_head</item>
+    </integer-array>
+
+
+    <string-array name="Maunawili_Falls_Milestone">
+        <item>Milestone 1 about Maunawili Falls</item>
+        <item>Milestone 2 about Maunawili Falls</item>
+        <item>Milestone 3 about Maunawili Falls</item>
+    </string-array>
+    <integer-array name="Maunawili_Falls_Milestone_Images">
+        <item>@drawable/img_koko_head</item>
+        <item>@drawable/img_koko_head</item>
+        <item>@drawable/img_koko_head</item>
+    </integer-array>
+
+
+    <string-array name="Stairway_to_Heaven_Milestone">
+        <item>Milestone 1 about Stairway to Heaven</item>
+        <item>Milestone 2 about Stairway to Heaven</item>
+        <item>Milestone 3 about Stairway to Heaven</item>
+    </string-array>
+    <integer-array name="Stairway_to_Heaven_Milestone_Images">
+        <item>@drawable/img_koko_head</item>
+        <item>@drawable/img_koko_head</item>
+        <item>@drawable/img_koko_head</item>
+    </integer-array>
+
+</resources>
