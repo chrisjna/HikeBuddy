@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="Koko_Head_Milestone">
-        <item>Under Development</item>
+        <item>
+                    This hike is a relatively straightforward as you will be climbing up railroad tracks.
+                    However this hike requires good physical condition as the heat and 1000 steps make this
+                    tough. The uneven terrain also can prove to be challenging so be sure to wear proper
+                    gear.
+            \n\n    Please be aware of any posted signage and read warnings carefully.
+    </item>
+        <item>
+                    Simply hike up the stairs until you reach the outpost at the top. Please be mindful
+                    of others climbing down the steps. To get back, walk back down the steps to the start
+                    of the trail.
+        </item>
     </string-array>
     <integer-array name="Koko_Head_Milestone_Images">
-        <item>@drawable/img_koko_head</item>
+        <item>@drawable/koko1</item>
+        <item>@drawable/koko2</item>
     </integer-array>
 
 
@@ -19,21 +31,16 @@
             \n\n    Continue to follow the worn path to avoid injuries and erosion to other areas of the trail.
         </item>
         <item>
-                    Around a mile in, you should reach an area with a low branch overhanging the trail.
-                    In addition there will be plastic footings here to help with grip. The terrain
-                    after this point becomes muddier and elevates.
-            \n\n    Continue on until you reach a large opening
-        </item>
-        <item>
                     There will be an opening in the canopy with two paths. There are multiple ways to
                     continue up but be sure to account for the mud here. The incline becomes very steep
                     and may prove difficult on rainy days.
             \n\n    Walk until you reach the stone walls
         </item>
         <item>
-                    When reaching the stone walls, be sure to turn left. After this point the path begins
-                    narrow dramatically and with less oompact dirt.
-            \n\n    Continue on until you reach a large staircase
+                    You should reach an area with many roots coming out of the ground.
+                    In addition there will be plastic footings here to help with grip. The terrain
+                    after this point becomes muddier and elevates.
+            \n\n    Continue on until you reach a large opening
         </item>
         <item>
                     Approach these stairs with caution and be mindful of others. There are no handrails
@@ -42,20 +49,20 @@
         </item>
     </string-array>
     <integer-array name="Manoa_Falls_Milestone_Images">
-        <item>@drawable/img_manoa_falls</item>
-        <item>@drawable/img_manoa_falls</item>
-        <item>@drawable/img_manoa_falls</item>
-        <item>@drawable/img_manoa_falls</item>
-        <item>@drawable/img_manoa_falls</item>
+        <item>@drawable/manoa1</item>
+        <item>@drawable/manoa2</item>
+        <item>@drawable/manoa3</item>
+        <item>@drawable/manoa4</item>
+        <item>@drawable/manoa5</item>
         <item>@drawable/img_manoa_falls</item>
     </integer-array>
 
 
     <string-array name="Makapuu_Lighthouse_Milestone">
         <item>
-                    The entrance for this hike is marked clearly by some bollards after the end of the
+                    The entrance for this trail is marked clearly by some bollards after the end of the
                     parking lot. Take care to read the posted signage and understand the safety warnings.
-                    There will be a smooth asphalt walkway that curves up to the 2nd milestone. Since
+          \n\n      There will be a smooth asphalt walkway that curves up to the 2nd milestone. Since
                     the path is very clearly marked, do not go off the white lines to avoid eroding
                     surroundings.
         </item>
@@ -67,13 +74,13 @@
         </item>
         <item>
                     The lighthouse will be below the cliff. Take the time to rest here.
-            \n\n    Backtrack to the start of the hike on the same path taken earlier.
+            \n\n    Backtrack to the start of the trail on the same path taken earlier.
         </item>
     </string-array>
     <integer-array name="Makapuu_Lighthouse_Milestone_Images">
-        <item>@drawable/img_makapuu</item>
-        <item>@drawable/img_makapuu</item>
-        <item>@drawable/img_makapuu</item>
+        <item>@drawable/lighthouse1</item>
+        <item>@drawable/lighthouse2</item>
+        <item>@drawable/lighthouse3</item>
     </integer-array>
 
 
