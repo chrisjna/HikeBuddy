@@ -2,6 +2,7 @@ package com.example.hikebuddy;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -126,7 +127,7 @@ public class Favorites  extends AppCompatActivity {
         Type type = new TypeToken<ArrayList<Hike>>() {}.getType();
         HikeData = gson.fromJson(json, type);
 
-        if (HikeData.isEmpty()){
+        if (HikeData!= null && HikeData.isEmpty()){
             recyclerView = findViewById(R.id.rv_hike_list);
             textview = findViewById(R.id.textView);
             recyclerView.setVisibility(View.GONE);
