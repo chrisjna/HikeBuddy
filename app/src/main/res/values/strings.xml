@@ -197,47 +197,6 @@
     <string name="textview">custom_text</string>
 
 
-    <!--Milestone Activity Strings-->
-
-    <string-array name="Koko_Head_Milestone">
-        <item>Under Development</item>
-    </string-array>
-    <integer-array name="Koko_Head_Milestone_Images">
-        <item>@drawable/img_koko_head</item>
-    </integer-array>
-
-    <string-array name="Manoa_Falls_Milestone">
-        <item>Milestone about Manoa Falls</item>
-        <item>Milestone about Manoa Falls</item>
-        <item>Milestone about Manoa Falls</item>
-    </string-array>
-    <integer-array name="Manoa_Falls_Milestone_Images">
-        <item>@drawable/img_manoa_falls</item>
-        <item>@drawable/img_manoa_falls</item>
-        <item>@drawable/img_manoa_falls</item>
-    </integer-array>
-
-    <string-array name="Makapuu_Lighthouse_Milestone">
-        <item>Milestone about Lighthouse</item>
-        <item>Milestone about Lighthouse</item>
-        <item>Milestone about Lighthouse</item>
-    </string-array>
-    <integer-array name="Makapuu_Lighthouse_Milestone_Images">
-        <item>@drawable/img_makapuu</item>
-        <item>@drawable/img_makapuu</item>
-        <item>@drawable/img_makapuu</item>
-    </integer-array>
-
-
-    <!--Information Activity Strings-->
-
-    <string name="title_activity_information">About</string>
-    <string name="large_text">
-        Tutorial\n
-        FAQ\n
-        About\n
-    </string>
-
     <string name="no_results_found">No results found</string>
     <string name="test">test</string>
 </resources>
