@@ -137,17 +137,6 @@ public class Favorites  extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() {
-
-        if (!searchView.isIconified() && searchView != null) {
-            searchView.setIconified(true);
-            searchView.onActionViewCollapsed();
-        } else {
-            super.onBackPressed();
-        }
-
-    }
-    @Override
     public void onStart() {
         super.onStart();
         running = true;
