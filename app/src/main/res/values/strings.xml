@@ -228,44 +228,6 @@
         <item>@drawable/img_makapuu</item>
     </integer-array>
 
-    <string-array name="Lanikai_Pillboxes_Milestone">
-        <item>The start of the Lanikai ridge trail is marked with a manmade sign and is between 2 areas of private property, the trail quickly gets steep as you ascend the mountain ridge!</item>
-        <item>The ridge is easy to follow without any confusing paths, keep following it until you reach the first pillbox.</item>
-        <item>Continue along the ridge until you reach the next pillbox.</item>
-        <item>The final pillbox is much smaller and eroded but marks the end of the hike.</item>>
-    </string-array>
-    <integer-array name="Lanikai_Pillboxes_Milestone_Images">
-        <item>@drawable/img_lanikai_milestone1</item>
-        <item>@drawable/img_lanikai_milestone2</item>
-        <item>@drawable/img_lanikai_milestone3</item>
-        <item>@drawable/img_lanikai_milestone4</item>
-    </integer-array>
-
-    <string-array name="Maunawili_Falls_Milestone">
-        <item>The start of the Maunawili trail is marked by handmade posted sign with a clear path, follow this path for the first 2 miles.</item>
-        <item>You\'ll come to a bend in the path with staircases going to the left, descend these stairs to get to the river floor.</item>
-        <item>Once at the bottom of the valley follow the river upstream until you get to the waterfall.</item>
-    </string-array>
-    <integer-array name="Maunawili_Falls_Milestone_Images">
-        <item>@drawable/img_maunawili_milestone1</item>
-        <item>@drawable/img_maunawili_milestone2</item>
-        <item>@drawable/img_maunawili_milestone3</item>
-    </integer-array>
-
-    <string-array name="Stairway_to_Heaven_Milestone">
-        <item>The legal route to the Stairway to Heaven starts with the Moanalua valley trail, marked by a state hike marker and green vehicle gate.</item>
-        <item>The Moanalua valley trail is a scenic forest semi-paved trail with 17 small bridge and water passings, be careful during rainy seasons as these passings may be flooded.</item>
-        <item>At the end of the Moanalua trail there will be a state marked sign, turn left at the sign and follow the small uphill path.  This will start to take you up the mountain ridge.</item>
-        <item>Continue hiking up the steep mountain range until you reach the very top, certain sections of the ridge are very steep and have rope railings you can use to climb up.</item>
-        <item>Once you reach the satellite tower you will be at the top of the Stairway to Heaven.  You can climb down these stairs partway for pictures but do not descend all the way as this will take you to the illegal entrance.  You must go back the way you came.</item>
-    </string-array>
-    <integer-array name="Stairway_to_Heaven_Milestone_Images">
-        <item>@drawable/img_stairway_milestone1</item>
-        <item>@drawable/img_stairway_milestone2</item>>
-        <item>@drawable/img_stairway_milestone3</item>
-        <item>@drawable/img_stairway_milestone4</item>
-        <item>@drawable/img_stairway_milestone5</item>
-    </integer-array>
 
     <!--Information Activity Strings-->
 
