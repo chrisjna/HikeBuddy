@@ -15,9 +15,11 @@
         <activity
             android:name=".InformationActivity"
             android:label="@string/title_activity_information"
+            android:launchMode="singleTask"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Milestone"
+            android:launchMode="singleTask"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MainActivity"
@@ -30,7 +32,7 @@
         <activity
             android:name=".HomePage"
             android:label="@string/title_activity_home_page"
-            android:launchMode="singleTop"
+            android:launchMode="singleTask"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,9 +51,15 @@
         <activity android:name=".HikeInfoActivity" />
         <activity android:name=".HikeAdapter" />
         <activity android:name=".Hike" />
-        <activity android:name=".Visitors"/>
-        <activity android:name=".Residents"/>
-        <activity android:name=".Favorites"/>
+        <activity
+            android:name=".Visitors"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".Residents"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".Favorites"
+            android:launchMode="singleTask" />
     </application>
 
 </manifest>
