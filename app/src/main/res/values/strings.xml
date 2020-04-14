@@ -130,9 +130,9 @@
     </integer-array>
 
     <string-array name="vis_gear">
-        <item>Hiking-Boots Sunscreen Camera</item>
-        <item>Hiking-Boots Swimsuit Water Bug-Repellent</item>
-        <item>Hiking-Boots Jacket Camera Headlamp</item>
+        <item>Hiking-Boots Sunscreen </item>
+        <item>Hiking-Boots Water-Bottles Bug-Repellent</item>
+        <item>Hiking-Boots Jacket  Headlamp</item>
     </string-array>
 
     <!-- DATABASE FOR RESIDENT HIKES -->
@@ -179,9 +179,9 @@
     </integer-array>
 
     <string-array name="res_gear">
-        <item>Sunscreen Hiking-Boots Hat Water</item>
+        <item>Sunscreen Hiking-Boots Hat Water-Bottles</item>
         <item>Hiking-Boots Water Bug-Repellent</item>
-        <item>Sunscreen Hat Water</item>
+        <item>Sunscreen Hat Water-Bottles</item>
     </string-array>
 
     <!--General-->
