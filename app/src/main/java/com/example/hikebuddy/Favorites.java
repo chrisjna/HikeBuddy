@@ -48,7 +48,7 @@ public class Favorites  extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         textview = findViewById(R.id.textView);
 
-        if (HikeData.isEmpty()) {
+        if (HikeData != null && HikeData.isEmpty()) {
             recyclerView.setVisibility(View.INVISIBLE);
             textview.setVisibility(View.VISIBLE);
         }
