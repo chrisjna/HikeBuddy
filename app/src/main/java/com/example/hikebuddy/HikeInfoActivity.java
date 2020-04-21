@@ -1,5 +1,7 @@
 package com.example.hikebuddy;
 
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Button;
 
 import android.widget.CompoundButton;
@@ -11,12 +13,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import android.widget.LinearLayout;
-
-
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
+import android.widget.Toast;
 
 public class HikeInfoActivity extends AppCompatActivity {
 
@@ -30,6 +30,8 @@ public class HikeInfoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hike_info_activity);
+        Toolbar toolbar = findViewById(R.id.toolbarHome);
+        setSupportActionBar(toolbar);
 
         // Initialize the views.
         final TextView hikeTitle = findViewById(R.id.hikename);
@@ -70,8 +72,6 @@ public class HikeInfoActivity extends AppCompatActivity {
             checkboxList.addView(checkBox);
         }
 
-
-
         //for Milestone
         final String hikeTitleIntent = getIntent().getStringExtra("title");
 
@@ -87,5 +87,27 @@ public class HikeInfoActivity extends AppCompatActivity {
 
             }
         });
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.search_menu, menu);
+        menu.findItem(R.id.search).setVisible(false);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.icons8_home_50);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        switch (id) {
+            case android.R.id.home:
+                Toast.makeText(this, "activity started", Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
     }
 }
