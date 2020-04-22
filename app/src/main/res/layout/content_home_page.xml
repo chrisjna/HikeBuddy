@@ -13,7 +13,7 @@
         android:layout_width="429dp"
         android:layout_height="280dp"
         android:contentDescription="@string/main_screen_image"
-        android:src="@drawable/mainpageimage"
+        android:src="@drawable/img_main"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.228"
         app:layout_constraintStart_toStartOf="parent"

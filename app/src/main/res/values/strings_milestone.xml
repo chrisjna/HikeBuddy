@@ -15,8 +15,8 @@
         </item>
     </string-array>
     <integer-array name="Koko_Head_Milestone_Images">
-        <item>@drawable/koko1</item>
-        <item>@drawable/koko2</item>
+        <item>@drawable/milestone_koko1</item>
+        <item>@drawable/milestone_koko2</item>
     </integer-array>
 
 
@@ -49,11 +49,11 @@
         </item>
     </string-array>
     <integer-array name="Manoa_Falls_Milestone_Images">
-        <item>@drawable/manoa1</item>
-        <item>@drawable/manoa2</item>
-        <item>@drawable/manoa3</item>
-        <item>@drawable/manoa4</item>
-        <item>@drawable/manoa5</item>
+        <item>@drawable/milestone_manoa1</item>
+        <item>@drawable/milestone_manoa2</item>
+        <item>@drawable/milestone_manoa3</item>
+        <item>@drawable/milestone_manoa4</item>
+        <item>@drawable/milestone_manoa5</item>
         <item>@drawable/img_manoa_falls</item>
     </integer-array>
 
@@ -78,9 +78,9 @@
         </item>
     </string-array>
     <integer-array name="Makapuu_Lighthouse_Milestone_Images">
-        <item>@drawable/lighthouse1</item>
-        <item>@drawable/lighthouse2</item>
-        <item>@drawable/lighthouse3</item>
+        <item>@drawable/milestone_lighthouse1</item>
+        <item>@drawable/milestone_lighthouse2</item>
+        <item>@drawable/milestone_lighthouse3</item>
     </integer-array>
 
 
@@ -91,10 +91,10 @@
         <item>The final pillbox is much smaller and eroded but marks the end of the hike.</item>>
     </string-array>
     <integer-array name="Lanikai_Pillboxes_Milestone_Images">
-        <item>@drawable/img_lanikai_milestone1</item>
-        <item>@drawable/img_lanikai_milestone2</item>
-        <item>@drawable/img_lanikai_milestone3</item>
-        <item>@drawable/img_lanikai_milestone4</item>
+        <item>@drawable/milestone_lanikai1</item>
+        <item>@drawable/milestone_lanikai2</item>
+        <item>@drawable/milestone_lanikai3</item>
+        <item>@drawable/milestone_lanikai4</item>
     </integer-array>
 
 
@@ -104,9 +104,9 @@
         <item>Once at the bottom of the valley follow the river upstream until you get to the waterfall.</item>
     </string-array>
     <integer-array name="Maunawili_Falls_Milestone_Images">
-        <item>@drawable/img_maunawili_milestone1</item>
-        <item>@drawable/img_maunawili_milestone2</item>
-        <item>@drawable/img_maunawili_milestone3</item>
+        <item>@drawable/milestone_maunawili1</item>
+        <item>@drawable/milestone_maunawili2</item>
+        <item>@drawable/milestone_maunawili3</item>
     </integer-array>
 
 
@@ -118,11 +118,11 @@
         <item>Once you reach the satellite tower you will be at the top of the Stairway to Heaven.  You can climb down these stairs partway for pictures but do not descend all the way as this will take you to the illegal entrance.  You must go back the way you came.</item>
     </string-array>
     <integer-array name="Stairway_to_Heaven_Milestone_Images">
-        <item>@drawable/img_stairway_milestone1</item>
-        <item>@drawable/img_stairway_milestone2</item>>
-        <item>@drawable/img_stairway_milestone3</item>
-        <item>@drawable/img_stairway_milestone4</item>
-        <item>@drawable/img_stairway_milestone5</item>
+        <item>@drawable/milestone_stairway1</item>
+        <item>@drawable/milestone_stairway2</item>>
+        <item>@drawable/milestone_stairway3</item>
+        <item>@drawable/milestone_stairway4</item>
+        <item>@drawable/milestone_stairway5</item>
     </integer-array>
 
 </resources>

@@ -1,35 +1,44 @@
-*List all sources (pictures / code) here*
 
-1. https://www.androidhive.info/2016/05/android-build-intro-slider-app/
+----------Slider Intro Resource----------
 
-2. Photo by Roberto Nickson from Pexels
+https://www.androidhive.info/2016/05/android-build-intro-slider-app/
 
-4. Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
 
-5. Icons made by <a href="https://www.flaticon.com/authors/pixelmeetup" title="Pixelmeetup">Pixelmeetup</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+----------https://www.flaticon.com/-----------
 
-6. Icons made by <a href="https://www.flaticon.com/authors/mangsaabguru" title="mangsaabguru">mangsaabguru</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
 
-7. Tourist Guide icon icon by Icons8
+Icons made by <a href="https://www.flaticon.com/authors/pixelmeetup" title="Pixelmeetup">Pixelmeetup</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
 
-8. Hawaii icon icon by Icons8
+Icons made by <a href="https://www.flaticon.com/authors/mangsaabguru" title="mangsaabguru">mangsaabguru</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
 
-9. koko2 - https://www.alltrails.com/trail/hawaii/oahu/koko-head-crater-trail?u=i/ Jeff Dalrymple
+----------https://icons8.com/----------
+Tourist Guide icon icon by Icons8
 
-10. koko1 - steve https://www.alltrails.com/trail/hawaii/oahu/koko-head-crater-trail?u=i/ buchanan
+Hawaii icon icon by Icons8
 
-11. manoa3 - Natalia Reynaga
+Home icon by Icons8
 
-12. manoa1 - DLRNS parks
+----------https://www.alltrails.com----------
 
-13. manoa2 - Irene Donquis-Moore
+milestone_koko2 - Jeff Dalrymple
 
-14. manoa5 - Ben (and Bentley) Winstead
+milestone_koko1 - Steve Buchanan
 
-15. lighthouse3 - Thomas Bartsch
+milestone_manoa3 - Natalia Reynaga
 
-16. lighthouse2 - Eric Z
+milestone_manoa2 - Irene Donquis-Moore
 
-17. lighthouse1- Previa1994 (Oct 2019)tripadvisor
+milestone_manoa5 - Ben (and Bentley) Winstead
 
-18. <a target="_blank" href="https://icons8.com/icons/set/home">Home icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+milestone_lighthouse3 - Thomas Bartsch
+
+milestone_lighthouse2 - Eric Z
+
+------------Misc----------
+milestone_manoa1 - DLRNS parks
+
+milestone_lighthouse1- Previa1994 (Oct 2019) tripadvisor.com
+
+Photo by Roberto Nickson from Pexels
+
