@@ -60,7 +60,7 @@ public class Residents extends AppCompatActivity {
         MenuItem searchMenuItem = menu.findItem(R.id.search);
         searchView = (SearchView) searchMenuItem.getActionView();
         searchView.setIconifiedByDefault(false);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.icons8_home_50);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.home);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         if (searchManager != null) {
