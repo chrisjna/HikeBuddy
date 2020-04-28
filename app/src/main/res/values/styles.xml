@@ -21,9 +21,7 @@
     </style>
 
     <style name="customRatingBar" parent="@android:style/Widget.RatingBar">
-        <item name="android:progressDrawable">@drawable/custom_rating_bar</item>
-        <item name="android:maxHeight">500dp</item>
-        <item name="android:maxWidth">500dp</item>
+        <item name="android:progressDrawable">@drawable/trek</item>
     </style>
 
 </resources>

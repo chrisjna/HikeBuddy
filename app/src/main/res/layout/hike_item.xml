@@ -49,13 +49,13 @@
 
         <RatingBar
             android:id="@+id/difficulty"
-            style="@android:style/Widget.DeviceDefault.Light.RatingBar.Indicator"
+            style="@style/customRatingBar"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="25dp"
             android:layout_alignBottom="@id/hikeimages"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="3dp"
-            android:layout_marginBottom="9dp"
+            android:layout_marginBottom="43dp"
             android:numStars="3" />
 
         <TextView
