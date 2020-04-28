@@ -16,7 +16,7 @@
 
     <string name="no_results_found">No results found</string>
     <string name="test">test</string>
-    <string name="tohome">tohome</string>
+    <string name="tohome">Back to Home</string>
     <string name="hiking_gear_checklist">Hiking Gear Checklist</string>
 
     <!-- underscores used to find the hike in Milestones-->
