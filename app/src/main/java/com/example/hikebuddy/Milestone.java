@@ -17,9 +17,6 @@ public class Milestone extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_milestone);
 
-        Toolbar toolbar = findViewById(R.id.toolbarHome);
-        setSupportActionBar(toolbar);
-
         viewPager = findViewById(R.id.viewPager);
 
         //get string

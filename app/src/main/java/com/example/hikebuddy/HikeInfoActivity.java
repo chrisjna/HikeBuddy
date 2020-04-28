@@ -92,8 +92,10 @@ public class HikeInfoActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.search_menu, menu);
         menu.findItem(R.id.search).setVisible(false);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.home);
+
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.trek_foreground);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         return true;
     }
 
