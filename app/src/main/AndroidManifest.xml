@@ -64,6 +64,12 @@
         <activity
             android:name=".Favorites"
             android:launchMode="singleTask" />
+        <activity
+            android:name=".Difficulty"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".Distance"
+            android:launchMode="singleTask" />
     </application>
 
 </manifest>

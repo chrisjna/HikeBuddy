@@ -52,6 +52,18 @@ public class HomePage extends AppCompatActivity {
         searchView.clearFocus();
     }
 
+    public void callDifficulty(View view){
+        Intent detailIntent = new Intent(mContext, Difficulty.class);
+        mContext.startActivity(detailIntent);
+        searchView.clearFocus();
+    }
+
+    public void callDistance(View view){
+        Intent detailIntent = new Intent(mContext, Distance.class);
+        mContext.startActivity(detailIntent);
+        searchView.clearFocus();
+    }
+
     final SearchView.OnQueryTextListener queryTextListener = new SearchView.OnQueryTextListener() {
         @Override
         public boolean onQueryTextSubmit(String query) {
