@@ -36,7 +36,8 @@
             android:layout_marginTop="5dp"
             android:layout_marginRight="3dp"
             android:background="@drawable/ic_favorite_shadow_24dp"
-            android:clickable="true" />
+            android:clickable="true"
+            android:focusable="true" />
 
         <TextView
             android:id="@+id/hikename"
@@ -49,14 +50,15 @@
 
         <RatingBar
             android:id="@+id/difficulty"
-            style="@style/customRatingBar"
             android:layout_width="wrap_content"
             android:layout_height="47dp"
             android:layout_alignBottom="@id/hikeimages"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="3dp"
             android:layout_marginBottom="11dp"
-            android:numStars="3" />
+            android:progressDrawable="@drawable/custom_ratingbar"
+            android:numStars="3"
+            android:stepSize="1.0"/>
 
         <TextView
             android:id="@+id/newsTitle"
