@@ -2,25 +2,32 @@
 <resources>
     <string-array name="Koko_Head_Milestone">
         <item>
-                    This hike is a relatively straightforward as you will be climbing up railroad tracks.
-                    However this hike requires good physical condition as the heat and 1000 steps make this
-                    tough. The uneven terrain also can prove to be challenging so be sure to wear proper
-                    gear.
-            \n\n    Please be aware of any posted signage and read warnings carefully.
+            Swipe right to start
+        </item>
+        <item>
+            This hike is a relatively straightforward as you will be climbing up railroad tracks.
+            However this hike requires good physical condition as the heat and 1000 steps make this
+            tough. The uneven terrain also can prove to be challenging so be sure to wear proper
+            gear.
+            \n\n Please be aware of any posted signage and read warnings carefully.
     </item>
         <item>
-                    Simply hike up the stairs until you reach the outpost at the top. Please be mindful
-                    of others climbing down the steps. To get back, walk back down the steps to the start
-                    of the trail.
+            Simply hike up the stairs until you reach the outpost at the top. Please be mindful
+            of others climbing down the steps. To get back, walk back down the steps to the start
+            of the trail.
         </item>
     </string-array>
     <integer-array name="Koko_Head_Milestone_Images">
+        <item>@drawable/swipe</item>
         <item>@drawable/milestone_koko1</item>
         <item>@drawable/milestone_koko2</item>
     </integer-array>
 
 
     <string-array name="Manoa_Falls_Milestone">
+        <item>
+            Swipe right to start
+        </item>
         <item>
                     The gate to the trail will be near the message board.
             \n\n    Your start and return point will be here so backtracking will be needed.
@@ -49,6 +56,7 @@
         </item>
     </string-array>
     <integer-array name="Manoa_Falls_Milestone_Images">
+        <item>@drawable/swipe</item>
         <item>@drawable/milestone_manoa1</item>
         <item>@drawable/milestone_manoa2</item>
         <item>@drawable/milestone_manoa3</item>
@@ -59,6 +67,9 @@
 
 
     <string-array name="Makapuu_Lighthouse_Milestone">
+        <item>
+            Swipe right to start
+        </item>
         <item>
                     The entrance for this trail is marked clearly by some bollards after the end of the
                     parking lot. Take care to read the posted signage and understand the safety warnings.
@@ -78,6 +89,7 @@
         </item>
     </string-array>
     <integer-array name="Makapuu_Lighthouse_Milestone_Images">
+        <item>@drawable/swipe</item>
         <item>@drawable/milestone_lighthouse1</item>
         <item>@drawable/milestone_lighthouse2</item>
         <item>@drawable/milestone_lighthouse3</item>
@@ -85,12 +97,16 @@
 
 
     <string-array name="Lanikai_Pillboxes_Milestone">
+        <item>
+            Swipe right to start
+        </item>
         <item>The start of the Lanikai ridge trail is marked with a manmade sign and is between 2 areas of private property, the trail quickly gets steep as you ascend the mountain ridge!</item>
         <item>The ridge is easy to follow without any confusing paths, keep following it until you reach the first pillbox.</item>
         <item>Continue along the ridge until you reach the next pillbox.</item>
         <item>The final pillbox is much smaller and eroded but marks the end of the hike.</item>>
     </string-array>
     <integer-array name="Lanikai_Pillboxes_Milestone_Images">
+        <item>@drawable/swipe</item>
         <item>@drawable/milestone_lanikai1</item>
         <item>@drawable/milestone_lanikai2</item>
         <item>@drawable/milestone_lanikai3</item>
@@ -99,11 +115,15 @@
 
 
     <string-array name="Maunawili_Falls_Milestone">
+        <item>
+            Swipe right to start
+        </item>
         <item>The start of the Maunawili trail is marked by handmade posted sign with a clear path, follow this path for the first 2 miles.</item>
         <item>You\'ll come to a bend in the path with staircases going to the left, descend these stairs to get to the river floor.</item>
         <item>Once at the bottom of the valley follow the river upstream until you get to the waterfall.</item>
     </string-array>
     <integer-array name="Maunawili_Falls_Milestone_Images">
+        <item>@drawable/swipe</item>
         <item>@drawable/milestone_maunawili1</item>
         <item>@drawable/milestone_maunawili2</item>
         <item>@drawable/milestone_maunawili3</item>
@@ -111,6 +131,9 @@
 
 
     <string-array name="Stairway_to_Heaven_Milestone">
+        <item>
+            Swipe right to start
+        </item>
         <item>The legal route to the Stairway to Heaven starts with the Moanalua valley trail, marked by a state hike marker and green vehicle gate.</item>
         <item>The Moanalua valley trail is a scenic forest semi-paved trail with 17 small bridge and water passings, be careful during rainy seasons as these passings may be flooded.</item>
         <item>At the end of the Moanalua trail there will be a state marked sign, turn left at the sign and follow the small uphill path.  This will start to take you up the mountain ridge.</item>
@@ -118,6 +141,7 @@
         <item>Once you reach the satellite tower you will be at the top of the Stairway to Heaven.  You can climb down these stairs partway for pictures but do not descend all the way as this will take you to the illegal entrance.  You must go back the way you came.</item>
     </string-array>
     <integer-array name="Stairway_to_Heaven_Milestone_Images">
+        <item>@drawable/swipe</item>
         <item>@drawable/milestone_stairway1</item>
         <item>@drawable/milestone_stairway2</item>>
         <item>@drawable/milestone_stairway3</item>
