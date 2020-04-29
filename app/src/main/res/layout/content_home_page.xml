@@ -31,7 +31,7 @@
             android:id="@+id/tableRow1"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_weight="1" >
 
             <Button
                 android:id="@+id/button2"
@@ -39,8 +39,8 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:contentDescription="@string/visitor"
+
                 android:drawableBottom="@mipmap/visiting_foreground"
-                android:drawablePadding="-20dp"
                 android:onClick="callVisitors"
                 android:text="@string/visitor"
                 android:textSize="20sp" />
@@ -52,18 +52,22 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:contentDescription="@string/resident"
+
                 android:drawableBottom="@mipmap/resident_foreground"
-                android:drawablePadding="-20dp"
+
                 android:onClick="callResidents"
                 android:text="@string/resident"
                 android:textSize="20sp" />
+
+
+
         </TableRow>
 
         <TableRow
             android:id="@+id/tableRow2"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_weight="1" >
 
             <Button
                 android:id="@+id/button7"
@@ -71,11 +75,11 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:contentDescription="@string/difficulty"
-                android:drawablePadding="-20dp"
+
+                android:drawableBottom="@drawable/difficulty"
                 android:onClick="callDifficulty"
                 android:text="@string/difficulty"
-                android:textSize="20sp"
-                android:gravity="center"/>
+                android:textSize="20sp" />
 
 
             <Button
@@ -84,10 +88,14 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:contentDescription="@string/distance"
-                android:drawablePadding="-20dp"
+
+                android:drawableBottom="@drawable/distance"
+
                 android:onClick="callDistance"
                 android:text="@string/distance"
                 android:textSize="20sp" />
+
+
 
         </TableRow>
 
@@ -95,7 +103,7 @@
             android:id="@+id/tableRow4"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_weight="1" >
 
             <Button
                 android:id="@+id/button5"
@@ -103,8 +111,9 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:contentDescription="@string/favorites"
+
                 android:drawableBottom="@mipmap/favorite_foreground"
-                android:drawablePadding="-20dp"
+
                 android:onClick="callFavorites"
                 android:text="@string/favorites"
                 android:textSize="20sp" />
@@ -116,10 +125,12 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:contentDescription="@string/information"
+
                 android:drawableBottom="@mipmap/information_foreground"
-                android:drawablePadding="-20dp"
+
                 android:onClick="callInformation"
                 android:text="@string/information"
+
                 android:textSize="20sp" />
 
         </TableRow>
