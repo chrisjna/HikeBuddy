@@ -2,6 +2,7 @@ package com.example.hikebuddy;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.TypedArray;
 import android.os.Bundle;
@@ -28,13 +29,15 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Hike> HikeData;
     private HikeAdapter Adapter;
+    /**
+     *
+     */
     private ArrayList<Hike> favHikes;
-
+    private Context mContext;
     private RecyclerView recyclerView;
-
-    TextView textview;
-    SearchView searchView;  //moved from OnCreateOptionsMenu to support onTextSubmit behavior
-    Toolbar toolbar;        //moved from OnCreateOptionsMenu to support onTextSubmit behavior
+    private TextView textview;
+    private SearchView searchView;  //moved from OnCreateOptionsMenu to support onTextSubmit behavior
+    private Toolbar toolbar;        //moved from OnCreateOptionsMenu to support onTextSubmit behavior
     static boolean running = false;
 
     @Override
@@ -43,13 +46,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         toolbar = findViewById(R.id.toolbarHome);
         setSupportActionBar(toolbar);
-
         HikeData = new ArrayList<>();
         recyclerView = findViewById(R.id.rv_hike_list);
         Adapter = new HikeAdapter(this, HikeData);
         recyclerView.setAdapter(Adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
+        mContext = this;
         initializeData();
     }
 
@@ -114,14 +116,12 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        switch (id) {
-            case android.R.id.home:
-                Toast.makeText(this, "activity started", Toast.LENGTH_SHORT).show();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-
+        if (id == android.R.id.home) {
+            Intent detailIntent = new Intent(mContext, HomePage.class);
+            mContext.startActivity(detailIntent);
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 
 
