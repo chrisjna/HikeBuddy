@@ -47,12 +47,12 @@
 
         <RatingBar
             android:id="@+id/difficulty"
-            style="@style/customRatingBar"
             android:layout_width="wrap_content"
             android:layout_height="47dp"
             android:layout_below="@id/hikeimages"
             android:layout_marginLeft="8dp"
             android:background="#FFFFFF"
+            android:progressDrawable="@drawable/custom_ratingbar"
             android:stepSize="1.0"
             android:numStars="3" />
 
