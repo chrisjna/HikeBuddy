@@ -26,10 +26,10 @@ public class Favorites  extends AppCompatActivity {
     private ArrayList<Hike> HikeData;
     private HikeAdapter Adapter;
     private RecyclerView recyclerView;
-
-    SearchView searchView;
-    Toolbar toolbar;
-    TextView textview;
+    private Context mContext;
+    private SearchView searchView;
+    private Toolbar toolbar;
+    private TextView textview;
     static boolean running = false;
 
     @Override
@@ -39,7 +39,7 @@ public class Favorites  extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbarHome);
         setSupportActionBar(toolbar);
         HikeData = new ArrayList<>();
-
+        mContext = this;
         initializeData();
 
         recyclerView = findViewById(R.id.rv_hike_list);
@@ -64,6 +64,10 @@ public class Favorites  extends AppCompatActivity {
                 getSystemService(Context.SEARCH_SERVICE);
         MenuItem searchMenuItem = menu.findItem(R.id.search);
         searchView = (SearchView) searchMenuItem.getActionView();
+
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.trek_foreground);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         if (searchManager != null) {
             searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
@@ -111,13 +115,13 @@ public class Favorites  extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.action_settings) {
+        if (id == android.R.id.home) {
+            Intent detailIntent = new Intent(mContext, HomePage.class);
+            mContext.startActivity(detailIntent);
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
-
 
     /**
      * Initialize the Hike data from resources.

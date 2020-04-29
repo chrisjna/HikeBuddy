@@ -2,6 +2,7 @@ package com.example.hikebuddy;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.TypedArray;
 import android.os.Bundle;
@@ -10,7 +11,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.SearchView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -28,10 +28,10 @@ public class Visitors extends AppCompatActivity {
     private HikeAdapter Adapter;
     private RecyclerView recyclerView;
     private ArrayList<Hike> favHikes;
-
     SearchView searchView;
-    static boolean running = false;
     TextView textView;
+    private Context mContext;
+    static boolean running = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +45,7 @@ public class Visitors extends AppCompatActivity {
         recyclerView.setAdapter(Adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         textView = findViewById(R.id.textView);
-
+        mContext = this;
         initializeData();
 
     }
@@ -105,14 +105,12 @@ public class Visitors extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        switch (id) {
-            case android.R.id.home:
-                Toast.makeText(this, "activity started", Toast.LENGTH_SHORT).show();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-
+        if (id == android.R.id.home) {
+            Intent detailIntent = new Intent(mContext, HomePage.class);
+            mContext.startActivity(detailIntent);
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 
 

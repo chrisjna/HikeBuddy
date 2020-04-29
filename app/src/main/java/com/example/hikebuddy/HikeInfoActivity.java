@@ -1,5 +1,6 @@
 package com.example.hikebuddy;
 
+import android.content.Context;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
@@ -16,10 +17,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 public class HikeInfoActivity extends AppCompatActivity {
 
+    private Context mContext;
     /**
      * Initializes the activity, filling in the data from the Intent.
      *
@@ -32,7 +33,7 @@ public class HikeInfoActivity extends AppCompatActivity {
         setContentView(R.layout.hike_info_activity);
         Toolbar toolbar = findViewById(R.id.toolbarHome);
         setSupportActionBar(toolbar);
-
+        mContext = this;
         // Initialize the views.
         final TextView hikeTitle = findViewById(R.id.hikename);
         ImageView hikeImage = findViewById(R.id.hikeimages);
@@ -103,13 +104,11 @@ public class HikeInfoActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        switch (id) {
-            case android.R.id.home:
-                Toast.makeText(this, "activity started", Toast.LENGTH_SHORT).show();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-
+        if (id == android.R.id.home) {
+            Intent detailIntent = new Intent(mContext, HomePage.class);
+            mContext.startActivity(detailIntent);
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 }

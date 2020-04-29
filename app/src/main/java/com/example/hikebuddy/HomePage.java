@@ -15,6 +15,7 @@ public class HomePage extends AppCompatActivity {
     private Context mContext;
     SearchView searchView;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
