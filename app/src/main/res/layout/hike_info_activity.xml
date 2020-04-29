@@ -51,10 +51,10 @@
             android:layout_height="47dp"
             android:layout_below="@id/hikeimages"
             android:layout_marginLeft="8dp"
-            android:background="#FFFFFF"
             android:progressDrawable="@drawable/custom_ratingbar"
-            android:stepSize="1.0"
-            android:numStars="3" />
+            android:isIndicator="true"
+            android:numStars="3"
+            android:stepSize="1.0"/>
 
         <TextView
             android:id="@+id/newsTitleDetail"
