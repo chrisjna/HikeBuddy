@@ -57,6 +57,7 @@
             android:layout_marginRight="3dp"
             android:layout_marginBottom="11dp"
             android:progressDrawable="@drawable/custom_ratingbar"
+            android:isIndicator="true"
             android:numStars="3"
             android:stepSize="1.0"/>
 
