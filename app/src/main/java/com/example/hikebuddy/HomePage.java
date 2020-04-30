@@ -1,5 +1,6 @@
 package com.example.hikebuddy;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -35,29 +36,28 @@ public class HomePage extends AppCompatActivity {
         searchView.setOnQueryTextListener(queryTextListener);
     }
 
-    public void callVisitors(View view){
+    public void callFilter(View view){
         onButtonShowPopupWindowClick(view);
         searchView.clearFocus();
+
+    }
+
+    public void callMain(View view){
+        Intent detailIntent = new Intent(mContext, MainActivity.class);
+        mContext.startActivity(detailIntent);
+        searchView.clearFocus();
+        popupWindow.dismiss();
+    }
+
+    public void callVisitors(View view){
+        Intent detailIntent = new Intent(mContext, Visitors.class);
+        mContext.startActivity(detailIntent);
+        searchView.clearFocus();
+        popupWindow.dismiss();
     }
 
     public void callResidents(View view){
         Intent detailIntent = new Intent(mContext, Residents.class);
-        mContext.startActivity(detailIntent);
-        searchView.clearFocus();
-        popupWindow.dismiss();
-    }
-
-    public void callFavorites(View view){
-        Intent detailIntent = new Intent(mContext, Favorites.class);
-        mContext.startActivity(detailIntent);
-        searchView.clearFocus();
-        popupWindow.dismiss();
-
-    }
-
-
-    public void callInformation(View view){
-        Intent detailIntent = new Intent(mContext, InformationActivity.class);
         mContext.startActivity(detailIntent);
         searchView.clearFocus();
         popupWindow.dismiss();
@@ -72,6 +72,20 @@ public class HomePage extends AppCompatActivity {
 
     public void callDistance(View view){
         Intent detailIntent = new Intent(mContext, Distance.class);
+        mContext.startActivity(detailIntent);
+        searchView.clearFocus();
+        popupWindow.dismiss();
+    }
+
+    public void callFavorites(View view){
+        Intent detailIntent = new Intent(mContext, Favorites.class);
+        mContext.startActivity(detailIntent);
+        searchView.clearFocus();
+        popupWindow.dismiss();
+    }
+
+    public void callInformation(View view){
+        Intent detailIntent = new Intent(mContext, InformationActivity.class);
         mContext.startActivity(detailIntent);
         searchView.clearFocus();
         popupWindow.dismiss();
@@ -93,26 +107,23 @@ public class HomePage extends AppCompatActivity {
         }
     };
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void onButtonShowPopupWindowClick(View view) {
 
-        // inflate the layout of the popup window
         LayoutInflater inflater = (LayoutInflater)
                 getSystemService(LAYOUT_INFLATER_SERVICE);
         View popupView = inflater.inflate(R.layout.window, null);
 
-        // create the popup window
         int width = LinearLayout.LayoutParams.WRAP_CONTENT;
         int height = LinearLayout.LayoutParams.WRAP_CONTENT;
-        boolean focusable = true; // lets taps outside the popup also dismiss it
+        boolean focusable = true;
         popupWindow = new PopupWindow(popupView, width, height, focusable);
-        popupWindow.setElevation(20);
 
-        // show the popup window
-        // which view you pass in doesn't matter, it is only used for the window tolken
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            popupWindow.setElevation(20);
+        }
+
         popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
 
-        // dismiss the popup window when touched
         popupView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {

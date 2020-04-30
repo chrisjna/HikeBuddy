@@ -42,8 +42,8 @@
                 android:contentDescription="@string/visitor"
 
                 android:drawableBottom="@mipmap/visiting_foreground"
-                android:onClick="callVisitors"
-                android:text="@string/visitor"
+                android:onClick="callFilter"
+                android:text="@string/filter_by"
                 android:textSize="20sp" />
 
             <Button
@@ -55,8 +55,8 @@
 
                 android:drawableBottom="@mipmap/resident_foreground"
 
-                android:onClick="callResidents"
-                android:text="@string/resident"
+                android:onClick="callMain"
+                android:text="@string/view_all"
                 android:textSize="20sp" />
 
 
