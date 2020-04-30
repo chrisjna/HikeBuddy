@@ -111,12 +111,13 @@ public class HomePage extends AppCompatActivity {
 
         LayoutInflater inflater = (LayoutInflater)
                 getSystemService(LAYOUT_INFLATER_SERVICE);
-        View popupView = inflater.inflate(R.layout.window, null);
+        final View popupView = inflater.inflate(R.layout.window, null);
 
-        int width = LinearLayout.LayoutParams.WRAP_CONTENT;
-        int height = LinearLayout.LayoutParams.WRAP_CONTENT;
+        int width = LinearLayout.LayoutParams.MATCH_PARENT;
+        int height = LinearLayout.LayoutParams.MATCH_PARENT;
         boolean focusable = true;
         popupWindow = new PopupWindow(popupView, width, height, focusable);
+        popupView.getBackground().setAlpha( 175);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             popupWindow.setElevation(20);
@@ -128,6 +129,7 @@ public class HomePage extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 popupWindow.dismiss();
+                popupView.getBackground().setAlpha( 0); // restore
                 return true;
             }
         });
