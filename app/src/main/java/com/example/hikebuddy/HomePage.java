@@ -34,8 +34,10 @@ import org.json.JSONObject;
 
 import java.io.BufferedInputStream;
 import java.io.InputStream;
+import java.math.RoundingMode;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.DecimalFormat;
 
 public class HomePage extends AppCompatActivity {
 
@@ -112,11 +114,12 @@ public class HomePage extends AppCompatActivity {
                 JSONObject main = jsn.getJSONObject("main");
                 JSONObject weather = jsn.getJSONArray("weather").getJSONObject(0);
 
-
                 location = jsn.getString("name");
                 temp = main.getString("temp");
                 double i = Double.parseDouble(temp);
                 i = (i/10 * 9/5) + 32;
+                i = Math.floor(i * 1e2) / 1e2;
+                System.out.println(i);
                 temp = Double.toString(i) + "°F";
 
                 weatherDescription = weather.getString("description");
