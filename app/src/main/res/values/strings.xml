@@ -22,6 +22,7 @@
     <string name="hiking_gear_checklist">Hiking Gear Checklist</string>
     <string name="filter_by">Filter by</string>
     <string name="view_all">View All</string>
+    <string name="sort_hikes_by">Sort Hikes By:</string>
 
     <!-- underscores used to find the hike in Milestones-->
     <string-array name="hike_names">
