@@ -41,7 +41,7 @@
                 android:layout_weight="1"
                 android:contentDescription="@string/visitor"
 
-                android:drawableBottom="@mipmap/visiting_foreground"
+                android:drawableBottom="@mipmap/filter_foreground"
                 android:onClick="callFilter"
                 android:text="@string/filter_by"
                 android:textSize="20sp" />
