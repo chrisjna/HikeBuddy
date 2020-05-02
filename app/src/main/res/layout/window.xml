@@ -38,15 +38,6 @@
                 android:layout_gravity="center"/>
 
             <Button
-                android:id="@+id/buttonThree"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="callDifficulty"
-                android:text="@string/difficulty"
-                android:textSize="22sp"
-                android:layout_gravity="center"/>
-
-            <Button
                 android:id="@+id/buttonTwo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -61,6 +52,15 @@
                 android:layout_height="wrap_content"
                 android:onClick="callDistance"
                 android:text="@string/distance"
+                android:textSize="22sp"
+                android:layout_gravity="center"/>
+
+            <Button
+                android:id="@+id/buttonThree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="callDifficulty"
+                android:text="@string/difficulty"
                 android:textSize="22sp"
                 android:layout_gravity="center"/>
         </LinearLayout>
