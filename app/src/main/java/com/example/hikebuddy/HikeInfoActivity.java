@@ -18,6 +18,8 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.widget.LinearLayout;
 
+import org.w3c.dom.Text;
+
 public class HikeInfoActivity extends AppCompatActivity {
 
     private Context mContext;
@@ -39,12 +41,18 @@ public class HikeInfoActivity extends AppCompatActivity {
         ImageView hikeImage = findViewById(R.id.hikeimages);
         TextView hikeInfo = findViewById(R.id.hikeinfo);
         RatingBar hikeDiff = findViewById(R.id.difficulty);
+        TextView hikeDist = findViewById(R.id.distance);
+        TextView hikeElev = findViewById(R.id.elevation);
+        TextView hikeTerr = findViewById(R.id.terrain);
 
         // Set the text and image from the Intent extra.
         hikeTitle.setText(getIntent().getStringExtra("title"));
         hikeImage.setImageResource(getIntent().getIntExtra("image_resource",0));
         hikeInfo.setText(getIntent().getStringExtra("info"));
         hikeDiff.setRating(getIntent().getIntExtra("diff", 0));
+        hikeDist.setText(getIntent().getStringExtra("dist"));
+        hikeElev.setText(getIntent().getStringExtra("elev"));
+        hikeTerr.setText(getIntent().getStringExtra("terr"));
 
         //To make the checkboxes I take a string and use Regex to split up the string into an array
         //Only works with ONE word items, ex "boots", NOT "hiking boots"

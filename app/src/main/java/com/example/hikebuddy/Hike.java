@@ -12,23 +12,32 @@ class Hike {
     private int diff;
     private String gear;
     private boolean favStatus;
+    private String distance;
+    private String elevation;
+    private String terrain;
 
 
-    public Hike(String title, String info, int imageResource, int diff, String gear, boolean favStatus) {
+    public Hike(String title, String info, int imageResource, int diff, String gear, String distance, String elevation, String terrain, boolean favStatus) {
         this.title = title;
         this.info = info;
         this.imageResource = imageResource;
         this.diff = diff;
         this.gear = gear;
         this.favStatus = favStatus;
+        this.distance = distance;
+        this.elevation = elevation;
+        this.terrain = terrain;
     }
 
-    public Hike(String title, String info, int imageResource, int diff, String gear) {
+    public Hike(String title, String info, int imageResource, int diff, String gear, String distance, String elevation, String terrain) {
         this.title = title;
         this.info = info;
         this.imageResource = imageResource;
         this.diff = diff;
         this.gear = gear;
+        this.distance = distance;
+        this.elevation = elevation;
+        this.terrain = terrain;
     }
 
     /**
@@ -66,4 +75,10 @@ class Hike {
     public void setFavStatus(boolean favStatus) {
         this.favStatus = favStatus;
     }
+
+    public String getDistance(){return distance;}
+
+    public String getElevation(){return elevation;}
+
+    public String getTerrain(){return terrain;}
 }

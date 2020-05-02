@@ -59,7 +59,7 @@
         <item>Hike Difficulty: Medium
 
                 \n\n\tThe Lanikai Pillboxes, or Kaiwa Ridge Trail is a short but steep uphill hike that leads you to an old military pillbox.
-                \n\t\tThe trail is 1.8 miles and can be quite rocky at points, there are no guardrails so it can be difficult for children.
+                \n\t\tThe trail is 1.4 miles and can be quite rocky at points, there are no guardrails so it can be difficult for children.
                 \n\t\tThe top of the ridge provides a great viewpoint, letting you see many island attractions including, Kaneohe Bay, Chinaman\'s Hat, Waimanalo Bay, and the Makapu\'u Lighthouse.
                 \n\t\tThe hike can be quite popular so be prepared to meet other people on the trail.
         </item>
@@ -107,6 +107,33 @@
         <item>Hiking-Boots Jacket Camera Headlamp</item>
     </string-array>
 
+    <string-array name="hike_distance">
+        <item>1.4 miles</item>
+        <item>1.5 miles</item>
+        <item>2 miles</item>
+        <item>1.5 mile</item>
+        <item>3.2 miles</item>
+        <item>4.5 miles</item>
+    </string-array>
+
+    <string-array name="hike_elevation">
+        <item>990 ft</item>
+        <item>600 ft</item>
+        <item>300 ft</item>
+        <item>650 ft</item>
+        <item>430 ft</item>
+        <item>2480 ft</item>
+    </string-array>
+
+    <string-array name="hike_terrain">
+        <item>Stairs</item>
+        <item>Dirt Trail, Muddy</item>
+        <item>Paved Path</item>
+        <item>Dirt Trail</item>
+        <item>Dirt Trail, Muddy</item>
+        <item>Dirt Trail, Stairs</item>
+    </string-array>
+
     <!-- DATABASE FOR VISITOR HIKES-->
     <string-array name="vis_hike_names">
         <item>Lanikai Pillboxes</item>
@@ -118,7 +145,7 @@
         <item>Hike Difficulty: Medium
 
                 \n\n\tThe Lanikai Pillboxes, or Kaiwa Ridge Trail is a short but steep uphill hike that leads you to an old military pillbox.
-                \n\t\tThe trail is 1.8 miles and can be quite rocky at points, there are no guardrails so it can be difficult for children.
+                \n\t\tThe trail is 1.4 miles and can be quite rocky at points, there are no guardrails so it can be difficult for children.
                 \n\t\tThe top of the ridge provides a great viewpoint, letting you see many island attractions including, Kaneohe Bay, Chinaman\'s Hat, Waimanalo Bay, and the Makapu\'u Lighthouse.
                 \n\t\tThe hike can be quite popular so be prepared to meet other people on the trail.
         </item>
@@ -155,6 +182,24 @@
         <item>Hiking-Boots Sunscreen </item>
         <item>Hiking-Boots Water-Bottles Bug-Repellent</item>
         <item>Hiking-Boots Jacket  Headlamp</item>
+    </string-array>
+
+    <string-array name="vis_distance">
+        <item>1.5 miles</item>
+        <item>3.2 miles</item>
+        <item>4.5 miles</item>
+    </string-array>
+
+    <string-array name="vis_elevation">
+        <item>650 ft</item>
+        <item>430 ft</item>
+        <item>2480 ft</item>
+    </string-array>
+
+    <string-array name="vis_terrain">
+        <item>Dirt Trail</item>
+        <item>Dirt Trail, Muddy</item>
+        <item>Dirt Trail, Stairs</item>
     </string-array>
 
     <!-- DATABASE FOR RESIDENT HIKES -->
@@ -206,6 +251,24 @@
         <item>Sunscreen Hat Water-Bottles</item>
     </string-array>
 
+    <string-array name="res_distance">
+        <item>1.4 miles</item>
+        <item>1.5 miles</item>
+        <item>2 miles</item>
+    </string-array>
+
+    <string-array name="res_elevation">
+        <item>990 ft</item>
+        <item>600 ft</item>
+        <item>300 ft</item>
+    </string-array>
+
+    <string-array name="res_terrain">
+        <item>Stairs</item>
+        <item>Dirt Trail, Muddy</item>
+        <item>Paved Path</item>
+    </string-array>
+
     <!-- DATABASE FOR DIFFICULTY HIKES-->
     <string-array name="diff_hike_names">
         <item>Makapuu Lighthouse</item>
@@ -227,7 +290,7 @@
         <item>Hike Difficulty: Medium
 
                 \n\n\tThe Lanikai Pillboxes, or Kaiwa Ridge Trail is a short but steep uphill hike that leads you to an old military pillbox.
-                \n\t\tThe trail is 1.8 miles and can be quite rocky at points, there are no guardrails so it can be difficult for children.
+                \n\t\tThe trail is 1.4 miles and can be quite rocky at points, there are no guardrails so it can be difficult for children.
                 \n\t\tThe top of the ridge provides a great viewpoint, letting you see many island attractions including, Kaneohe Bay, Chinaman\'s Hat, Waimanalo Bay, and the Makapu\'u Lighthouse.
                 \n\t\tThe hike can be quite popular so be prepared to meet other people on the trail.
         </item>
@@ -289,6 +352,34 @@
         <item>Sunscreen Hiking-Boots Hat Water-Bottles</item>
     </string-array>
 
+    <string-array name="diff_distance">
+        <item>2 miles</item>
+        <item>1.5 miles</item>
+        <item>3.2 miles</item>
+        <item>1.5 miles</item>
+        <item>4.5 miles</item>
+        <item>1.4 miles</item>
+    </string-array>
+
+    <string-array name="diff_elevation">
+        <item>300 ft</item>
+        <item>650 ft</item>
+        <item>430 ft</item>
+        <item>600 ft</item>
+        <item>2480 ft</item>
+        <item>990 ft</item>
+    </string-array>
+
+    <string-array name="diff_terrain">
+        <item>Paved Path</item>
+        <item>Dirt Trail</item>
+        <item>Dirt Trail, Muddy</item>
+        <item>Dirt Trail, Muddy</item>
+        <item>Dirt Trail, Stairs</item>
+        <item>Stairs</item>
+
+    </string-array>
+
     <!-- DATABASE FOR DISTANCE HIKES-->
     <string-array name="dis_hike_names">
         <item>Koko Head</item>
@@ -317,7 +408,7 @@
         <item>Hike Difficulty: Medium
 
                 \n\n\tThe Lanikai Pillboxes, or Kaiwa Ridge Trail is a short but steep uphill hike that leads you to an old military pillbox.
-                \n\t\tThe trail is 1.8 miles and can be quite rocky at points, there are no guardrails so it can be difficult for children.
+                \n\t\tThe trail is 1.4 miles and can be quite rocky at points, there are no guardrails so it can be difficult for children.
                 \n\t\tThe top of the ridge provides a great viewpoint, letting you see many island attractions including, Kaneohe Bay, Chinaman\'s Hat, Waimanalo Bay, and the Makapu\'u Lighthouse.
                 \n\t\tThe hike can be quite popular so be prepared to meet other people on the trail.
         </item>
@@ -372,6 +463,33 @@
         <item>Sunscreen Hat Water-Bottles</item>
         <item>Hiking-Boots Water-Bottles Bug-Repellent</item>
         <item>Hiking-Boots Jacket Camera Headlamp</item>
+    </string-array>
+
+    <string-array name="dis_distance">
+        <item>1.4 miles</item>
+        <item>1.5 miles</item>
+        <item>1.5 miles</item>
+        <item>2 miles</item>
+        <item>3.2 miles</item>
+        <item>4.5 miles</item>
+    </string-array>
+
+    <string-array name="dis_elevation">
+        <item>990 ft</item>
+        <item>600 ft</item>
+        <item>650 ft</item>
+        <item>300 ft</item>
+        <item>430 ft</item>
+        <item>2480 ft</item>
+    </string-array>
+
+    <string-array name="dis_terrain">
+        <item>Stairs</item>
+        <item>Dirt Trail, Muddy</item>
+        <item>Dirt Trail</item>
+        <item>Paved Path</item>
+        <item>Dirt Trail, Muddy</item>
+        <item>Dirt Trail, Stairs</item>
     </string-array>
 
 </resources>

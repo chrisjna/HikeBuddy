@@ -259,6 +259,9 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder> {
         private ImageView mHikeImage;
         private RatingBar mHikeDiff;
         private Button mFav;
+        private TextView mHikeElev;
+        private TextView mHikeDist;
+        private TextView mHikeTerrain;
 
         /**
          * Constructor for the ViewHolder, used in onCreateViewHolder().
@@ -274,6 +277,10 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder> {
             mHikeImage = itemView.findViewById(R.id.hikeimages);
             mHikeDiff = itemView.findViewById(R.id.difficulty);
             mFav = itemView.findViewById(R.id.favorite);
+            mHikeElev = itemView.findViewById(R.id.elevation);
+            mHikeDist = itemView.findViewById(R.id.distance);
+            mHikeTerrain = itemView.findViewById(R.id.terrain);
+
 
             // Set the OnClickListener to the entire view.
             itemView.setOnClickListener(this);
@@ -294,6 +301,9 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder> {
             detailIntent.putExtra("info", currentHike.getInfo());
             detailIntent.putExtra("diff", currentHike.getDiff());
             detailIntent.putExtra("gear", currentHike.getGear());
+            detailIntent.putExtra("dist", currentHike.getDistance());
+            detailIntent.putExtra("elev", currentHike.getElevation());
+            detailIntent.putExtra("terr", currentHike.getTerrain());
             mContext.startActivity(detailIntent);
         }
     }

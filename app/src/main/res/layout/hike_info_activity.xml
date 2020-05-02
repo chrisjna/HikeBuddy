@@ -79,11 +79,96 @@
             app:fontFamily="casual" />
 
 
+        <TableLayout
+            android:id="@+id/hikeTable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/hikeinfo"
+            android:layout_centerInParent="false"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="false"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#AAED6F">
+
+            <TableRow android:gravity="center">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_column="0"
+                    android:layout_margin="1dp"
+                    android:gravity="center"
+                    android:text="Distance    "
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/distance"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_column="1"
+                    android:layout_margin="1dp"
+                    android:gravity="center"
+                    android:text=""
+                    android:textSize="15dp" />
+            </TableRow>
+
+            <TableRow android:gravity="center">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_column="0"
+                    android:layout_margin="1dp"
+                    android:gravity="center"
+                    android:text="Elevation    "
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/elevation"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_column="1"
+                    android:layout_margin="1dp"
+                    android:gravity="center"
+                    android:text=""
+                    android:textSize="15dp" />
+
+            </TableRow>
+
+            <TableRow android:gravity="center">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_column="0"
+                    android:layout_margin="1dp"
+                    android:gravity="center"
+                    android:text="Terrain    "
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/terrain"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_column="1"
+                    android:layout_margin="1dp"
+                    android:gravity="center"
+                    android:text=""
+                    android:textSize="15dp" />
+
+            </TableRow>
+        </TableLayout>
+
         <TextView
             android:id="@+id/hikegear"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/hikeinfo"
+            android:layout_below="@id/hikeTable"
             android:gravity="center"
             android:text="@string/hiking_gear_checklist"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"

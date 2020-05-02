@@ -134,6 +134,9 @@ public class MainActivity extends AppCompatActivity {
                 .obtainTypedArray(R.array.hike_images);
         int[] HikeDifficulty = getResources().getIntArray(R.array.difficulty);
         String[] HikeGear = getResources().getStringArray(R.array.hike_gear);
+        String[] HikeDist = getResources().getStringArray(R.array.hike_distance);
+        String[] HikeElev = getResources().getStringArray(R.array.hike_elevation);
+        String[] HikeTerr= getResources().getStringArray(R.array.hike_terrain);
 
         // Clear the existing data (to avoid duplication).
         HikeData.clear();
@@ -142,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
         // information about each Hike
         for (int i = 0; i < HikeList.length; i++) {
             HikeData.add(new Hike(HikeList[i], HikeInfo[i],
-                    HikeImageResources.getResourceId(i, 0), HikeDifficulty[i], HikeGear[i], false));
+                    HikeImageResources.getResourceId(i, 0), HikeDifficulty[i], HikeGear[i], HikeDist[i], HikeElev[i], HikeTerr[i], false));
         }
 
         //Get favorite hikes list
