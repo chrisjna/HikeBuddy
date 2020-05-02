@@ -183,14 +183,12 @@ public class HomePage extends AppCompatActivity {
             Intent detailIntent = new Intent(mContext, Favorites.class);
             mContext.startActivity(detailIntent);
             searchView.clearFocus();
-            popupWindow.dismiss();
         }
 
         public void callInformation(View view) {
             Intent detailIntent = new Intent(mContext, InformationActivity.class);
             mContext.startActivity(detailIntent);
             searchView.clearFocus();
-            popupWindow.dismiss();
         }
 
         final SearchView.OnQueryTextListener queryTextListener = new SearchView.OnQueryTextListener() {

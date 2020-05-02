@@ -145,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
         // information about each Hike
         for (int i = 0; i < HikeList.length; i++) {
             HikeData.add(new Hike(HikeList[i], HikeInfo[i],
-                    HikeImageResources.getResourceId(i, 0), HikeDifficulty[i], HikeGear[i], HikeDist[i], HikeElev[i], HikeTerr[i], false));
+                    HikeImageResources.getResourceId(i, 0), HikeDifficulty[i], HikeGear[i], HikeDist[i], HikeElev[i], HikeTerr[i]));
         }
 
         //Get favorite hikes list
