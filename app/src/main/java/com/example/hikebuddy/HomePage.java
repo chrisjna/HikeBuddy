@@ -148,7 +148,6 @@ public class HomePage extends AppCompatActivity {
             Intent detailIntent = new Intent(mContext, MainActivity.class);
             mContext.startActivity(detailIntent);
             searchView.clearFocus();
-            popupWindow.dismiss();
         }
 
         public void callVisitors(View view) {
