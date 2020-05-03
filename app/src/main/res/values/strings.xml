@@ -23,6 +23,7 @@
     <string name="filter_by">Filter by</string>
     <string name="view_all">View All</string>
     <string name="sort_hikes_by">Sort Hikes By:</string>
+    <string name="swipe_to_view">Swipe to View</string>
 
     <!-- underscores used to find the hike in Milestones-->
     <string-array name="hike_names">

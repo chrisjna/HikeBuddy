@@ -36,33 +36,32 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textSize="20sp"
                 app:fontFamily="sans-serif-medium" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="5"
+                android:maxHeight="20dip"
+                android:minHeight="20dip" />
+
+            <TextView
+                android:id="@+id/textViewNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/test"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/swipe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/swipe_to_view"
+                android:textSize="15sp" />
         </LinearLayout>
     </ScrollView>
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/textViewNumber"
-        android:max="5"
-        android:maxHeight="20dip"
-        android:minHeight="20dip" />
-
-    <TextView
-        android:id="@+id/textViewNumber"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/swipe"
-        android:gravity="center"
-        android:text="@string/test"
-        android:textSize="15dp"/>
-    <TextView
-        android:id="@+id/swipe"
-        android:layout_alignParentBottom="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Swipe to View"
-        android:textSize="15dp"/>
 </RelativeLayout>
