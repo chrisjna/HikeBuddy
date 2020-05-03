@@ -3,19 +3,25 @@
 <resources>
     <string name="title_activity_information">About</string>
     <string name="large_text">
-        <h2>Tutorial</h2>
+        <b><big>Tutorial</big></b>
         \n In progress
-        \n\n<h2>FAQ</h2>
-        \n <strong>What do the hiker shaped symbols mean?</strong>
-        \n The hiker images located on the bottom left are indicators of the difficulty of the hike. 1 means the hike is
-        easily accessible for most conditions, 2 stars means that some experience and physical conditioning is required
-        Three stars indicate a trail that requires good physical condition as well as proper gear. Difficulty
-        is based off of how well maintained the trails are, the natural terrain and the length of the route.
-        \n\n <strong>What is the heart shaped symbol?</strong>
+
+        \n\n<b><big>FAQ</big></b>
+
+        \n<b>What do the hiker shaped symbols mean?</b>
+        \nThe hiker images located on the bottom left are indicators of the difficulty of the hike.
+        \n<b>•</b> 1 icon means the hike is easily accessible for most conditions
+        \n<b>•</b> 2 icons means that some experience and physical conditioning is required
+        \n<b>•</b> 3 icons indicate a trail that requires good physical condition as well as proper gear.
+        \nDifficulty is based off of how well maintained the trails are, the natural terrain and the length of the route.
+
+        \n\n<b>What is the heart shaped symbol?</b>
         \n These symbols mark which hike you have favorited. To access them, visit your Favorites list from the homepage?
-        \n\n<strong>How do I see all the hikes available?</strong>
-        \n On the Home screen, click on "View All"
-        \n\n<h2>Useful Resources</h2>
+
+        \n\n<b>How do I see all the hikes available?</b>
+        \nOn the Home screen, click on "View All"
+
+        \n\n<b>Useful Resources</b>
         \n <a href="http://www.google.com">http://www.google.com</a>
         \n <a href="https://hawaiitrails.hawaii.gov/trails/#/">https://hawaiitrails.hawaii.gov/trails/#/</a>
         \n <a href="https://dlnr.hawaii.gov/dsp/hiking/oahu/">https://dlnr.hawaii.gov/dsp/hiking/oahu/</a>
