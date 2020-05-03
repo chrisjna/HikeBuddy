@@ -5,7 +5,7 @@
     <string name="title_activity_home_page">Home</string>
     <string name="main_screen_image">main screen image</string>
     <string name="visitor">Visiting</string>
-    <string name="resident">Resident</string>
+    <string name="resident">Popularity</string>
     <string name="favorites">Favorites</string>
     <string name="distance">Distance</string>
     <string name="difficulty">Difficulty</string>
