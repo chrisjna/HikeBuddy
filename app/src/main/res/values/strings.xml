@@ -38,37 +38,26 @@
     <string-array name="hike_info">
         <item>Hike Difficulty: Hard
 
-            \n\n\tThe Koko Head Stairs, or Koko Crater Trail, is a long uphill hike that takes you to the top of the Koko Crater, a 1208ft high volcanic tuff cone.
-            \n\t\tThe stairs are actually old railroad tracks that go up the Crater.
-            \n\t\tThere are a total of 1050 of these tracks!
-            \n\t\tWatch out for the bridge section of the hike, where the tracks act as a bridge over a 40ft drop.
-            \n\t\tThe hike is short, ranging from 30min to 1hour but can be quite tiresome, be sure you stretch your knees!</item>
+            \n\n\tThe Koko Head Stairs is a series of 1048 railroad tracks that go up the side of Koko Head Crater.
+            \n\t\tThe hike is out in the open with no cover and is a tough uphill climb, watch out for the bridge section and stretch your knees!</item>
         <item>Hike Difficulty: Medium
 
-                \n\n\tManoa Falls trail is a short 1.7 mile hike through Manoa valley that leads to a large 150ft waterfall.
-                \n\t\tA popular tourist hike, Manoa Falls has been featured in many movies and TV shows including, Jurassic Park, Hunger Games, and Lost.
-                \n\t\tAfter periods of rain the hike can be extremely muddy and slippery so pay attention to weather forecasts.
-                \n\t\tDo not attempt to hike around and climb to the top of the waterfall as it can be very dangerous.
+                \n\n\tManoa Falls is a short hike that takes you through Manoa Valley to a 150ft waterfall.
+                \n\t\tIt is a popular tourist hike and has been featured in the movies Jurassic Park, Hunger Games, and Lost!
         </item>
         <item>Hike Difficulty: Easy
 
-                \n\n\tThe Makapu\'u Lightshouse trail is an easy cement paved trail that traces along Oahu\'s southeastern coastline.
-                \n\t\tThe trail is out in the open with no cover and can be quite sunny, but has an amazing view of the ocean.
-                \n\t\tA great hike for kids or families, you can even push a stroller up the trail. Leashed pets are allowed.
-                \n\t\tIt is a short 2 miles round trip trail that takes you to a lighthouse built in 1909, it has the largest light of any lighthouse in the entire USA.
+                \n\n\tThe Makapu\'u Lighthouse trail is an easy cement paved hike that takes you along the coastline to a lighthouse built in 1909.
+                            \n\t\tIt is a great hike for families, children, and pets, you can even push a baby stroller along the path!
         </item>
         <item>Hike Difficulty: Medium
 
-                \n\n\tThe Lanikai Pillboxes, or Kaiwa Ridge Trail is a short but steep uphill hike that leads you to an old military pillbox.
-                \n\t\tThe trail is 1.4 miles and can be quite rocky at points, there are no guardrails so it can be difficult for children.
+                \n\n\tThe Lanikai Pillboxes, or Kaiwa Ridge Trail is a mountain ridge hike that leads you to four old military pillboxs.
                 \n\t\tThe top of the ridge provides a great viewpoint, letting you see many island attractions including, Kaneohe Bay, Chinaman\'s Hat, Waimanalo Bay, and the Makapu\'u Lighthouse.
-                \n\t\tThe hike can be quite popular so be prepared to meet other people on the trail.
         </item>
         <item>Hike Difficulty: Medium
 
                 \n\t\tThe Maunawili Falls is a valley hike, taking you through the forest and across streams to reach a small 20ft waterfall.
-                \n\t\tThe hike is 2.5 miles but has both uphill and downhill sections.
-                \n\t\tAfter periods of rain the hike can be extremely muddy and slippery so pay attention to weather forecasts.
                 \n\t\tYou can swim in the pool and even jump off the top of the waterfall, but be safe!
         </item>
         <item>Hike Difficulty: Hard
@@ -145,16 +134,12 @@
     <string-array name="vis_hike_info">
         <item>Hike Difficulty: Medium
 
-                \n\n\tThe Lanikai Pillboxes, or Kaiwa Ridge Trail is a short but steep uphill hike that leads you to an old military pillbox.
-                \n\t\tThe trail is 1.4 miles and can be quite rocky at points, there are no guardrails so it can be difficult for children.
+                \n\n\tThe Lanikai Pillboxes, or Kaiwa Ridge Trail is a mountain ridge hike that leads you to four old military pillboxs.
                 \n\t\tThe top of the ridge provides a great viewpoint, letting you see many island attractions including, Kaneohe Bay, Chinaman\'s Hat, Waimanalo Bay, and the Makapu\'u Lighthouse.
-                \n\t\tThe hike can be quite popular so be prepared to meet other people on the trail.
         </item>
         <item>Hike Difficulty: Medium
 
                 \n\t\tThe Maunawili Falls is a valley hike, taking you through the forest and across streams to reach a small 20ft waterfall.
-                \n\t\tThe hike is 2.5 miles but has both uphill and downhill sections.
-                \n\t\tAfter periods of rain the hike can be extremely muddy and slippery so pay attention to weather forecasts.
                 \n\t\tYou can swim in the pool and even jump off the top of the waterfall, but be safe!
         </item>
         <item>Hike Difficulty: Hard
@@ -213,24 +198,17 @@
     <string-array name="res_hike_info">
         <item>Hike Difficulty: Hard
 
-            \n\n\tThe Koko Head Stairs, or Koko Crater Trail, is a long uphill hike that takes you to the top of the Koko Crater, a 1208ft high volcanic tuff cone.
-            \n\t\tThe stairs are actually old railroad tracks that go up the Crater.
-            \n\t\tThere are a total of 1050 of these tracks!
-            \n\t\tWatch out for the bridge section of the hike, where the tracks act as a bridge over a 40ft drop.
-            \n\t\tThe hike is short, ranging from 30min to 1hour but can be quite tiresome, be sure you stretch your knees!</item>
+            \n\n\tThe Koko Head Stairs is a series of 1048 railroad tracks that go up the side of Koko Head Crater.
+            \n\t\tThe hike is out in the open with no cover and is a tough uphill climb, watch out for the bridge section and stretch your knees!</item>
         <item>Hike Difficulty: Medium
 
-                \n\n\tManoa Falls trail is a short 1.7 mile hike through Manoa valley that leads to a large 150ft waterfall.
-                \n\t\tA popular tourist hike, Manoa Falls has been featured in many movies and TV shows including, Jurassic Park, Hunger Games, and Lost.
-                \n\t\tAfter periods of rain the hike can be extremely muddy and slippery so pay attention to weather forecasts.
-                \n\t\tDo not attempt to hike around and climb to the top of the waterfall as it can be very dangerous.
+                \n\n\tManoa Falls is a short hike that takes you through Manoa Valley to a 150ft waterfall.
+                \n\t\tIt is a popular tourist hike and has been featured in the movies Jurassic Park, Hunger Games, and Lost!
         </item>
         <item>Hike Difficulty: Easy
 
-                \n\n\tThe Makapu\'u Lightshouse trail is an easy cement paved trail that traces along Oahu\'s southeastern coastline.
-                \n\t\tThe trail is out in the open with no cover and can be quite sunny, but has an amazing view of the ocean.
-                \n\t\tA great hike for kids or families, you can even push a stroller up the trail. Leashed pets are allowed.
-                \n\t\tIt is a short 2 miles round trip trail that takes you to a lighthouse built in 1909, it has the largest light of any lighthouse in the entire USA.
+                \n\n\tThe Makapu\'u Lighthouse trail is an easy cement paved hike that takes you along the coastline to a lighthouse built in 1909.
+                \n\t\tIt is a great hike for families, children, and pets, you can even push a baby stroller along the path!
         </item>
     </string-array>
 
@@ -283,31 +261,23 @@
     <string-array name="diff_hike_info">
         <item>Hike Difficulty: Easy
 
-                \n\n\tThe Makapu\'u Lightshouse trail is an easy cement paved trail that traces along Oahu\'s southeastern coastline.
-                \n\t\tThe trail is out in the open with no cover and can be quite sunny, but has an amazing view of the ocean.
-                \n\t\tA great hike for kids or families, you can even push a stroller up the trail. Leashed pets are allowed.
-                \n\t\tIt is a short 2 miles round trip trail that takes you to a lighthouse built in 1909, it has the largest light of any lighthouse in the entire USA.
+                \n\n\tThe Makapu\'u Lighthouse trail is an easy cement paved hike that takes you along the coastline to a lighthouse built in 1909.
+            \n\t\tIt is a great hike for families, children, and pets, you can even push a baby stroller along the path!
         </item>
         <item>Hike Difficulty: Medium
 
-                \n\n\tThe Lanikai Pillboxes, or Kaiwa Ridge Trail is a short but steep uphill hike that leads you to an old military pillbox.
-                \n\t\tThe trail is 1.4 miles and can be quite rocky at points, there are no guardrails so it can be difficult for children.
+                \n\n\tThe Lanikai Pillboxes, or Kaiwa Ridge Trail is a mountain ridge hike that leads you to four old military pillboxs.
                 \n\t\tThe top of the ridge provides a great viewpoint, letting you see many island attractions including, Kaneohe Bay, Chinaman\'s Hat, Waimanalo Bay, and the Makapu\'u Lighthouse.
-                \n\t\tThe hike can be quite popular so be prepared to meet other people on the trail.
         </item>
         <item>Hike Difficulty: Medium
 
                 \n\t\tThe Maunawili Falls is a valley hike, taking you through the forest and across streams to reach a small 20ft waterfall.
-                \n\t\tThe hike is 2.5 miles but has both uphill and downhill sections.
-                \n\t\tAfter periods of rain the hike can be extremely muddy and slippery so pay attention to weather forecasts.
                 \n\t\tYou can swim in the pool and even jump off the top of the waterfall, but be safe!
         </item>
         <item>Hike Difficulty: Medium
 
-                \n\n\tManoa Falls trail is a short 1.7 mile hike through Manoa valley that leads to a large 150ft waterfall.
-                \n\t\tA popular tourist hike, Manoa Falls has been featured in many movies and TV shows including, Jurassic Park, Hunger Games, and Lost.
-                \n\t\tAfter periods of rain the hike can be extremely muddy and slippery so pay attention to weather forecasts.
-                \n\t\tDo not attempt to hike around and climb to the top of the waterfall as it can be very dangerous.
+                \n\n\tManoa Falls is a short hike that takes you through Manoa Valley to a 150ft waterfall.
+                \n\t\tIt is a popular tourist hike and has been featured in the movies Jurassic Park, Hunger Games, and Lost!
         </item>
         <item>Hike Difficulty: Hard
 
@@ -319,11 +289,8 @@
         </item>
         <item>Hike Difficulty: Hard
 
-            \n\n\tThe Koko Head Stairs, or Koko Crater Trail, is a long uphill hike that takes you to the top of the Koko Crater, a 1208ft high volcanic tuff cone.
-            \n\t\tThe stairs are actually old railroad tracks that go up the Crater.
-            \n\t\tThere are a total of 1050 of these tracks!
-            \n\t\tWatch out for the bridge section of the hike, where the tracks act as a bridge over a 40ft drop.
-            \n\t\tThe hike is short, ranging from 30min to 1hour but can be quite tiresome, be sure you stretch your knees!</item>
+            \n\n\tThe Koko Head Stairs is a series of 1048 railroad tracks that go up the side of Koko Head Crater.
+            \n\t\tThe hike is out in the open with no cover and is a tough uphill climb, watch out for the bridge section and stretch your knees!</item>
     </string-array>
 
     <array name="diff_hike_images">
@@ -394,37 +361,26 @@
     <string-array name="dis_hike_info">
         <item>Hike Difficulty: Hard
 
-            \n\n\tThe Koko Head Stairs, or Koko Crater Trail, is a long uphill hike that takes you to the top of the Koko Crater, a 1208ft high volcanic tuff cone.
-            \n\t\tThe stairs are actually old railroad tracks that go up the Crater.
-            \n\t\tThere are a total of 1050 of these tracks!
-            \n\t\tWatch out for the bridge section of the hike, where the tracks act as a bridge over a 40ft drop.
-            \n\t\tThe hike is short, ranging from 30min to 1hour but can be quite tiresome, be sure you stretch your knees!</item>
+            \n\n\tThe Koko Head Stairs is a series of 1048 railroad tracks that go up the side of Koko Head Crater.
+            \n\t\tThe hike is out in the open with no cover and is a tough uphill climb, watch out for the bridge section and stretch your knees!</item>
         <item>Hike Difficulty: Medium
 
-                \n\n\tManoa Falls trail is a short 1.7 mile hike through Manoa valley that leads to a large 150ft waterfall.
-                \n\t\tA popular tourist hike, Manoa Falls has been featured in many movies and TV shows including, Jurassic Park, Hunger Games, and Lost.
-                \n\t\tAfter periods of rain the hike can be extremely muddy and slippery so pay attention to weather forecasts.
-                \n\t\tDo not attempt to hike around and climb to the top of the waterfall as it can be very dangerous.
+                \n\n\tManoa Falls is a short hike that takes you through Manoa Valley to a 150ft waterfall.
+                \n\t\tIt is a popular tourist hike and has been featured in the movies Jurassic Park, Hunger Games, and Lost!
         </item>
         <item>Hike Difficulty: Medium
 
-                \n\n\tThe Lanikai Pillboxes, or Kaiwa Ridge Trail is a short but steep uphill hike that leads you to an old military pillbox.
-                \n\t\tThe trail is 1.4 miles and can be quite rocky at points, there are no guardrails so it can be difficult for children.
+                \n\n\tThe Lanikai Pillboxes, or Kaiwa Ridge Trail is a mountain ridge hike that leads you to four old military pillboxs.
                 \n\t\tThe top of the ridge provides a great viewpoint, letting you see many island attractions including, Kaneohe Bay, Chinaman\'s Hat, Waimanalo Bay, and the Makapu\'u Lighthouse.
-                \n\t\tThe hike can be quite popular so be prepared to meet other people on the trail.
         </item>
         <item>Hike Difficulty: Easy
 
-                \n\n\tThe Makapu\'u Lightshouse trail is an easy cement paved trail that traces along Oahu\'s southeastern coastline.
-                \n\t\tThe trail is out in the open with no cover and can be quite sunny, but has an amazing view of the ocean.
-                \n\t\tA great hike for kids or families, you can even push a stroller up the trail. Leashed pets are allowed.
-                \n\t\tIt is a short 2 miles round trip trail that takes you to a lighthouse built in 1909, it has the largest light of any lighthouse in the entire USA.
+                \n\n\tThe Makapu\'u Lighthouse trail is an easy cement paved hike that takes you along the coastline to a lighthouse built in 1909.
+                \n\t\tIt is a great hike for families, children, and pets, you can even push a baby stroller along the path!
         </item>
         <item>Hike Difficulty: Medium
 
                 \n\t\tThe Maunawili Falls is a valley hike, taking you through the forest and across streams to reach a small 20ft waterfall.
-                \n\t\tThe hike is 2.5 miles but has both uphill and downhill sections.
-                \n\t\tAfter periods of rain the hike can be extremely muddy and slippery so pay attention to weather forecasts.
                 \n\t\tYou can swim in the pool and even jump off the top of the waterfall, but be safe!
         </item>
         <item>Hike Difficulty: Hard
