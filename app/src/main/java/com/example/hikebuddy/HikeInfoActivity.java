@@ -89,11 +89,9 @@ public class HikeInfoActivity extends AppCompatActivity {
         btnMile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Intent intent = new Intent(HikeInfoActivity.this, Milestone.class);
                 intent.putExtra("hikeTitleInfoActivity",hikeTitleIntent);
                 startActivity(intent);
-
             }
         });
     }

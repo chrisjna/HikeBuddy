@@ -56,22 +56,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".HikeInfoActivity" />
-        <activity android:name=".HikeAdapter" />
-        <activity android:name=".Hike" />
-        <activity
-            android:name=".Visitors"
-            android:launchMode="singleTask" />
-        <activity
-            android:name=".Residents"
-            android:launchMode="singleTask" />
         <activity
             android:name=".Favorites"
-            android:launchMode="singleTask" />
-        <activity
-            android:name=".Difficulty"
-            android:launchMode="singleTask" />
-        <activity
-            android:name=".Distance"
             android:launchMode="singleTask" />
     </application>
 

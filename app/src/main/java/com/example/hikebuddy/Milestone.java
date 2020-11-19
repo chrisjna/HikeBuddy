@@ -9,8 +9,8 @@ import android.os.Bundle;
 
 public class Milestone extends AppCompatActivity {
 
-    ViewPager viewPager;
-    String hikeTitleMilestone;
+    private ViewPager viewPager;
+    private String hikeTitleMilestone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

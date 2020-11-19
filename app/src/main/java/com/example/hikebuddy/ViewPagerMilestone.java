@@ -19,7 +19,7 @@ import java.lang.reflect.Modifier;
 
 public class ViewPagerMilestone extends PagerAdapter {
 
-    private Context context;
+    private final Context context;
     private String [] texts;
     private TypedArray images;
 

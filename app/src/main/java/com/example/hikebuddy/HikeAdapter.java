@@ -3,8 +3,6 @@ package com.example.hikebuddy;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,19 +10,12 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.Toast;
-
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Array;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
 
 /***
  * The adapter class for the RecyclerView, contains the Hike data.
@@ -33,14 +24,9 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder> {
 
     private ArrayList<Hike> mHikeData;
     private Context mContext;
-    private int index;
     private ArrayList<Hike> FavHikes = new ArrayList<Hike>();
-    private Residents residents = new Residents();
-    private Visitors visitors = new Visitors();
     private Favorites favorites = new Favorites();
     private MainActivity mainactivity = new MainActivity();
-    private Difficulty difficultyObj = new Difficulty();
-    private Distance distanceObj = new Distance();
 
     /**
      * Constructor that passes in the Hike data and the context.
@@ -51,7 +37,6 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder> {
     HikeAdapter(Context context, ArrayList<Hike> HikeData) {
         this.mHikeData = HikeData;
         this.mContext = context;
-        index = 0;
     }
 
     public void filterList(ArrayList<Hike> filteredList) {
@@ -70,7 +55,6 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder> {
     public HikeAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new ViewHolder(LayoutInflater.from(mContext).
                 inflate(R.layout.hike_item, parent, false));
-
     }
 
     /**
@@ -110,141 +94,49 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder> {
                 //getAdapterPosition gets the current clicked on hike
                 Hike currentHike = mHikeData.get(viewHolder.getAdapterPosition());
                 Gson gson = new Gson();
-                String json = new String();
+                String json;
 
-                if (currentHike.getFavStatus() == false) {
+                if (!currentHike.getFavStatus()) {
                     currentHike.setFavStatus(true);
                     viewHolder.mFav.setPressed(true);
                     editor.putBoolean("favbutton", true);
                     editor.apply();
 
-                    if(residents.isRunning()) {
-                        json = pref.getString("favs", null);
-                        Type type = new TypeToken<ArrayList<Hike>>() {}.getType();
-                        if(gson.fromJson(json, type) == null) {
-                            Hike addedHike = mHikeData.get(viewHolder.getAdapterPosition());
-                            FavHikes.add(addedHike);
-                            json = gson.toJson(FavHikes);
-                            editor.putString("favs", json);
-                            editor.apply();
-                        }
-                        else{
-                            FavHikes = gson.fromJson(json, type);
-                            Hike addedHike = mHikeData.get(viewHolder.getAdapterPosition());
-                            FavHikes.add(addedHike);
-                            json = gson.toJson(FavHikes);
-                            editor.putString("favs", json);
-                            editor.apply();
-                        }
-                    }
-
-                    if(visitors.isRunning()) {
-                        json = pref.getString("favs", null);
-                        Type type = new TypeToken<ArrayList<Hike>>() {}.getType();
-                        if(gson.fromJson(json, type) == null) {
-                            Hike addedHike = mHikeData.get(viewHolder.getAdapterPosition());
-                            FavHikes.add(addedHike);
-                            json = gson.toJson(FavHikes);
-                            editor.putString("favs", json);
-                            editor.apply();
-                        }
-                        else{
-                            FavHikes = gson.fromJson(json, type);
-                            Hike addedHike = mHikeData.get(viewHolder.getAdapterPosition());
-                            FavHikes.add(addedHike);
-                            json = gson.toJson(FavHikes);
-                            editor.putString("favs", json);
-                            editor.apply();
-                        }
-                }
                     if(mainactivity.isRunning()) {
                         json = pref.getString("favs", null);
-                        Type type = new TypeToken<ArrayList<Hike>>() {
-                        }.getType();
-                        if (gson.fromJson(json, type) == null) {
-                            Hike addedHike = mHikeData.get(viewHolder.getAdapterPosition());
-                            FavHikes.add(addedHike);
-                            json = gson.toJson(FavHikes);
-                            editor.putString("favs", json);
-                            editor.apply();
-                        } else {
-                            FavHikes = gson.fromJson(json, type);
-                            Hike addedHike = mHikeData.get(viewHolder.getAdapterPosition());
-                            FavHikes.add(addedHike);
-                            json = gson.toJson(FavHikes);
-                            editor.putString("favs", json);
-                            editor.apply();
-                        }
-                    }
-                    if(difficultyObj.isRunning()) {
-                        json = pref.getString("favs", null);
                         Type type = new TypeToken<ArrayList<Hike>>() {}.getType();
+                        Hike checkHike = mHikeData.get(viewHolder.getAdapterPosition());
                         if(gson.fromJson(json, type) == null) {
                             Hike addedHike = mHikeData.get(viewHolder.getAdapterPosition());
                             FavHikes.add(addedHike);
                             json = gson.toJson(FavHikes);
                             editor.putString("favs", json);
                             editor.apply();
+                            Toast.makeText(mContext, "Hike Favorited", Toast.LENGTH_SHORT).show();
+                            viewHolder.mFav.setBackgroundResource(R.drawable.ic_favorite_red_24dp);
+                            notifyDataSetChanged();
                         }
-                        else{
+                        else if (gson.fromJson(json, type) != null && json.contains(checkHike.getTitle()) ) {
+                            Toast.makeText(mContext, "Hike Already Added", Toast.LENGTH_SHORT).show();
+                        }
+                        else {
                             FavHikes = gson.fromJson(json, type);
                             Hike addedHike = mHikeData.get(viewHolder.getAdapterPosition());
                             FavHikes.add(addedHike);
                             json = gson.toJson(FavHikes);
                             editor.putString("favs", json);
                             editor.apply();
+                            Toast.makeText(mContext, "Hike Favorited", Toast.LENGTH_SHORT).show();
+                            viewHolder.mFav.setBackgroundResource(R.drawable.ic_favorite_red_24dp);
+                            notifyDataSetChanged();
+                            }
                         }
-                    }
-                    if(distanceObj.isRunning()) {
-                        json = pref.getString("favs", null);
-                        Type type = new TypeToken<ArrayList<Hike>>() {}.getType();
-                        if(gson.fromJson(json, type) == null) {
-                            Hike addedHike = mHikeData.get(viewHolder.getAdapterPosition());
-                            FavHikes.add(addedHike);
-                            json = gson.toJson(FavHikes);
-                            editor.putString("favs", json);
-                            editor.apply();
-                        }
-                        else{
-                            FavHikes = gson.fromJson(json, type);
-                            Hike addedHike = mHikeData.get(viewHolder.getAdapterPosition());
-                            FavHikes.add(addedHike);
-                            json = gson.toJson(FavHikes);
-                            editor.putString("favs", json);
-                            editor.apply();
-                        }
-                    }
-
-
-                    Toast.makeText(mContext, "Hike Favorited", Toast.LENGTH_SHORT).show();
-                    viewHolder.mFav.setBackgroundResource(R.drawable.ic_favorite_red_24dp);
-                    notifyDataSetChanged();
                 }
                 else{
                     currentHike.setFavStatus(false);
                     editor.putBoolean("favbutton", false);
                     editor.apply();
 
-                    if(residents.isRunning()) {
-                        json = pref.getString("favs", null);
-                        Type type = new TypeToken<ArrayList<Hike>>() {}.getType();
-                        FavHikes = gson.fromJson(json, type);
-                        Hike removedHike = mHikeData.get(viewHolder.getAdapterPosition());
-                        FavHikes.remove(removedHike);
-                        json = gson.toJson(FavHikes);
-                        editor.putString("favs", json);
-                        editor.apply();
-                    }
-                    if(visitors.isRunning()) {
-                        json = pref.getString("favs", null);
-                        Type type = new TypeToken<ArrayList<Hike>>() {}.getType();
-                        FavHikes = gson.fromJson(json, type);
-                        Hike removedHike = mHikeData.get(viewHolder.getAdapterPosition());
-                        FavHikes.remove(removedHike);
-                        json = gson.toJson(FavHikes);
-                        editor.putString("favs", json);
-                        editor.apply();
-                    }
                     if(favorites.isRunning()){
                         json = pref.getString("favs", null);
                         Type type = new TypeToken<ArrayList<Hike>>() {}.getType();
@@ -253,44 +145,13 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.ViewHolder> {
                         FavHikes.remove(removedHike);
                         json = gson.toJson(FavHikes);
                         editor.putString("favs", json);
-                        editor.apply();
+                        editor.commit();
+                        notifyDataSetChanged();
+                        viewHolder.mFav.setBackgroundResource(R.drawable.ic_favorite_shadow_24dp);
+                        Toast.makeText(mContext, "Hike Unfavorited", Toast.LENGTH_SHORT).show();
                     }
-                    if(mainactivity.isRunning()){
-                        json = pref.getString("favs", null);
-                        Type type = new TypeToken<ArrayList<Hike>>() {}.getType();
-                        FavHikes = gson.fromJson(json, type);
-                        Hike removedHike = FavHikes.get(viewHolder.getAdapterPosition());
-                        FavHikes.remove(removedHike);
-                        json = gson.toJson(FavHikes);
-                        editor.putString("favs", json);
-                        editor.apply();
-                    }
-                    if(difficultyObj.isRunning()) {
-                        json = pref.getString("favs", null);
-                        Type type = new TypeToken<ArrayList<Hike>>() {}.getType();
-                        FavHikes = gson.fromJson(json, type);
-                        Hike removedHike = mHikeData.get(viewHolder.getAdapterPosition());
-                        FavHikes.remove(removedHike);
-                        json = gson.toJson(FavHikes);
-                        editor.putString("favs", json);
-                        editor.apply();
-                    }
-                    if(distanceObj.isRunning()) {
-                        json = pref.getString("favs", null);
-                        Type type = new TypeToken<ArrayList<Hike>>() {}.getType();
-                        FavHikes = gson.fromJson(json, type);
-                        Hike removedHike = mHikeData.get(viewHolder.getAdapterPosition());
-                        FavHikes.remove(removedHike);
-                        json = gson.toJson(FavHikes);
-                        editor.putString("favs", json);
-                        editor.apply();
-                    }
-
-                    Toast.makeText(mContext, "Hike Unfavorited", Toast.LENGTH_SHORT).show();
-                    viewHolder.mFav.setBackgroundResource(R.drawable.ic_favorite_shadow_24dp);
-                    notifyDataSetChanged();
-
                 }
+
             }
 
         });

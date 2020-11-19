@@ -1,6 +1,7 @@
 package com.example.hikebuddy;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.LocationManager;
@@ -34,6 +35,7 @@ import org.json.JSONObject;
 
 import java.io.BufferedInputStream;
 import java.io.InputStream;
+import java.lang.ref.WeakReference;
 import java.math.RoundingMode;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -45,11 +47,6 @@ public class HomePage extends AppCompatActivity {
     private Context mContext;
     private SearchView searchView;
     private PopupWindow popupWindow;
-    int PERMISSION_ID = 44;
-
-    String API = "aa6de6253900fd1126c0882059f9e591";
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +72,7 @@ public class HomePage extends AppCompatActivity {
         if (id == R.id.weather) {
             if(checkPermissions()){
                 if(isLocationEnabled())
-                    new weatherTask().execute();
+                    new weatherTask(this).execute();
             } else{
                 requestPermissions();
             }
@@ -84,12 +81,17 @@ public class HomePage extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    class weatherTask extends AsyncTask<String, Void, String> {
+    private static class weatherTask extends AsyncTask<String, Void, String> {
+        private final WeakReference<HomePage> activityReference;
+
+        weatherTask(HomePage context) {
+            activityReference = new WeakReference<>(context);
+        }
 
         protected String doInBackground(String... args) {
             String result = "please change";
             try {
-                URL url= new URL("https://api.openweathermap.org/data/2.5/weather?q=honolulu,usa&appid=" + API);
+                URL url= new URL("https://api.openweathermap.org/data/2.5/weather?q=honolulu,usa&appid=" + "aa6de6253900fd1126c0882059f9e591");
                 HttpURLConnection con = (HttpURLConnection) url.openConnection();
                 InputStream response = new BufferedInputStream(con.getInputStream());
                 java.util.Scanner scanner = new java.util.Scanner(response,"UTF-8").useDelimiter("//A");
@@ -128,8 +130,11 @@ public class HomePage extends AppCompatActivity {
                 e.printStackTrace();
             }
             ALLweather = location + "\n" + "Temp: "  + temp + "\n" + "Humidity: " + humidity + "\n" + weatherDescription;
-            System.out.println(ALLweather);
-            Toast toast = Toast.makeText(mContext, ALLweather, Toast.LENGTH_LONG);
+
+            HomePage activity = activityReference.get();
+            if (activity == null || activity.isFinishing()) return;
+
+            Toast toast = Toast.makeText(activity, ALLweather, Toast.LENGTH_LONG);
             toast.setGravity(Gravity.TOP, 0, 250);
             ViewGroup group = (ViewGroup) toast.getView();
             TextView messageTextView = (TextView) group.getChildAt(0);
@@ -152,28 +157,28 @@ public class HomePage extends AppCompatActivity {
         }
 
         public void callVisitors(View view) {
-            Intent detailIntent = new Intent(mContext, Visitors.class);
+            Intent detailIntent = new Intent(mContext, MainActivity.class);
             mContext.startActivity(detailIntent);
             searchView.clearFocus();
             popupWindow.dismiss();
         }
 
         public void callResidents(View view) {
-            Intent detailIntent = new Intent(mContext, Residents.class);
+            Intent detailIntent = new Intent(mContext, MainActivity.class);
             mContext.startActivity(detailIntent);
             searchView.clearFocus();
             popupWindow.dismiss();
         }
 
         public void callDifficulty(View view) {
-            Intent detailIntent = new Intent(mContext, Difficulty.class);
+            Intent detailIntent = new Intent(mContext, MainActivity.class);
             mContext.startActivity(detailIntent);
             searchView.clearFocus();
             popupWindow.dismiss();
         }
 
         public void callDistance(View view) {
-            Intent detailIntent = new Intent(mContext, Distance.class);
+            Intent detailIntent = new Intent(mContext, MainActivity.class);
             mContext.startActivity(detailIntent);
             searchView.clearFocus();
             popupWindow.dismiss();
@@ -191,7 +196,7 @@ public class HomePage extends AppCompatActivity {
             searchView.clearFocus();
         }
 
-        final SearchView.OnQueryTextListener queryTextListener = new SearchView.OnQueryTextListener() {
+        protected SearchView.OnQueryTextListener queryTextListener = new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
@@ -236,14 +241,12 @@ public class HomePage extends AppCompatActivity {
         }
 
     private boolean checkPermissions() {
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
-                ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-            return true;
-        }
-        return false;
+        return ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
+                ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED;
     }
 
     private void requestPermissions() {
+        int PERMISSION_ID = 44;
         ActivityCompat.requestPermissions(
                 this,
                 new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION},

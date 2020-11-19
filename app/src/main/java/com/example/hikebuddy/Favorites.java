@@ -1,5 +1,6 @@
 package com.example.hikebuddy;
 
+import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
@@ -30,16 +31,18 @@ public class Favorites  extends AppCompatActivity {
     private SearchView searchView;
     private Toolbar toolbar;
     private TextView textview;
-    static boolean running = false;
+    private boolean refresh = false;
+    private static boolean running = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbarHome);
+        toolbar = findViewById(R.id.toolbarHome);
         setSupportActionBar(toolbar);
         HikeData = new ArrayList<>();
         mContext = this;
+
         initializeData();
 
         recyclerView = findViewById(R.id.rv_hike_list);
@@ -95,7 +98,7 @@ public class Favorites  extends AppCompatActivity {
         ArrayList<Hike> filteredList = new ArrayList<>();
 
         for (Hike item : HikeData) {
-            if (item.getTitle().toLowerCase().contains(text.toLowerCase())) {
+            if (item.getTitle().contains(text.toLowerCase())) {
                 recyclerView = findViewById(R.id.rv_hike_list);
                 textview = findViewById(R.id.textView);
                 recyclerView.setVisibility(View.VISIBLE);
@@ -133,7 +136,6 @@ public class Favorites  extends AppCompatActivity {
         String json = pref.getString("favs", null);
         Type type = new TypeToken<ArrayList<Hike>>() {}.getType();
         HikeData = gson.fromJson(json, type);
-
     }
 
     @Override
@@ -142,10 +144,23 @@ public class Favorites  extends AppCompatActivity {
         running = true;
     }
 
-    @Override
+     @Override
     public void onStop() {
         super.onStop();
         running = false;
+        refresh = true;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (refresh) {
+            finish();
+            overridePendingTransition(0, 0);
+            startActivity(getIntent());
+            overridePendingTransition(0, 0);
+            refresh = false;
+        }
     }
 
     public boolean isRunning(){

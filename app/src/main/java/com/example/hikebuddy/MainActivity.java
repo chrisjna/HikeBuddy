@@ -7,12 +7,10 @@ import android.content.SharedPreferences;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.SearchView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -29,16 +27,14 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Hike> HikeData;
     private HikeAdapter Adapter;
-    /**
-     *
-     */
     private ArrayList<Hike> favHikes;
     private Context mContext;
     private RecyclerView recyclerView;
     private TextView textview;
     private SearchView searchView;  //moved from OnCreateOptionsMenu to support onTextSubmit behavior
     private Toolbar toolbar;        //moved from OnCreateOptionsMenu to support onTextSubmit behavior
-    static boolean running = false;
+    private static boolean running = false;
+    private boolean refresh = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<Hike> filteredList = new ArrayList<>();
 
         for (Hike item : HikeData) {
-            if (item.getTitle().toLowerCase().contains(text.toLowerCase())) {
+            if (item.getTitle().contains(text.toLowerCase())) {
                 textview = findViewById(R.id.textView);
                 recyclerView.setVisibility(View.VISIBLE);
                 textview.setVisibility(View.GONE);
@@ -191,6 +187,19 @@ public class MainActivity extends AppCompatActivity {
     public void onStop() {
         super.onStop();
         running = false;
+        refresh = true;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (refresh) {
+            finish();
+            overridePendingTransition(0, 0);
+            startActivity(getIntent());
+            overridePendingTransition(0, 0);
+            refresh = false;
+        }
     }
 
     public boolean isRunning() {
