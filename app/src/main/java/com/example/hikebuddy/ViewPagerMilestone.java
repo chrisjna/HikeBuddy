@@ -69,7 +69,7 @@ public class ViewPagerMilestone extends PagerAdapter {
     public Object instantiateItem(@NonNull ViewGroup container, final int position) {
 
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = layoutInflater.inflate(R.layout.custom, null);
+        View view = layoutInflater.inflate(R.layout.content_milestone_adapter, null);
 
         ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
         imageView.setImageResource(images.getResourceId(position, -1));
